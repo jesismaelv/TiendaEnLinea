@@ -1,4 +1,8 @@
-@import "mixins.scss";
+@import "mixin.scss";
+
+$texto: #000;
+$blanco: white;
+$fondo: #999;
 
 body,
 html {
@@ -8,4 +12,31 @@ html {
 
 body {
   margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $texto;
+  &:hover {
+    text-decoration: none;
+    color: unset;
+  }
+}
+
+.header-principal {
+  position: relative;
+  display: block;
+  height: 60px;
+  background-color: $fondo;
+}
+
+.nav-principal {
+  position: relative;
+  display: flex;
+}
+
+.logo, .menu-movil {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
 }
