@@ -36,6 +36,85 @@
   }
 
 
+  function registrar_producto($data) {
+    $bd = mysqli_connect("db","root","root", "main");
+    $nombre = $data['nombre'];
+    $unidad = $data['unidad'];
+    $descripcion = $data['descripcion'];
+    $precio = $data['precio'];
+    $existencia = $data['existencia'];
+
+    $query = "INSERT INTO producto ( nombre, unidad, descripcion, precio, existencia )
+      VALUES ( '$nombre', '$unidad', '$descrpcion', '$precio', '$existencia' )";
+    $result = $bd->query($query);
+
+    $id = $bd->insert_id;
+    if( $_FILES['imagen']["tmp_name"] != "" ) {
+      $index = 'imagen';
+      $nombre = 'principal';
+      $camino = "../img/productos/" . $id . "/";
+      $status = subir_imagen($index, $nombre, $camino);
+      if( $status['exito'] ) {
+        $camino = $status['camino'];
+        $camino = str_replace( '../', '', $camino);
+        $query = "UPDATE producto SET imagen = '$camino' WHERE id = '$id'";
+        $error['imagen'] = $bd->query($query);
+      }
+      else {
+        $error['imagen'] = 'No se pudo subir la imagen.';
+      }
+    }
+
+    if( $_FILES['imagenes']["tmp_name"][0] != "" ) {
+      $index = 'imagen';
+      $nombre = 'galeria';
+      $camino = "../img/productos/" . $id . "/";
+
+      for($i=0; $i<count($_FILES['imagenes']['name']); $i++) {
+          $tmpFilePath = $_FILES['imagenes']['tmp_name'][$i];
+          if($tmpFilePath != ""){
+            $nombre = $nombre + $i;
+            $name = basename($_FILES[$index]["name"]);
+            $tipo = strtolower(pathinfo($name,PATHINFO_EXTENSION));
+            if (!is_dir($camino)) {
+              mkdir($camino);
+            }
+            $camino = $camino . $nombre . "." . $tipo;
+            if ( move_uploaded_file($_FILES[$index]["tmp_name"], $camino ) ) {
+              $status['exito'] = true;
+              $status['camino'] = $camino;
+            }
+          }
+      }
+    }
+
+
+    $bd->close();
+
+    return $result;
+  }
+
+  function subir_imagen($index, $nombre, $camino) {
+    $name = basename($_FILES[$index]["name"]);
+    $tipo = strtolower(pathinfo($name,PATHINFO_EXTENSION));
+    if (!is_dir($camino)) {
+      mkdir($camino);
+    }
+    $camino = $camino . $nombre . "." . $tipo;
+    if ( move_uploaded_file($_FILES[$index]["tmp_name"], $camino ) ) {
+      $status['exito'] = true;
+      $status['camino'] = $camino;
+    }
+    else {
+      $status['exito'] = false;
+    }
+    return $status;
+  }
+
+  function aviso( $str ){
+		include "aviso.php";
+  }
+
   function print_x($var, $die = false) {
     echo "<pre>";
       print_r($var);
