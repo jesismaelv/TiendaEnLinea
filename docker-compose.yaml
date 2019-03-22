@@ -5,12 +5,14 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=main
+    volumes:
+      - ./mysql:/var/lib/mysql
   app:
-    image: lamp
+    image: php-mysql
     ports:
       - 80:80
     volumes:
-      - ./codeigniter:/var/www/html
+      - ./app:/var/www/html
     depends_on:
       - db
     links:
@@ -30,4 +32,4 @@ services:
   sass:
     image: larryprice/sass
     volumes:
-      - ./codeigniter/css:/src
+      - ./app/css:/src

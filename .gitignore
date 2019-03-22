@@ -1,0 +1,8 @@
+/data
+/.git
+/mysql
+/codeigniter/css/**/*.map
+/codeigniter/css/**/*.css
+!/codeigniter/css/estilos-administrador.css
+!/codeigniter/css/estilos-alumno.css
+!/codeigniter/css/estilos-visitante.css
