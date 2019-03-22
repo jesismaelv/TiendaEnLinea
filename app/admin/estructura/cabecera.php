@@ -14,12 +14,3 @@
   <title> TrannyFrut • <?php echo @$page_title; ?> </title>
 </head>
 <body>
-
-  <header class="header-principal">
-    <nav class="nav-principal">
-      <div class="container">
-        <div class="col-12">
-        </div>
-      </div>
-    </nav>
-  </header>
