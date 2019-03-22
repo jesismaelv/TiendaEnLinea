@@ -12,8 +12,8 @@
           </div>
         </div>
         <div class="menu__footer__iconos">
-          <a href="#" class="menu__link--iconos">Cuenta</a>
-          <a href="#" class="menu__link--iconos">Carrito</a>
+          <a href="#" class="menu__link--cuenta">Cuenta</a>
+          <a href="#" class="menu__link--carrito">Carrito</a>
         </div>
       </div>
     </div>
