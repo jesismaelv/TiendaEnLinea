@@ -16,22 +16,21 @@
 <body>
 
   <header class="header-principal">
-      <div class="container">
-        <div class="col-12">
-          <div class="nav-principal">
-            <div class="logo">
-              Logo
-            </div>
-            <div class="menu-movil">
-              <div class="menu__links">
-                <a href="#" class="menu__link">Inicio</a>
-                <a href="#" class="menu__link">Tienda</a>
-                <a href="#" class="menu__link--iconos">Busqueda</a>
-                <a href="#" class="menu__link--iconos">Cuenta</a>
-                <a href="#" class="menu__link--iconos">Carrito</a>
-              </div>
-            </div>
+    <nav class="nav-principal">
+      <div class="container contenedor-principal">
+        <div class="logo">
+          Logo
+        </div>
+        <button class="menu-btn-movil"></button>
+        <div class="menu-movil">
+          <div class="menu__links">
+            <a href="#" class="menu__link">Inicio</a>
+            <a href="#" class="menu__link">Tienda</a>
+            <a href="#" class="menu__link--iconos">Busqueda</a>
+            <a href="#" class="menu__link--iconos">Cuenta</a>
+            <a href="#" class="menu__link--iconos">Carrito</a>
           </div>
         </div>
       </div>
+    </nav>
   </header>

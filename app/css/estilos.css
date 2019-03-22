@@ -6,6 +6,14 @@ html {
 body {
   margin: 0; }
 
+body,
+html {
+  height: 100%;
+  width: 100%; }
+
+body {
+  margin: 0; }
+
 a {
   text-decoration: none;
   color: #000; }
@@ -14,18 +22,32 @@ a {
     color: unset; }
 
 .header-principal {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: block;
   height: 60px;
   background-color: #999; }
 
 .nav-principal {
   position: relative;
-  display: flex; }
+  display: flex;
+  align-items: center;
+  height: 100%; }
 
 .logo, .menu-movil {
   position: relative;
   display: inline-block;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  color: white; }
+
+.menu__link {
+  color: white; }
+
+.contenedor-principal {
+  position: relative;
+  display: flex;
+  justify-content: space-between; }
 
 /*# sourceMappingURL=estilos.css.map */

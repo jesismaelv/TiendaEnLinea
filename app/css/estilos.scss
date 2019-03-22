@@ -1,4 +1,5 @@
 @import "mixin.scss";
+@import "admin.scss";
 
 $texto: #000;
 $blanco: white;
@@ -24,7 +25,10 @@ a {
 }
 
 .header-principal {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: block;
   height: 60px;
   background-color: $fondo;
@@ -33,10 +37,23 @@ a {
 .nav-principal {
   position: relative;
   display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .logo, .menu-movil {
   position: relative;
   display: inline-block;
   text-transform: uppercase;
+  color: $blanco;
+}
+
+.menu__link {
+  color: $blanco;
+}
+
+.contenedor-principal {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
 }
