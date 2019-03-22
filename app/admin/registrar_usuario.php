@@ -1,22 +1,21 @@
 <?php
-  $page_title = "Registrar Producto";
+  $page_title = "Registrar Usuario";
   include('estructura/cabecera.php');
 
   if($_POST!=NULL) {
     if( registrar_producto($_POST) === true ) {
-      aviso("Se ha registrado el producto.");
+      aviso("Se ha registrado el usuario.");
     }
     else {
-      aviso("El producto no se pudo registrar. Inténtalo de nuevo.");
+      aviso("El usuario no se pudo registrar. Inténtalo de nuevo.");
     }
   }
 
-  print_x(@$_POST['imagenes']);
 ?>
 
 <main class="admin-page registrar-producto-page">
   <div class="container">
-    <h1> Agregar producto </h1>
+    <h1> Agregar usuario </h1>
 
     <form action="registrar_producto.php" method="post" enctype="multipart/form-data">
       <div class="row">

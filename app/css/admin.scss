@@ -36,6 +36,8 @@ h1 {
 }
 
 .alinear-derecha {
+  display: block;
+  width: 100%;
   text-align: right;
 
   *:last-child {
