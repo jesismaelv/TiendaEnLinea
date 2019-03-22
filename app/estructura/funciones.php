@@ -2,10 +2,7 @@
   // Ejemplo de consulta
   // $sql = "SELECT * FROM usuarios";
   // $result = $db->query($sql);
-
   // CONECCION CON LA BASE DE DATOS
-
-
 
   if (mysqli_connect_errno()) {
     echo "No se pudo conectar con la base de datos: " . mysqli_connect_error();
@@ -19,15 +16,12 @@
     $contrasena = md5($args['contrasena']);
     $foto = $args['foto'];
 
-
-
-    $query = "SELECT correo FROM usuarios WHERE correo = $correo";
+    $query = " SELECT correo FROM usuarios WHERE correo = '$correo' ";
     $result = $bd->query($query);
-    print_x($result);
     if ($result->num_rows > 0) {
-      return 'correo_utilizado';
+      return "correo_repetido";
     } else {
-      $query = "INSERT INTO usuarios ( nombre, apellido, correo, contrasena, foto, tipo )
+      $query = " INSERT INTO usuarios ( nombre, apellido, correo, contrasena, foto, tipo )
         VALUES ('$nombre', '$apellido', '$correo', '$contrasena', '$foto', 'cliente')";
       $result = $bd->query($query);
       return $result;
