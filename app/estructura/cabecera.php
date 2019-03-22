@@ -26,7 +26,6 @@
           <div class="menu__links">
             <a href="#" class="menu__link">Inicio</a>
             <a href="#" class="menu__link">Tienda</a>
-            <a href="#" class="menu__link--iconos">Busqueda</a>
             <a href="#" class="menu__link--iconos">Cuenta</a>
             <a href="#" class="menu__link--iconos">Carrito</a>
           </div>
@@ -34,3 +33,4 @@
       </div>
     </nav>
   </header>
+  <div class="menu-spacer"></div>

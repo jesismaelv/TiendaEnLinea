@@ -16,11 +16,23 @@ body {
 }
 
 a {
+  position: relative;
   text-decoration: none;
   color: $texto;
+  transition: all 0.5s ease;
   &:hover {
+    cursor: pointer;
     text-decoration: none;
     color: unset;
+    &:after {
+      position: absolute;
+      right: 0;
+      left: 0;
+      display: block;
+      content: '';
+      height: 2px;
+      background: $blanco;
+    }
   }
 }
 
@@ -32,6 +44,7 @@ a {
   display: block;
   height: 60px;
   background-color: $fondo;
+  z-index: 500;
 }
 
 .nav-principal {
@@ -48,12 +61,41 @@ a {
   color: $blanco;
 }
 
+.menu-btn-movil {
+  display: none;
+}
+
 .menu__link {
   color: $blanco;
+  margin-left: 20px;
 }
 
 .contenedor-principal {
   position: relative;
   display: flex;
   justify-content: space-between;
+}
+
+.menu-spacer {
+  height: 60px;
+}
+
+.footer-principal {
+  background: $fondo;
+  padding: 30px 0 100px;
+}
+
+.menu__footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-links {
+  display: flex;
+}
+
+.menu__footer__links {
+  display: flex;
+  flex-direction: column;
+  margin: 0 50px;
 }

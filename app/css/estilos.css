@@ -6,6 +6,83 @@ html {
 body {
   margin: 0; }
 
+* {
+  box-sizing: border-box; }
+
+h1 {
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 1.5em;
+  position: relative;
+  padding-bottom: 0.5em; }
+  h1:after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: gray;
+    position: absolute;
+    bottom: 0px;
+    left: 0px; }
+
+.alinear-derecha {
+  text-align: right; }
+  .alinear-derecha *:last-child {
+    margin-right: 0px; }
+
+.input-group {
+  margin-bottom: 30px;
+  font-weight: bold; }
+
+label {
+  display: block;
+  margin-bottom: 7px; }
+
+input:not([type='file']),
+textarea,
+select {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  width: 100%;
+  display: block;
+  border: 1px solid #666;
+  padding: 5px 10px; }
+
+[type='file'] {
+  width: 100%;
+  display: block; }
+  [type='file'] + [type='file'] {
+    margin-top: 20px; }
+
+.input-galeria {
+  width: 100%; }
+
+.boton {
+  appearance: none;
+  -webkit-appearance: none;
+  -o-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+  border: 0px solid transparent;
+  background-color: #ccc;
+  padding: 0.7em 1.5em 0.6em;
+  margin: 10px; }
+  .boton:hover {
+    background-color: #aaa; }
+  .boton-wide {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px; }
+  .boton-important {
+    background-color: #037;
+    color: white; }
+    .boton-important:hover {
+      background-color: #014; }
+
 body,
 html {
   height: 100%;
@@ -15,11 +92,22 @@ body {
   margin: 0; }
 
 a {
+  position: relative;
   text-decoration: none;
-  color: #000; }
+  color: #000;
+  transition: all 0.5s ease; }
   a:hover {
+    cursor: pointer;
     text-decoration: none;
     color: unset; }
+    a:hover:after {
+      position: absolute;
+      right: 0;
+      left: 0;
+      display: block;
+      content: '';
+      height: 2px;
+      background: white; }
 
 .header-principal {
   position: fixed;
@@ -28,7 +116,8 @@ a {
   right: 0;
   display: block;
   height: 60px;
-  background-color: #999; }
+  background-color: #999;
+  z-index: 500; }
 
 .nav-principal {
   position: relative;
@@ -42,12 +131,35 @@ a {
   text-transform: uppercase;
   color: white; }
 
+.menu-btn-movil {
+  display: none; }
+
 .menu__link {
-  color: white; }
+  color: white;
+  margin-left: 20px; }
 
 .contenedor-principal {
   position: relative;
   display: flex;
   justify-content: space-between; }
+
+.menu-spacer {
+  height: 60px; }
+
+.footer-principal {
+  background: #999;
+  padding: 30px 0 100px; }
+
+.menu__footer {
+  display: flex;
+  justify-content: space-between; }
+
+.logo-links {
+  display: flex; }
+
+.menu__footer__links {
+  display: flex;
+  flex-direction: column;
+  margin: 0 50px; }
 
 /*# sourceMappingURL=estilos.css.map */

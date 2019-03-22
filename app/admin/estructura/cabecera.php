@@ -18,6 +18,9 @@
 <header class="header-principal">
     <nav class="nav-principal">
       <div class="container contenedor-principal">
+        <a href="#" class="logo">
+          Logo
+        </a>
         <button class="menu-btn-movil"></button>
         <div class="menu-movil">
           <div class="menu__links">
@@ -32,3 +35,5 @@
       </div>
     </nav>
   </header>
+  <div class="menu-spacer"></div>
+
