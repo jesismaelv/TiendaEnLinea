@@ -1,0 +1,55 @@
+[ G E N E R A L ]
+[ ] Login
+[X] Cerrar Sesión
+[ ] Registrarse
+[ ] Perder contrasena
+
+
+[ A D M I N ]
+--estructura--
+[X] Menú
+[X] Footer
+
+--registrar--
+[X] Producto
+[X] Novedad
+[X] Usuario
+[X] Slide Galeria
+
+--eliminar--
+[X] Producto
+[X] Novedad
+[X] Cliente
+[X] Slide Galeria
+
+--editar/ver--
+[ ] Producto
+[ ] Novedad
+[ ] Cliente
+[ ] Orden
+[ ] Slide de galería
+
+
+[ C L I E N T E ]
+--estructura--
+[ ] Menú
+[ ] Footer
+
+--views--
+[ ] Inicio
+    [ ] Galería
+    [ ] Novedades
+    [ ] Productos recienes
+[ ] Archivo Productos
+    [ ] Productos relacionados
+[ ] Single Producto
+
+--cuenta--
+[ ] Editar Perfil
+[ ] Carrito
+[ ] Checkout
+[ ] Ordenes
+[ ] Orden
+    [ ] Cancelar orden
+
+
