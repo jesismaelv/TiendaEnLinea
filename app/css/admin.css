@@ -26,6 +26,9 @@ h1 {
     bottom: 0px;
     left: 0px; }
 
+main {
+  padding: 60px 0px; }
+
 .alinear-derecha {
   text-align: right; }
   .alinear-derecha *:last-child {
