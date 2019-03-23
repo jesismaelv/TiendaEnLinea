@@ -24,6 +24,46 @@ a {
 }
 
 
+.boton {
+  @include reset-appearance();
+  color: #333;
+  display: inline-block;
+  background-color: #ccc;
+  padding: 0.7em 1.5em 0.6em;
+  margin: 10px;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-weight: regular;
+  @include borde-redondo(3px);
+  @include transicion();
+  cursor: pointer;
+
+  &:hover {
+    background-color: #aaa;
+    color: #333;
+    text-decoration: none;
+  }
+
+  &-wide {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  &-important {
+    background-color: #037;
+    color: white;
+
+    &:hover {
+      background-color: #014;
+      color: white;
+    }
+  }
+}
+
 
 h1 {
   font-size: 25px;
@@ -182,6 +222,10 @@ h1 {
 
 .login-page {
   text-align: center;
+
+  .input-group {
+    text-align: left;
+  }
 
   .container {
     max-width: 450px;
