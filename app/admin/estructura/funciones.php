@@ -35,7 +35,6 @@
     $bd->close();
   }
 
-
   function registrar_producto($data) {
     $bd = mysqli_connect("db","root","root", "main");
     $nombre = $data['nombre'];
@@ -89,6 +88,38 @@
       $error['imagenes'] = $bd->query($query);
     }
     $bd->close();
+    return $result;
+  }
+
+  function registrar_novedad($data) {
+    $bd = mysqli_connect("db","root","root", "main");
+    $titulo = $data['titulo'];
+    $subtitulo = $data['subtitulo'];
+    $descripcion = $data['descripcion'];
+
+    $query = "INSERT INTO novedades ( titulo, subtitulo, descripcion)
+      VALUES ( '$titulo', '$subtitulo', '$descripcion')";
+    $result = $bd->query($query);
+
+    $id = $bd->insert_id;
+    if( $_FILES['imagen']["tmp_name"] != "" ) {
+      $index = 'imagen';
+      $nombre = 'principal';
+      $camino = "../img/novedades/" . $id . "/";
+      $status = subir_imagen($index, $nombre, $camino);
+      if( $status['exito'] ) {
+        $camino = $status['camino'];
+        $camino = str_replace( '../', '', $camino);
+        $query = "UPDATE novedades SET imagen = '$camino' WHERE id = '$id'";
+        $error['imagen'] = $bd->query($query);
+      }
+      else {
+        $error['imagen'] = 'No se pudo subir la imagen.';
+      }
+    }
+
+    $bd->close();
+
     return $result;
   }
 

@@ -30,6 +30,8 @@ main {
   padding: 60px 0px; }
 
 .alinear-derecha {
+  display: block;
+  width: 100%;
   text-align: right; }
   .alinear-derecha *:last-child {
     margin-right: 0px; }
