@@ -64,7 +64,7 @@
         $error['imagen'] = 'No se pudo subir la imagen.';
       }
     }
-    
+
     if( $_FILES['imagenes']["tmp_name"][0] != "" ) {
       $index = 'imagen';
       $nombre = 'galeria';
