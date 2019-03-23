@@ -5,6 +5,7 @@
 
 <main class="index-page">
   <div class="container">
+    <?php print_x($_SESSION) ?>
   </div>
 </main>
 

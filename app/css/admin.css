@@ -11,23 +11,6 @@ body {
   box-sizing: border-box;
   font-family: "Raleway"; }
 
-h1 {
-  font-size: 25px;
-  text-transform: uppercase;
-  font-weight: bold;
-  margin-bottom: 1.5em;
-  position: relative;
-  padding-bottom: 0.5em; }
-  h1:after {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 3px;
-    background-color: gray;
-    position: absolute;
-    bottom: 0px;
-    left: 0px; }
-
 main {
   padding: 60px 0px; }
 

@@ -1,4 +1,3 @@
-
 <?php 
   include ('funciones.php');
 ?>
@@ -26,7 +25,7 @@
           <div class="menu__links">
             <a href="#" class="menu__link">Inicio</a>
             <a href="#" class="menu__link">Tienda</a>
-            <a href="#" class="menu__link--cuenta">Cuenta</a>
+            <a href="/login.php" class="menu__link--cuenta">Cuenta</a>
             <a href="#" class="menu__link--carrito">Carrito</a>
           </div>
         </div>

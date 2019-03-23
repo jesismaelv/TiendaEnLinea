@@ -11,23 +11,6 @@ body {
   box-sizing: border-box;
   font-family: "Raleway"; }
 
-h1 {
-  font-size: 25px;
-  text-transform: uppercase;
-  font-weight: bold;
-  margin-bottom: 1.5em;
-  position: relative;
-  padding-bottom: 0.5em; }
-  h1:after {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 3px;
-    background-color: gray;
-    position: absolute;
-    bottom: 0px;
-    left: 0px; }
-
 main {
   padding: 60px 0px; }
 
@@ -288,6 +271,32 @@ a {
   text-decoration: none;
   color: #000; }
 
+h1 {
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 1.5em;
+  position: relative;
+  padding-bottom: 0.5em; }
+  h1:after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: gray;
+    position: absolute;
+    bottom: 0px;
+    left: 0px; }
+  h1.centrado {
+    text-align: center; }
+    h1.centrado:after {
+      left: 50%;
+      transform: translate(-50%, 0); }
+
+.link {
+  display: inline-block;
+  text-decoration: underline; }
+
 .header-principal {
   position: fixed;
   top: 0;
@@ -395,5 +404,10 @@ a {
   position: relative;
   display: inline-block;
   transition: all 0.5s ease; }
+
+.login-page {
+  text-align: center; }
+  .login-page .container {
+    max-width: 450px; }
 
 /*# sourceMappingURL=estilos.css.map */

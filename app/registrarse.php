@@ -1,51 +1,73 @@
 <?php
-  $page_title = "Registro";
+  $page_title = "Registrarse";
   include('estructura/cabecera.php');
 
-  $args = [
-    'nombre' => 'Ismael',
-    'apellido' => 'Villegas',
-    'correo' => 'jesismaelv@gmail.com',
-    'contrasena' => 'ismael',
-    'foto' => 'fotos/ismael.jpg'
-  ];
+  if($_POST!=NULL) {
+    if( registrar_usuario($_POST) === true ) {
+      $str = "Ahora puedes intentar Iniciar sesión.";
+      aviso($str);
+    }
+    else {
+      aviso("Ha ocurrido un error, por favor inténtalo de nuevo.");
+    }
+  }
 
-  $res = registrar_usuario($args);
-  print_r($res);
 ?>
 
-<main class="registration-page">
+<main class="admin-page registrar-producto-page">
   <div class="container">
-    <h1> Registration </h1>
-    <form action="registro_completado.php"
-      class="forma-registro"
-      method="post"
-      enctype='multipart/form-data'>
+    <h1> Registrarse </h1>
+
+    <form action="registrarse.php" method="post" enctype="multipart/form-data">
       <div class="row">
+        <div class="col-12 col-md-3">
 
-        <div class="col-12">
-          <div class="forma-registro__input">
-            <label> Nombre </label>
-            <input type="text" name="nombre">
+          <div class="input-group">
+            <label> Foto </label>
+            <input type="file" name="imagen" accept="image/png, image/jpeg">
           </div>
+
         </div>
 
-        <div class="col-12">
-          <div class="forma-registro__input">
-            <label> Nombre </label>
-            <input type="text" name="nombre">
-          </div>
-        </div>
+        <div class="col-12 col-md-9">
 
-        <div class="col-12">
-          <div class="forma-registro__input">
-            <label> Nombre </label>
-            <input type="text" name="nombre">
+          <div class="row">
+            <div class="col-12 col-sm-6">
+              <div class="input-group">
+                <label> Nombre </label>
+                <input type="text" name="nombre">
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6">
+              <div class="input-group">
+                <label> Apellido </label>
+                <input type="text" name="apellido" >
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6">
+              <div class="input-group">
+                <label> Correo </label>
+                <input type="text" name="correo" >
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6">
+              <div class="input-group">
+                <label> Contraseña </label>
+                <input type="password" name="contrasena" >
+              </div>
+            </div>
+
+          </div>
+          <div class="alinear-derecha">
+            <button class="boton boton-important"> Registrarme </button>
           </div>
         </div>
-      
       </div>
     </form>
+
   </div>
 </main>
 

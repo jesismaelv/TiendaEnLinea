@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Mar 23, 2019 at 06:30 AM
+-- Generation Time: Mar 23, 2019 at 06:26 PM
 -- Server version: 5.7.11
 -- PHP Version: 7.2.8
 
@@ -21,6 +21,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `main`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `direccion`
+--
+
+CREATE TABLE `direccion` (
+  `id` int(11) NOT NULL,
+  `id_usuario` int(11) DEFAULT NULL,
+  `nombre` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci,
+  `apellido` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci,
+  `correo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci,
+  `calle` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci,
+  `colonia` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `zip` int(11) DEFAULT NULL,
+  `estado` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci,
+  `pais` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci,
+  `notas` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -129,11 +149,19 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `correo`, `foto`, `contrasena`, `tipo`, `carrito`) VALUES
 (19, 'Ismael', 'Villegas', 'jesismaelv@gmail.com', 'fotos/ismael.jpg', '56437ee14d804bfa14762e0b1782827e', 'cliente', NULL),
-(22, 'Ismael', 'Villegas', 'ismael@entraencatarsis.com', 'img/usuarios/22/perfil.jpg', '56437ee14d804bfa14762e0b1782827e', 'admin', NULL);
+(22, 'Ismael', 'Villegas', 'ismael@entraencatarsis.com', 'img/usuarios/22/perfil.jpg', '56437ee14d804bfa14762e0b1782827e', 'admin', NULL),
+(30, 'elena', 'Dummy', 'elena@dummy.com', 'img/usuarios/30/perfil.png', 'fadf17141f3f9c3389d10d09db99f757', 'cliente', NULL),
+(32, 'admin', '', 'admin', 'img/usuarios/32/perfil.png', '21232f297a57a5a743894a0e4a801fc3', 'admin', NULL);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `direccion`
+--
+ALTER TABLE `direccion`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `novedades`
@@ -170,6 +198,12 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT for table `direccion`
+--
+ALTER TABLE `direccion`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `novedades`
 --
 ALTER TABLE `novedades`
@@ -197,7 +231,7 @@ ALTER TABLE `slides_inicio`
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
