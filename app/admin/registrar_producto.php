@@ -29,7 +29,7 @@
 
           <div class="input-group">
             <label> Galería </label>
-              <input type="file" name="imagenes" id="fileToUpload" accept="image/png, image/jpeg" multiple="multiple">
+              <input type="file" name="imagenes[]" id="fileToUpload" accept="image/png, image/jpeg" multiple="multiple">
           </div>
 
         </div>

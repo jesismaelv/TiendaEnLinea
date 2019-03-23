@@ -64,33 +64,31 @@
         $error['imagen'] = 'No se pudo subir la imagen.';
       }
     }
-
+    
     if( $_FILES['imagenes']["tmp_name"][0] != "" ) {
       $index = 'imagen';
       $nombre = 'galeria';
-      $camino = "../img/productos/" . $id . "/";
+      $dir = "../img/productos/" . $id . "/";
 
       for($i=0; $i<count($_FILES['imagenes']['name']); $i++) {
-          $tmpFilePath = $_FILES['imagenes']['tmp_name'][$i];
-          if($tmpFilePath != ""){
-            $nombre = $nombre + $i;
-            $name = basename($_FILES[$index]["name"]);
-            $tipo = strtolower(pathinfo($name,PATHINFO_EXTENSION));
-            if (!is_dir($camino)) {
-              mkdir($camino);
-            }
-            $camino = $camino . $nombre . "." . $tipo;
-            if ( move_uploaded_file($_FILES[$index]["tmp_name"], $camino ) ) {
-              $status['exito'] = true;
-              $status['camino'] = $camino;
-            }
+        $tmpFilePath = $_FILES['imagenes']['tmp_name'][$i];
+        if($tmpFilePath != ""){
+          $name = basename($_FILES['imagenes']["name"][$i]);
+          $tipo = strtolower(pathinfo($name,PATHINFO_EXTENSION));
+          if (!is_dir($dir)) {
+            mkdir($dir);
           }
+          $camino = $dir . $nombre . $i . "." . $tipo;
+          if ( move_uploaded_file( $tmpFilePath, $camino ) ) {
+            $galeria[$i] = str_replace('../','',$camino);
+          }
+        }
       }
+      $galeria = json_encode($galeria);
+      $query = "UPDATE producto SET imagenes = '$galeria' WHERE id = '$id'";
+      $error['imagenes'] = $bd->query($query);
     }
-
-
     $bd->close();
-
     return $result;
   }
 

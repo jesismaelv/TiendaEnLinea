@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Mar 22, 2019 at 11:28 PM
+-- Generation Time: Mar 23, 2019 at 02:20 AM
 -- Server version: 5.7.11
 -- PHP Version: 7.2.8
 
@@ -63,7 +63,8 @@ CREATE TABLE `producto` (
   `precio` int(11) DEFAULT NULL,
   `unidad` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci,
   `existencia` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci,
-  `fecha_creacion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `fecha_creacion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `imagenes` json DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -158,7 +159,7 @@ ALTER TABLE `orden`
 -- AUTO_INCREMENT for table `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `slides_inicio`
