@@ -26,7 +26,7 @@
 
           <div class="input-group">
             <label> Correo </label>
-            <input type="email" name="correo" >
+            <input type="text" name="correo" >
           </div>
 
           <div class="input-group">

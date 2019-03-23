@@ -7,6 +7,10 @@
 
   include ("../funciones-generales.php");
 
+  if($_SESSION['tipo'] != 'admin') {
+    header("Location: /");
+  }
+
   if (mysqli_connect_errno()) {
     echo "No se pudo conectar con la base de datos: " . mysqli_connect_error();
   }
