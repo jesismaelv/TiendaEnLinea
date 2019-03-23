@@ -1,5 +1,5 @@
 <?php
-  $page_title = "Inicio";
+  $page_title = "Registrar Producto";
   include('estructura/cabecera.php');
 ?>
 
@@ -13,15 +13,15 @@
 
           <div class="input-group">
             <label> Imagen Principal </label>
-            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input type="file" name="imagen" id="fileToUpload">
           </div>
 
           <div class="input-group">
             <label> Galería </label>
-            <div class="input-galeria-producto">
-              <input type="file" name="fileToUpload" id="fileToUpload">
-              <button type="button" data-agregar-imagen> Agregar más </button>
+            <div class="input-galeria" id="galeriaProducto">
+              <input type="file" name="imagenes[]" id="fileToUpload">
             </div>
+            <button class="boton boton-wide" type="button" data-agregar-imagen='galeriaProducto'> + Agregar más </button>
           </div>
 
         </div>
@@ -53,7 +53,9 @@
               </div>
             </div>
           </div>
-
+          <div class="alinear-derecha">
+            <button class="boton boton-important"> Guardar </button>
+          </div>
         </div>
       </div>
     </form>
