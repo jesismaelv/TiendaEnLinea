@@ -34,6 +34,14 @@
   }
 }
 
+
+@mixin upto_sm() {
+  @media only screen and (min-width: 1px) and (max-width: 991px) {
+    @content;
+  }
+}
+
+
 @mixin solo_md() {
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     @content;
@@ -132,4 +140,22 @@ $breakpoint: 991px;
   @media only screen and (max-width: $breakpoint) {
     @content;
   }
+}
+
+
+@mixin bgimage($path: "") {
+  @if $path !="" {
+    background-image: url($path);
+  }
+
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@mixin transicion($duracion: 0.5s, $aceleracion: ease, $property: all) {
+  -webkit-transition: $property $duracion $aceleracion;
+  -moz-transition: $property $duracion $aceleracion;
+  -o-transition: $property $duracion $aceleracion;
+  transition: $property $duracion $aceleracion;
 }

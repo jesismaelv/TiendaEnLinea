@@ -30,6 +30,11 @@ h1 {
   text-align: right; }
   .alinear-derecha *:last-child {
     margin-right: 0px; }
+  @media only screen and (min-width: 1px) and (max-width: 991px) {
+    .alinear-derecha--nosm {
+      text-align: left; }
+      .alinear-derecha--nosm *:first-child {
+        margin-left: 0px; } }
 
 .input-group {
   margin-bottom: 30px;
@@ -66,11 +71,15 @@ select {
   -moz-appearance: none;
   background-color: transparent;
   border: 0px solid transparent;
+  color: #333;
+  display: inline-block;
   background-color: #ccc;
   padding: 0.7em 1.5em 0.6em;
   margin: 10px; }
   .boton:hover {
-    background-color: #aaa; }
+    background-color: #aaa;
+    color: #333;
+    text-decoration: none; }
   .boton-wide {
     width: 100%;
     margin-left: 0px;
@@ -81,7 +90,8 @@ select {
     background-color: #037;
     color: white; }
     .boton-important:hover {
-      background-color: #014; }
+      background-color: #014;
+      color: white; }
 
 .aviso {
   position: fixed;
@@ -111,5 +121,63 @@ select {
     opacity: 0;
     cursor: none;
     pointer-events: none; } }
+.tarjeta-producto {
+  position: relative;
+  width: 100%;
+  height: 100%; }
+  .tarjeta-producto .eliminar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    padding-top: 2px; }
+    .tarjeta-producto .eliminar:hover {
+      text-decoration: none; }
+  .tarjeta-producto .link-producto {
+    padding: 10px 10px 20px;
+    background-color: white;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    display: block;
+    width: 100%;
+    position: relative;
+    color: #333;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    margin-bottom: 40px; }
+    .tarjeta-producto .link-producto .imagen {
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 100%;
+      padding: 60% 0; }
+    .tarjeta-producto .link-producto h2,
+    .tarjeta-producto .link-producto span {
+      z-index: 1;
+      margin-bottom: 0px; }
+    .tarjeta-producto .link-producto span {
+      color: #666; }
+    .tarjeta-producto .link-producto h2 {
+      margin-top: 20px;
+      font-weight: bold; }
+    .tarjeta-producto .link-producto:hover {
+      text-decoration: none;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); }
+
+.cabecera-productos {
+  margin-bottom: 50px; }
 
 /*# sourceMappingURL=admin.css.map */

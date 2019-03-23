@@ -10,8 +10,6 @@
       aviso("El producto no se pudo registrar. Inténtalo de nuevo.");
     }
   }
-
-  print_x(@$_POST['imagenes']);
 ?>
 
 <main class="admin-page registrar-producto-page">

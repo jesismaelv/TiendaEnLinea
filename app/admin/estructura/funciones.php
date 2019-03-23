@@ -109,6 +109,14 @@
     return $status;
   }
 
+  function get_productos(){
+    $bd = mysqli_connect("db","root","root", "main");
+    $sql = "SELECT * FROM producto";
+    $result = $bd->query($sql);
+    $bd->close();
+    return $result;
+  }
+
   function aviso( $str ){
 		include "aviso.php";
   }
