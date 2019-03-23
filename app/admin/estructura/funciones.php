@@ -152,10 +152,38 @@
 		include "aviso.php";
   }
 
+  function eliminar($tipo, $id) {
+    $bd = mysqli_connect("db","root","root", "main");
+    $sql = "DELETE FROM $tipo WHERE id = '$id'";
+    $result = $bd->query($sql);
+    $bd->close();
+
+    switch($tipo) {
+      case "producto":
+        $path = "../img/$id/";
+        break;
+    }
+    //delete_files($path);
+
+    return $result;
+  }
+
   function print_x($var, $die = false) {
     echo "<pre>";
       print_r($var);
     echo "</pre>";
     if($die) die();
+  }
+
+  function delete_files($target) {
+    if(is_dir($target)){
+        $files = glob( $target . '*', GLOB_MARK );
+        foreach( $files as $file ){
+            delete_files( $file );
+        }
+        rmdir( $target );
+    } elseif(is_file($target)) {
+        unlink( $target );  
+    }
   }
 ?>

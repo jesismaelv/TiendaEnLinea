@@ -1,6 +1,14 @@
 <?php
   $page_title = "Registrar Producto";
   include('estructura/cabecera.php');
+
+  if($_GET['eliminar'] == 'exito') {
+    echo aviso("El producto se ha eliminado con exito.");
+  }
+  if($_GET['eliminar'] == 'error') {
+    echo aviso("Hubo un error al eliminar el producto.");
+  }
+
 ?>
 <main class="admin-page registrar-producto-page">
   <div class="container">
@@ -33,7 +41,7 @@
                 </h2>
                 <span class="precio">$<?php echo $producto['precio'] ?></span> • <span class="existencia">Quedan <?php echo $producto['existencia'] ?></span>
               </a>
-              <a class="eliminar" href="/admin/eliminar-producto.php?id=<?php echo $producto['id'] ?>"> X </a>
+              <a class="eliminar" href="/admin/eliminar.php?s=producto&id=<?php echo $producto['id'] ?>"> X </a>
             </article>
             
 
