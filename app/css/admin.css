@@ -28,7 +28,11 @@ main {
 
 .input-group {
   margin-bottom: 30px;
-  font-weight: bold; }
+  font-weight: bold;
+  position: relative; }
+  .input-group img {
+    width: 100%;
+    height: auto; }
 
 label {
   display: block;

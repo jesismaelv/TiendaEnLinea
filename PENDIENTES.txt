@@ -24,10 +24,10 @@
 
 --editar/ver--
 [ ] Producto
-[ ] Novedad
+[X] Novedad
 [ ] Cliente
 [ ] Orden
-[ ] Slide de galería
+[X] Slide de galería
 
 
 [ C L I E N T E ]

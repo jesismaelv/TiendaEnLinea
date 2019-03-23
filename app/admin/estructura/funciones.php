@@ -103,6 +103,38 @@
     return $result;
   }
 
+  function editar_novedad($data, $id) {
+    $bd = mysqli_connect("db","root","root", "main");
+    $titulo = $data['titulo'];
+    $subtitulo = $data['subtitulo'];
+    $descripcion = $data['descripcion'];
+
+    $query = "UPDATE novedades
+              SET titulo = '$titulo', subtitulo = '$subtitulo', descripcion = '$descripcion'
+              WHERE id = '$id'";
+    $result = $bd->query($query);
+
+    if( $_FILES['imagen']["tmp_name"] != "" ) {
+      $index = 'imagen';
+      $nombre = 'principal';
+      $camino = "../img/novedades/" . $id . "/";
+      $status = subir_imagen($index, $nombre, $camino);
+      if( $status['exito'] ) {
+        $camino = $status['camino'];
+        $camino = str_replace( '../', '', $camino);
+        $query = "UPDATE novedades SET imagen = '$camino' WHERE id = '$id'";
+        $error['imagen'] = $bd->query($query);
+      }
+      else {
+        $error['imagen'] = 'No se pudo subir la imagen.';
+      }
+    }
+
+    $bd->close();
+
+    return $result;
+  }
+
   function registrar_slide($data) {
     $bd = mysqli_connect("db","root","root", "main");
     $frase = $data['frase'];
@@ -114,6 +146,38 @@
     $result = $bd->query($query);
 
     $id = $bd->insert_id;
+    if( $_FILES['imagen']["tmp_name"] != "" ) {
+      $index = 'imagen';
+      $nombre = 'principal';
+      $camino = "../img/slides_inicio/" . $id . "/";
+      $status = subir_imagen($index, $nombre, $camino);
+      if( $status['exito'] ) {
+        $camino = $status['camino'];
+        $camino = str_replace( '../', '', $camino);
+        $query = "UPDATE slides_inicio SET imagen = '$camino' WHERE id = '$id'";
+        $error['imagen'] = $bd->query($query);
+      }
+      else {
+        $error['imagen'] = 'No se pudo subir la imagen.';
+      }
+    }
+
+    $bd->close();
+
+    return $result;
+  }
+
+  function editar_slide($data, $id) {
+    $bd = mysqli_connect("db","root","root", "main");
+    $frase = $data['frase'];
+    $subtitulo = $data['subtitulo'];
+    $accion = $data['accion'];
+
+    $query = "UPDATE slides_inicio
+              SET frase = '$frase', subtitulo = '$subtitulo', boton = '$accion'
+              WHERE id = '$id'";
+    $result = $bd->query($query);
+
     if( $_FILES['imagen']["tmp_name"] != "" ) {
       $index = 'imagen';
       $nombre = 'principal';

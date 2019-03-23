@@ -25,7 +25,51 @@ session_start();
     $apellido = $args['apellido'];
     $correo = $args['correo'];
     $contrasena = md5($args['contrasena']);
-    if( $args['tipo'] != '' ) {
+    if( $args['tipo'] != '' && $_SESSION['tipo'] == 'admin' ) {
+      $tipo = $args['tipo'];
+    }
+    else {
+      $tipo = 'cliente';
+    }
+
+    $query = "SELECT correo FROM usuarios WHERE correo = '$correo'";
+    $result = $bd->query($query);
+    if ($result->num_rows > 0) {
+      $bd->close();
+      return false;
+    } else {
+      $query = "INSERT INTO usuarios ( nombre, apellido, correo, contrasena, foto, tipo )
+        VALUES ('$nombre', '$apellido', '$correo', '$contrasena', '$foto', '$tipo')";
+      $result = $bd->query($query);
+
+      $id = $bd->insert_id;
+      if( $_FILES['imagen']["tmp_name"] != "" ) {
+        $index = 'imagen';
+        $nombre = 'perfil';
+        $camino = "../img/usuarios/" . $id . "/";
+        $status = subir_imagen($index, $nombre, $camino);
+        if( $status['exito'] ) {
+          $camino = $status['camino'];
+          $camino = str_replace( '../', '', $camino);
+          $query = "UPDATE usuarios SET foto = '$camino' WHERE id = '$id'";
+          $error['imagen'] = $bd->query($query);
+        }
+        else {
+          $error['imagen'] = 'No se pudo subir la imagen.';
+        }
+      }
+      $bd->close();
+      return $result;
+    }
+  }
+
+  function editar_usuario($args) {
+    $bd = mysqli_connect("db","root","root", "main");
+    $nombre = $args['nombre'];
+    $apellido = $args['apellido'];
+    $correo = $args['correo'];
+    $contrasena = md5($args['contrasena']);
+    if( $args['tipo'] != '' && $_SESSION['tipo'] == 'admin' ) {
       $tipo = $args['tipo'];
     }
     else {
@@ -69,6 +113,21 @@ session_start();
     $result = $bd->query($sql);
     $bd->close();
     return $result;
+  }
+
+  function get_single( $tipo, $id ){
+    $bd = mysqli_connect("db","root","root", "main");
+    $sql = "SELECT * FROM $tipo WHERE id = '$id'";
+    $result = $bd->query($sql);
+    if ($result->num_rows > 0) :
+      while($row = $result->fetch_assoc()) :
+        $res = $row;
+      endwhile;
+    else :
+      $res = false;
+    endif;
+    $bd->close();
+    return $res;
   }
 
   function aviso( $str ){

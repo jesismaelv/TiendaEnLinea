@@ -2,27 +2,39 @@
   $page_title = "Registrar Novedades";
   include('estructura/cabecera.php');
 
+
+  $id = $_GET['id'];
+
   if($_POST!=NULL) {
-    if( registrar_novedad($_POST) === true ) {
-      aviso("Se ha registrado la novedad.");
+    if( editar_novedad($_POST, $id) === true ) {
+      aviso("Se ha editado la novedad.");
     }
     else {
-      aviso("La novedad no se pudo registrar. Inténtalo de nuevo.");
+      aviso("La novedad no se pudo editar. Inténtalo de nuevo.");
     }
   }
+
+  $info = get_single('novedades', $id);
+
+  $img = $info['imagen'];
+  $titulo = $info['titulo'];
+  $subtitulo = $info['subtitulo'];
+  $descripcion = $info['descripcion'];
+
 ?>
 
 <main class="admin-page registrar-producto-page">
   <div class="container">
-    <h1> Agregar novedad </h1>
+    <h1> Editar novedad </h1>
 
-    <form action="registrar_novedad.php" method="post" enctype="multipart/form-data">
+    <form action="editar_novedad.php?id=<?php echo $id ?>" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="col-12 col-md-3">
 
           <div class="input-group">
             <label> Imagen Principal </label>
-            <input type="file" name="imagen" id="fileToUpload" accept="image/png, image/jpeg">
+            <img src="../<?php echo $img ?>">
+            <input type="file" name="imagen" accept="image/png, image/jpeg">
           </div>
 
         </div>
@@ -33,21 +45,21 @@
             <div class="col-12">
               <div class="input-group">
                 <label> Titulo </label>
-                <input type="text" name="titulo" >
+                <input type="text" name="titulo" value="<?php echo $titulo; ?>" >
               </div>
             </div>
 
             <div class="col-12">
               <div class="input-group">
                 <label> Subtitulo </label>
-                <input type="text" name="subtitulo" >
+                <input type="text" name="subtitulo" value="<?php echo $subtitulo; ?>">
               </div>
             </div>
 
             <div class="col-12">
               <div class="input-group">
                 <label> Descripcion </label>
-                <textarea name="descripcion"></textarea>
+                <textarea name="descripcion"><?php echo $descripcion; ?></textarea>
               </div>
             </div>
 

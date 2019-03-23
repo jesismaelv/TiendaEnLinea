@@ -45,6 +45,12 @@ main {
 .input-group {
   margin-bottom: 30px;
   font-weight: bold;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 label {

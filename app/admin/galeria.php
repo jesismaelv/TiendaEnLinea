@@ -32,7 +32,7 @@
           <div class="col-12 col-md-6">
             <article class="tarjeta tarjeta-slide">
               <a class="link-slide"
-                  href="/admin/editar-slide.php?id=<?php echo $slide['id'] ?>"
+                  href="/admin/editar_slide.php?id=<?php echo $slide['id'] ?>"
                   style="background-image:url(../<?php echo $slide['imagen'] ?>)">
 
                 <div class="contenido">

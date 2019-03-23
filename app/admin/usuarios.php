@@ -32,7 +32,7 @@
           <div class="col-12 col-sm-6 col-lg-4">
             <article class="tarjeta tarjeta-usuario">
               <a class="link-usuario"
-                  href="/admin/editar-usuario.php?id=<?php echo $usuario['id'] ?>">
+                  href="/admin/editar_usuario.php?id=<?php echo $usuario['id'] ?>">
                   <div class="imagen"
                   style="background-image:url(../<?php echo $usuario['foto'] ?>)"></div>
 

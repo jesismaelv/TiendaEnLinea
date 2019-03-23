@@ -32,7 +32,7 @@
           <div class="col-12 col-sm-6 col-lg-4">
             <article class="tarjeta tarjeta-producto">
               <a class="link-producto"
-                  href="/admin/editar-novedad.php?id=<?php echo $novedad['id'] ?>">
+                  href="/admin/editar_novedad.php?id=<?php echo $novedad['id'] ?>">
                   <div class="imagen"
                   style="background-image:url(../<?php echo $novedad['imagen'] ?>)"></div>
 
