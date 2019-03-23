@@ -5,7 +5,6 @@
 
 <main class="index-page">
   <div class="container">
-    <h1> Hola </h1>
   </div>
 </main>
 

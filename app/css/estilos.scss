@@ -1,4 +1,9 @@
 @import "mixin.scss";
+@import "admin.scss";
+
+$texto: #000;
+$blanco: white;
+$fondo: #999;
 
 body,
 html {
@@ -8,4 +13,118 @@ html {
 
 body {
   margin: 0;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  color: $texto;
+}
+
+.header-principal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  height: 60px;
+  background-color: $fondo;
+  z-index: 500;
+}
+
+.nav-principal {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.logo, .menu-movil {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  color: $blanco;
+}
+
+.menu-btn-movil {
+  display: none;
+}
+
+.menu__link {
+  color: $blanco;
+  margin-left: 20px;
+  transition: all 0.5s ease;
+  text-transform: uppercase;
+  &:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: $blanco;
+    &:after {
+      position: absolute;
+      right: 0;
+      left: 0;
+      display: block;
+      content: '';
+      height: 2px;
+      background: $blanco;
+    }
+  }
+}
+
+.contenedor-principal {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-spacer {
+  height: 60px;
+}
+
+.footer-principal {
+  background: $fondo;
+  padding: 30px 0 100px;
+}
+
+.menu__footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-links {
+  display: flex;
+}
+
+.menu__footer__links {
+  display: flex;
+  flex-direction: column;
+  margin: 0 50px;
+}
+
+.menu__link--cuenta {
+  background-image: url('../img/icono-cuenta.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-left: 20px;
+  width: 25px;
+  height: 25px;
+  text-indent: -9999px;
+  position: relative;
+  display: inline-block;
+  transition: all 0.5s ease;
+}
+
+.menu__link--carrito {
+  background-image: url('../img/icono-carrito.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-left: 20px;
+  width: 25px;
+  height: 25px;
+  text-indent: -9999px;
+  position: relative;
+  display: inline-block;
+  transition: all 0.5s ease;
 }

@@ -17,9 +17,20 @@
 
   <header class="header-principal">
     <nav class="nav-principal">
-      <div class="container">
-        <div class="col-12">
+      <div class="container contenedor-principal">
+        <div class="logo">
+          Logo
+        </div>
+        <button class="menu-btn-movil"></button>
+        <div class="menu-movil">
+          <div class="menu__links">
+            <a href="#" class="menu__link">Inicio</a>
+            <a href="#" class="menu__link">Tienda</a>
+            <a href="#" class="menu__link--cuenta">Cuenta</a>
+            <a href="#" class="menu__link--carrito">Carrito</a>
+          </div>
         </div>
       </div>
     </nav>
   </header>
+  <div class="menu-spacer"></div>
