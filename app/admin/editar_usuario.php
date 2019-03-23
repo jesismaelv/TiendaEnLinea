@@ -58,7 +58,7 @@
             <div class="col-12 col-sm-6">
               <div class="input-group">
                 <label> Correo </label>
-                <input type="text" name="correo" value="<?php echo $correo ?>">
+                <input type="text" name="correo" value="<?php echo $correo ?>" disabled>
               </div>
             </div>
 
