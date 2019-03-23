@@ -3,7 +3,7 @@
   include('estructura/cabecera.php');
 
   if($_POST!=NULL) {
-    if( registrar_producto($_POST) === true ) {
+    if( registrar_usuario($_POST) === true ) {
       aviso("Se ha registrado el usuario.");
     }
     else {
@@ -17,18 +17,13 @@
   <div class="container">
     <h1> Agregar usuario </h1>
 
-    <form action="registrar_producto.php" method="post" enctype="multipart/form-data">
+    <form action="registrar_usuario.php" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="col-12 col-md-3">
 
           <div class="input-group">
-            <label> Imagen Principal </label>
-            <input type="file" name="imagen" id="fileToUpload" accept="image/png, image/jpeg">
-          </div>
-
-          <div class="input-group">
-            <label> Galería </label>
-              <input type="file" name="imagenes" id="fileToUpload" accept="image/png, image/jpeg" multiple="multiple">
+            <label> Foto </label>
+            <input type="file" name="imagen" accept="image/png, image/jpeg">
           </div>
 
         </div>
@@ -45,31 +40,35 @@
 
             <div class="col-12 col-sm-6">
               <div class="input-group">
-                <label> Unidad </label>
-                <input type="text" name="unidad" >
-              </div>
-            </div>
-
-            <div class="col-12">
-              <div class="input-group">
-                <label> Descripción </label>
-                <textarea name="descripcion" ></textarea>
+                <label> Apellido </label>
+                <input type="text" name="apellido" >
               </div>
             </div>
 
             <div class="col-12 col-sm-6">
               <div class="input-group">
-                <label> Precio </label>
-                <input type="number" name="precio" >
+                <label> Correo </label>
+                <input type="text" name="correo" >
               </div>
             </div>
 
             <div class="col-12 col-sm-6">
               <div class="input-group">
-                <label> Existencia </label>
-                <input type="number" name="existencia" >
+                <label> Contraseña </label>
+                <input type="password" name="contrasena" >
               </div>
             </div>
+
+            <div class="col-12 col-sm-6">
+              <div class="input-group">
+                <label> Tipo </label>
+                <select name="tipo">
+                  <option value="cliente"> Cliente </option>
+                  <option value="admin"> Administrador </option>
+                </select>
+              </div>
+            </div>
+
           </div>
           <div class="alinear-derecha">
             <button class="boton boton-important"> Guardar </button>

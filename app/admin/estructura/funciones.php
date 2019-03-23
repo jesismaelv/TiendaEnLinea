@@ -17,19 +17,39 @@
     $apellido = $args['apellido'];
     $correo = $args['correo'];
     $contrasena = md5($args['contrasena']);
-    $foto = $args['foto'];
-
-
+    if( $args['tipo'] != '' ) {
+      $tipo = $args['tipo'];
+    }
+    else {
+      $tipo = 'cliente';
+    }
 
     $query = "SELECT correo FROM usuarios WHERE correo = $correo";
     $result = $bd->query($query);
-    print_x($result);
     if ($result->num_rows > 0) {
       return 'correo_utilizado';
     } else {
       $query = "INSERT INTO usuarios ( nombre, apellido, correo, contrasena, foto, tipo )
-        VALUES ('$nombre', '$apellido', '$correo', '$contrasena', '$foto', 'cliente')";
+        VALUES ('$nombre', '$apellido', '$correo', '$contrasena', '$foto', '$tipo')";
       $result = $bd->query($query);
+
+      $id = $bd->insert_id;
+      if( $_FILES['imagen']["tmp_name"] != "" ) {
+        $index = 'imagen';
+        $nombre = 'perfil';
+        $camino = "../img/usuarios/" . $id . "/";
+        $status = subir_imagen($index, $nombre, $camino);
+        if( $status['exito'] ) {
+          $camino = $status['camino'];
+          $camino = str_replace( '../', '', $camino);
+          $query = "UPDATE usuarios SET foto = '$camino' WHERE id = '$id'";
+          $error['imagen'] = $bd->query($query);
+        }
+        else {
+          $error['imagen'] = 'No se pudo subir la imagen.';
+        }
+      }
+
       return $result;
     }
     $bd->close();
@@ -51,7 +71,7 @@
     if( $_FILES['imagen']["tmp_name"] != "" ) {
       $index = 'imagen';
       $nombre = 'principal';
-      $camino = "../img/productos/" . $id . "/";
+      $camino = "../img/producto/" . $id . "/";
       $status = subir_imagen($index, $nombre, $camino);
       if( $status['exito'] ) {
         $camino = $status['camino'];
@@ -67,7 +87,7 @@
     if( $_FILES['imagenes']["tmp_name"][0] != "" ) {
       $index = 'imagen';
       $nombre = 'galeria';
-      $dir = "../img/productos/" . $id . "/";
+      $dir = "../img/producto/" . $id . "/";
 
       for($i=0; $i<count($_FILES['imagenes']['name']); $i++) {
         $tmpFilePath = $_FILES['imagenes']['tmp_name'][$i];
@@ -123,6 +143,38 @@
     return $result;
   }
 
+  function registrar_slide($data) {
+    $bd = mysqli_connect("db","root","root", "main");
+    $frase = $data['frase'];
+    $subtitulo = $data['subtitulo'];
+    $accion = $data['accion'];
+
+    $query = "INSERT INTO slides_inicio ( frase, subtitulo, boton)
+      VALUES ( '$frase', '$subtitulo', '$accion')";
+    $result = $bd->query($query);
+
+    $id = $bd->insert_id;
+    if( $_FILES['imagen']["tmp_name"] != "" ) {
+      $index = 'imagen';
+      $nombre = 'principal';
+      $camino = "../img/slides_inicio/" . $id . "/";
+      $status = subir_imagen($index, $nombre, $camino);
+      if( $status['exito'] ) {
+        $camino = $status['camino'];
+        $camino = str_replace( '../', '', $camino);
+        $query = "UPDATE slides_inicio SET imagen = '$camino' WHERE id = '$id'";
+        $error['imagen'] = $bd->query($query);
+      }
+      else {
+        $error['imagen'] = 'No se pudo subir la imagen.';
+      }
+    }
+
+    $bd->close();
+
+    return $result;
+  }
+
   function subir_imagen($index, $nombre, $camino) {
     $name = basename($_FILES[$index]["name"]);
     $tipo = strtolower(pathinfo($name,PATHINFO_EXTENSION));
@@ -140,9 +192,9 @@
     return $status;
   }
 
-  function get_productos(){
+  function get_archivo( $tipo ){
     $bd = mysqli_connect("db","root","root", "main");
-    $sql = "SELECT * FROM producto";
+    $sql = "SELECT * FROM $tipo";
     $result = $bd->query($sql);
     $bd->close();
     return $result;
@@ -158,13 +210,9 @@
     $result = $bd->query($sql);
     $bd->close();
 
-    switch($tipo) {
-      case "producto":
-        $path = "../img/$id/";
-        break;
-    }
-    //delete_files($path);
+    $path = "../img/$tipo/$id/";
 
+    delete_files($path);
     return $result;
   }
 
@@ -183,7 +231,7 @@
         }
         rmdir( $target );
     } elseif(is_file($target)) {
-        unlink( $target );  
+        unlink( $target );
     }
   }
 ?>

@@ -1,12 +1,12 @@
 <?php
-  $page_title = "Productos";
+  $page_title = "Usuarios";
   include('estructura/cabecera.php');
 
   if($_GET['eliminar'] == 'exito') {
-    echo aviso("El producto se ha eliminado con exito.");
+    echo aviso("El usuario se ha eliminado con exito.");
   }
   if($_GET['eliminar'] == 'error') {
-    echo aviso("Hubo un error al eliminar el producto.");
+    echo aviso("Hubo un error al eliminar el usuario.");
   }
 
 ?>
@@ -14,34 +14,35 @@
   <div class="container">
     <div class="cabecera cabecera-productos row">
       <div class="col-12 col-md-6">
-        <h1> Productos </h1>
+        <h1> Usuarios </h1>
 
       </div>
       <div class="col-12 col-md-6 alinear-derecha alinear-derecha--nosm">
-        <a  href="/admin/registrar_producto.php" class="boton"> Registrar Producto </a>
+        <a  href="/admin/registrar_usuario.php" class="boton"> Registrar usuario </a>
       </div>
     </div>
 
     <section class="archive-productos">
       <div class="row">
         <?php
-          $result = get_archivo("producto");
+          $result = get_archivo("usuarios");
           if ($result->num_rows > 0) :
-            while($producto = $result->fetch_assoc()) :
+            while($usuario = $result->fetch_assoc()) :
         ?>
           <div class="col-12 col-sm-6 col-lg-4">
-            <article class="tarjeta tarjeta-producto">
-              <a class="link-producto"
-                  href="/admin/editar-producto.php?id=<?php echo $producto['id'] ?>">
+            <article class="tarjeta tarjeta-usuario">
+              <a class="link-usuario"
+                  href="/admin/editar-usuario.php?id=<?php echo $usuario['id'] ?>">
                   <div class="imagen"
-                  style="background-image:url(../<?php echo $producto['imagen'] ?>)"></div>
+                  style="background-image:url(../<?php echo $usuario['foto'] ?>)"></div>
 
                 <h2>
-                  <?php echo $producto['nombre']; ?>
+                  <?php echo $usuario['nombre'] . " " . $usuario['apellido']; ?>
                 </h2>
-                <span class="precio">$<?php echo $producto['precio'] ?></span> • <span class="existencia">Quedan <?php echo $producto['existencia'] ?></span>
+
+                <p><?php echo $usuario['correo'] ?></p>
               </a>
-              <a class="eliminar" href="/admin/eliminar.php?s=producto&id=<?php echo $producto['id'] ?>"> X </a>
+              <a class="eliminar" href="/admin/eliminar.php?s=usuarios&id=<?php echo $usuario['id'] ?>"> X </a>
             </article>
             
 

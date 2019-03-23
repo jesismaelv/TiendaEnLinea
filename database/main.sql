@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Mar 23, 2019 at 02:20 AM
+-- Generation Time: Mar 23, 2019 at 06:30 AM
 -- Server version: 5.7.11
 -- PHP Version: 7.2.8
 
@@ -32,9 +32,17 @@ CREATE TABLE `novedades` (
   `id` int(11) NOT NULL,
   `titulo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci,
   `subtitulo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci,
-  `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci,
+  `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `imagen` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `novedades`
+--
+
+INSERT INTO `novedades` (`id`, `titulo`, `subtitulo`, `descripcion`, `imagen`) VALUES
+(4, 'Novedaza', 'Con subtitlo!', 'Y DescripciÃ³n :0 ', 'img/novedades/4/principal.jpg'),
+(5, 'Otra novedad', 'uy', 'uyuyiy', 'img/novedades/5/principal.jpg');
 
 -- --------------------------------------------------------
 
@@ -67,6 +75,13 @@ CREATE TABLE `producto` (
   `imagenes` json DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `producto`
+--
+
+INSERT INTO `producto` (`id`, `imagen`, `nombre`, `descripcion`, `precio`, `unidad`, `existencia`, `fecha_creacion`, `imagenes`) VALUES
+(31, 'img/producto/31/principal.jpg', 'Un buen meme', '', 123, 'memistico', '89', '2019-03-23 02:35:25', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -80,6 +95,16 @@ CREATE TABLE `slides_inicio` (
   `boton` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci,
   `id` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `slides_inicio`
+--
+
+INSERT INTO `slides_inicio` (`imagen`, `frase`, `subtitulo`, `boton`, `id`) VALUES
+('img/slides_inicio/1/principal.png', 'Titulo de galerÃ­a', '', '', 1),
+('img/slides_inicio/3/principal.png', '', '', '', 3),
+('img/slides_inicio/5/principal.png', 'Titulo de galerÃ­a', 'Con subtitlo!', '', 5),
+(NULL, 'Bienvenidos al sitio!', 'Que bonitos se ven hoy', '', 8);
 
 -- --------------------------------------------------------
 
@@ -103,7 +128,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `correo`, `foto`, `contrasena`, `tipo`, `carrito`) VALUES
-(19, 'Ismael', 'Villegas', 'jesismaelv@gmail.com', 'fotos/ismael.jpg', '56437ee14d804bfa14762e0b1782827e', 'cliente', NULL);
+(19, 'Ismael', 'Villegas', 'jesismaelv@gmail.com', 'fotos/ismael.jpg', '56437ee14d804bfa14762e0b1782827e', 'cliente', NULL),
+(22, 'Ismael', 'Villegas', 'ismael@entraencatarsis.com', 'img/usuarios/22/perfil.jpg', '56437ee14d804bfa14762e0b1782827e', 'admin', NULL);
 
 --
 -- Indexes for dumped tables
@@ -147,7 +173,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT for table `novedades`
 --
 ALTER TABLE `novedades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `orden`
@@ -159,19 +185,19 @@ ALTER TABLE `orden`
 -- AUTO_INCREMENT for table `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `slides_inicio`
 --
 ALTER TABLE `slides_inicio`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

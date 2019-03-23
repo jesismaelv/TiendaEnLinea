@@ -3,7 +3,8 @@
 
 $texto: #000;
 $blanco: white;
-$fondo: #999;
+$fondo: #333;
+$acento: #9F7;
 
 body,
 html {
@@ -39,7 +40,8 @@ a {
   height: 100%;
 }
 
-.logo, .menu-movil {
+.logo,
+.menu-movil {
   position: relative;
   display: inline-block;
   text-transform: uppercase;
@@ -55,18 +57,30 @@ a {
   margin-left: 20px;
   transition: all 0.5s ease;
   text-transform: uppercase;
+  @include transicion();
+  padding-bottom: 10px;
+  position: relative;
+
+  &:after {
+    @include transicion();
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, 0%) scale(0);
+    display: block;
+    content: '';
+    height: 1px;
+    background: $acento;
+  }
+
   &:hover {
     cursor: pointer;
     text-decoration: none;
-    color: $blanco;
+    color: $acento;
+
     &:after {
-      position: absolute;
-      right: 0;
-      left: 0;
-      display: block;
-      content: '';
-      height: 2px;
-      background: $blanco;
+      transform: translate(-50%, 0%) scale(1);
     }
   }
 }
