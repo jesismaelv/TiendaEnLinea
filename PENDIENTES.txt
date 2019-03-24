@@ -10,6 +10,14 @@
 [X] Menú
 [X] Footer
 
+--archivo--
+[X] Producto
+[X] Novedad
+[X] Usuario
+[X] Slide Galeria
+[ ] Ordenes Pendientes
+[ ] Todas las Órdenes
+
 --registrar--
 [X] Producto
 [X] Novedad
@@ -42,18 +50,18 @@
     [ ] Productos recienes
 [X] Archivo Productos
 [X] Single Producto
-    [X] Productos relacionados
+    [x] Productos relacionados
 
 --cuenta--
 [X] Editar Perfil
 [X] Direcciones
-    [X] Agregar direccion
-    [X] Editar direccion
-    [X] Eliminar direccion
+    [x] Agregar direccion
+    [x] Editar direccion
+    [x] Eliminar direccion
 [X] Carrito
-    [X] Agregar al carrito
-    [X] Editar carrito
-    [X] Eliminar de carrito
+    [x] Agregar al carrito
+    [x] Editar carrito
+    [x] Eliminar de carrito
 [X] Checkout
 [X] Ordenes [Se muestran en el perfil]
 [ ] Orden

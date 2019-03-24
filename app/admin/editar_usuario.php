@@ -5,7 +5,7 @@
   $id = $_GET['id'];
 
   if($_POST!=NULL) {
-    if( editar_usuario($_POST, $id) === true ) {
+    if( editar_usuario($_POST, $id, true) === true ) {
       aviso("Se ha editado el usuario.");
     }
     else {

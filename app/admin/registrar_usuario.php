@@ -3,7 +3,7 @@
   include('estructura/cabecera.php');
 
   if($_POST!=NULL) {
-    if( registrar_usuario($_POST) === true ) {
+    if( registrar_usuario($_POST, true) === true ) {
       aviso("Se ha registrado el usuario.");
     }
     else {

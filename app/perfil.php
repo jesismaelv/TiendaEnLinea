@@ -5,7 +5,7 @@
   $id = $_SESSION['id'];
 
   if($_POST!=NULL) {
-    if( editar_usuario($_POST, $id) === true ) {
+    if( editar_usuario($_POST, $id, false) === true ) {
       aviso("Se ha editado tu perfil.");
     }
     else {
@@ -40,7 +40,7 @@
       </div>
     </div>
 
-    <form action="editar_usuario.php?id=<?php echo $id ?>" method="post" enctype="multipart/form-data">
+    <form action="perfil.php" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="col-12 col-md-3">
 

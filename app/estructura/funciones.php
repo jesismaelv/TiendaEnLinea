@@ -85,6 +85,21 @@
     return $result;
   }
 
+  function get_orden($id, $id_usuario) {
+    $bd = mysqli_connect("db","root","root", "main");
+    $sql = "SELECT * FROM orden WHERE id_usuario = '$id_usuario' AND id = '$id'";
+    $result = $bd->query($sql);
+    if ($result->num_rows > 0) :
+      while($row = $result->fetch_assoc()) :
+        $res = $row;
+      endwhile;
+    else :
+      $res = false;
+    endif;
+    $bd->close();
+    return $res;
+  }
+
   function agregar_producto($cantidad, $id, $id_usuario) {
     $bd = mysqli_connect("db","root","root", "main");
     $carrito = json_decode($_SESSION['carrito']);

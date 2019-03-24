@@ -20,7 +20,7 @@ date_default_timezone_set("America/Tijuana");
     $bd->close();
   }
 
-  function registrar_usuario($args) {
+  function registrar_usuario($args, $es_admin = false) {
     $bd = mysqli_connect("db","root","root", "main");
     $nombre = $args['nombre'];
     $apellido = $args['apellido'];
@@ -47,7 +47,12 @@ date_default_timezone_set("America/Tijuana");
       if( $_FILES['imagen']["tmp_name"] != "" ) {
         $index = 'imagen';
         $nombre = 'perfil';
-        $camino = "../img/usuarios/" . $id . "/";
+        if($es_admin) {
+          $camino = "../img/usuarios/" . $id . "/";
+        }
+        else {
+          $camino = "img/usuarios/" . $id . "/";
+        }
         $status = subir_imagen($index, $nombre, $camino);
         if( $status['exito'] ) {
           $camino = $status['camino'];
@@ -64,7 +69,7 @@ date_default_timezone_set("America/Tijuana");
     }
   }
 
-  function editar_usuario($args, $id) {
+  function editar_usuario($args, $id, $es_admin = false) {
     $bd = mysqli_connect("db","root","root", "main");
     $nombre = $args['nombre'];
     $apellido = $args['apellido'];
@@ -93,11 +98,19 @@ date_default_timezone_set("America/Tijuana");
     if( $_FILES['imagen']["tmp_name"] != "" ) {
       $index = 'imagen';
       $nombre = 'perfil';
-      $camino = "../img/usuarios/" . $id . "/";
+      if($es_admin) {
+        $camino = "../img/usuarios/" . $id . "/";
+      }
+      else {
+        $camino = "img/usuarios/" . $id . "/";
+      }
       $status = subir_imagen($index, $nombre, $camino);
       if( $status['exito'] ) {
         $camino = $status['camino'];
         $camino = str_replace( '../', '', $camino);
+
+        if(!$es_admin) $_SESSION['foto'] = $camino;
+
         $query = "UPDATE usuarios SET foto = '$camino' WHERE id = '$id'";
         $error['imagen'] = $bd->query($query);
       }
