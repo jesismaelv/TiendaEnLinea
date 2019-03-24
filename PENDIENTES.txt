@@ -41,8 +41,8 @@
     [ ] Novedades
     [ ] Productos recienes
 [X] Archivo Productos
-[ ] Single Producto
-    [ ] Productos relacionados
+[X] Single Producto
+    [X] Productos relacionados
 
 --cuenta--
 [X] Editar Perfil
@@ -51,6 +51,7 @@
     [X] Editar direccion
     [X] Eliminar direccion
 [ ] Carrito
+    [X] Agregar al carrito
 [ ] Checkout
 [ ] Ordenes
 [ ] Orden
