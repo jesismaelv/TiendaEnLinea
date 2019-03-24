@@ -24,7 +24,18 @@
           <div class="menu__links">
             <a href="#" class="menu__link">Inicio</a>
             <a href="#" class="menu__link">Tienda</a>
-            <a href="/login.php" class="menu__link--cuenta">Cuenta</a>
+            <?php
+              if($_SESSION['foto']) {
+                $img = '../'.$_SESSION['foto'];
+                $img = "style='background-image:url($img)'";
+                $url = "perfil.php";
+              }
+              else {
+                $img = "";
+                $url = "login.php";
+              }
+            ?>
+            <a href="<?php echo $url ?>" <?php echo $img ?> class="menu__link--cuenta">Cuenta</a>
             <a href="#" class="menu__link--carrito">Carrito</a>
           </div>
         </div>

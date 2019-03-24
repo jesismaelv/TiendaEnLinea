@@ -45,7 +45,11 @@
 [ ] Single Producto
 
 --cuenta--
-[ ] Editar Perfil
+[X] Editar Perfil
+[X] Direcciones
+    [X] Agregar direccion
+    [X] Editar direccion
+    [X] Eliminar direccion
 [ ] Carrito
 [ ] Checkout
 [ ] Ordenes
