@@ -41,8 +41,8 @@
     [ ] Novedades
     [ ] Productos recienes
 [ ] Archivo Productos
-    [ ] Productos relacionados
 [ ] Single Producto
+    [ ] Productos relacionados
 
 --cuenta--
 [X] Editar Perfil

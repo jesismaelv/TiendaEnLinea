@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Mar 23, 2019 at 06:26 PM
+-- Generation Time: Mar 24, 2019 at 01:55 AM
 -- Server version: 5.7.11
 -- PHP Version: 7.2.8
 
@@ -38,9 +38,16 @@ CREATE TABLE `direccion` (
   `colonia` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `zip` int(11) DEFAULT NULL,
   `estado` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci,
-  `pais` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci,
+  `ciudad` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci,
   `notas` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `direccion`
+--
+
+INSERT INTO `direccion` (`id`, `id_usuario`, `nombre`, `apellido`, `correo`, `calle`, `colonia`, `zip`, `estado`, `ciudad`, `notas`) VALUES
+(1, 32, 'Ismael', 'Villegas', 'jesismaelv@gmail.com', 'Hello', 'Coloniaa', 12345, 'Baja California', 'Hello x3', 'Notasas');
 
 -- --------------------------------------------------------
 
@@ -62,7 +69,7 @@ CREATE TABLE `novedades` (
 
 INSERT INTO `novedades` (`id`, `titulo`, `subtitulo`, `descripcion`, `imagen`) VALUES
 (4, 'Novedaza', 'Con subtitlo!', 'Y DescripciÃ³n :0 ', 'img/novedades/4/principal.jpg'),
-(5, 'Otra novedad', 'uy', 'uyuyiy', 'img/novedades/5/principal.jpg');
+(5, 'Otra novedad editada otra vez a berda', 'HOLA? ayayayay', 'uyuyiy editado', 'img/novedades/5/principal.png');
 
 -- --------------------------------------------------------
 
@@ -100,7 +107,8 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`id`, `imagen`, `nombre`, `descripcion`, `precio`, `unidad`, `existencia`, `fecha_creacion`, `imagenes`) VALUES
-(31, 'img/producto/31/principal.jpg', 'Un buen meme', '', 123, 'memistico', '89', '2019-03-23 02:35:25', NULL);
+(31, 'img/producto/31/principal.png', 'Un buen meme', 'ahora con descripcion', 150, 'memistico', '90', '2019-03-23 02:35:25', '[\"img/producto/31/galeria0.png\", \"img/producto/31/galeria1.png\"]'),
+(36, 'img/producto/36/principal.png', 'Prueba', '', 123, 'img', '67', '2019-03-24 00:21:05', '[\"img/producto/36/galeria0.png\", \"img/producto/36/galeria1.png\", \"img/producto/36/galeria2.png\"]');
 
 -- --------------------------------------------------------
 
@@ -124,7 +132,7 @@ INSERT INTO `slides_inicio` (`imagen`, `frase`, `subtitulo`, `boton`, `id`) VALU
 ('img/slides_inicio/1/principal.png', 'Titulo de galerÃ­a', '', '', 1),
 ('img/slides_inicio/3/principal.png', '', '', '', 3),
 ('img/slides_inicio/5/principal.png', 'Titulo de galerÃ­a', 'Con subtitlo!', '', 5),
-(NULL, 'Bienvenidos al sitio!', 'Que bonitos se ven hoy', '', 8);
+('img/slides_inicio/8/principal.png', 'Bienvenidos al sitio! editado', 'Que bonitos se ven hoy editoad', '###', 8);
 
 -- --------------------------------------------------------
 
@@ -148,10 +156,10 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `correo`, `foto`, `contrasena`, `tipo`, `carrito`) VALUES
-(19, 'Ismael', 'Villegas', 'jesismaelv@gmail.com', 'fotos/ismael.jpg', '56437ee14d804bfa14762e0b1782827e', 'cliente', NULL),
+(19, 'Ismael', 'Villegas', 'jesismaelv@gmail.com', 'fotos/ismael.jpg', '56437ee14d804bfa14762e0b1782827e', 'admin', NULL),
 (22, 'Ismael', 'Villegas', 'ismael@entraencatarsis.com', 'img/usuarios/22/perfil.jpg', '56437ee14d804bfa14762e0b1782827e', 'admin', NULL),
 (30, 'elena', 'Dummy', 'elena@dummy.com', 'img/usuarios/30/perfil.png', 'fadf17141f3f9c3389d10d09db99f757', 'cliente', NULL),
-(32, 'admin', '', 'admin', 'img/usuarios/32/perfil.png', '21232f297a57a5a743894a0e4a801fc3', 'admin', NULL);
+(32, 'admin editado', 'hola editado', 'admin', 'img/usuarios/32/perfil.png', '21232f297a57a5a743894a0e4a801fc3', 'cliente', NULL);
 
 --
 -- Indexes for dumped tables
@@ -201,13 +209,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT for table `direccion`
 --
 ALTER TABLE `direccion`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `novedades`
 --
 ALTER TABLE `novedades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `orden`
@@ -219,7 +227,7 @@ ALTER TABLE `orden`
 -- AUTO_INCREMENT for table `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `slides_inicio`
@@ -231,7 +239,7 @@ ALTER TABLE `slides_inicio`
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
