@@ -71,6 +71,62 @@
     return $result;
   }
 
+  function editar_producto($data, $id) {
+    $bd = mysqli_connect("db","root","root", "main");
+    $nombre = $data['nombre'];
+    $unidad = $data['unidad'];
+    $descripcion = $data['descripcion'];
+    $precio = $data['precio'];
+    $existencia = $data['existencia'];
+
+    $query = "UPDATE producto
+              SET nombre = '$nombre', unidad = '$unidad', descripcion = '$descripcion', precio = '$precio', existencia = '$existencia'
+              WHERE id = '$id'";
+    $result = $bd->query($query);
+
+    if( $_FILES['imagen']["tmp_name"] != "" ) {
+      $index = 'imagen';
+      $nombre = 'principal';
+      $camino = "../img/producto/" . $id . "/";
+      $status = subir_imagen($index, $nombre, $camino);
+      if( $status['exito'] ) {
+        $camino = $status['camino'];
+        $camino = str_replace( '../', '', $camino);
+        $query = "UPDATE producto SET imagen = '$camino' WHERE id = '$id'";
+        $error['imagen'] = $bd->query($query);
+      }
+      else {
+        $error['imagen'] = 'No se pudo subir la imagen.';
+      }
+    }
+
+    if( $_FILES['imagenes']["tmp_name"][0] != "" ) {
+      $index = 'imagen';
+      $nombre = 'galeria';
+      $dir = "../img/producto/" . $id . "/";
+
+      for($i=0; $i<count($_FILES['imagenes']['name']); $i++) {
+        $tmpFilePath = $_FILES['imagenes']['tmp_name'][$i];
+        if($tmpFilePath != ""){
+          $name = basename($_FILES['imagenes']["name"][$i]);
+          $tipo = strtolower(pathinfo($name,PATHINFO_EXTENSION));
+          if (!is_dir($dir)) {
+            mkdir($dir);
+          }
+          $camino = $dir . $nombre . $i . "." . $tipo;
+          if ( move_uploaded_file( $tmpFilePath, $camino ) ) {
+            $galeria[$i] = str_replace('../','',$camino);
+          }
+        }
+      }
+      $galeria = json_encode($galeria);
+      $query = "UPDATE producto SET imagenes = '$galeria' WHERE id = '$id'";
+      $error['imagenes'] = $bd->query($query);
+    }
+    $bd->close();
+    return $result;
+  }
+
   function registrar_novedad($data) {
     $bd = mysqli_connect("db","root","root", "main");
     $titulo = $data['titulo'];

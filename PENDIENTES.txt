@@ -23,9 +23,9 @@
 [X] Slide Galeria
 
 --editar/ver--
-[ ] Producto
+[X] Producto
 [X] Novedad
-[ ] Cliente
+[X] Cliente
 [ ] Orden
 [X] Slide de galería
 

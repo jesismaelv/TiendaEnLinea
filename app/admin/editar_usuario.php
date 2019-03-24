@@ -22,11 +22,11 @@
   $tipo = $info['tipo'];
 ?>
 
-<main class="admin-page registrar-producto-page">
+<main class="admin-page pagina-editar-usuario">
   <div class="container">
     <h1> Editar usuario </h1>
 
-    <form action="registrar_usuario.php" method="post" enctype="multipart/form-data">
+    <form action="editar_usuario.php?id=<?php echo $id ?>" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="col-12 col-md-3">
 

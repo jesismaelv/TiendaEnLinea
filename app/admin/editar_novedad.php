@@ -2,7 +2,6 @@
   $page_title = "Registrar Novedades";
   include('estructura/cabecera.php');
 
-
   $id = $_GET['id'];
 
   if($_POST!=NULL) {

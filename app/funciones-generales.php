@@ -63,45 +63,47 @@ session_start();
     }
   }
 
-  function editar_usuario($args) {
+  function editar_usuario($args, $id) {
     $bd = mysqli_connect("db","root","root", "main");
     $nombre = $args['nombre'];
     $apellido = $args['apellido'];
-    $correo = $args['correo'];
-    $contrasena = md5($args['contrasena']);
     if( $args['tipo'] != '' && $_SESSION['tipo'] == 'admin' ) {
       $tipo = $args['tipo'];
+      $tipo_query = ", tipo = '$tipo' ";
     }
     else {
       $tipo = 'cliente';
+      $tipo_query = "";
     }
 
-    $query = "SELECT correo FROM usuarios WHERE correo = '$correo'";
-    $result = $bd->query($query);
-    if ($result->num_rows > 0) {
-      $bd->close();
-      return false;
-    } else {
-      $query = "INSERT INTO usuarios ( nombre, apellido, correo, contrasena, foto, tipo )
-        VALUES ('$nombre', '$apellido', '$correo', '$contrasena', '$foto', '$tipo')";
-      $result = $bd->query($query);
+    if( $args['contrasena'] != '') {
+      $contrasena = md5($args['contrasena']);
+      $contrasena_sql = ", contrasena = '$contrasena'";
+    }
+    else {
+      $contrasena_sql = "";
+    }
 
-      $id = $bd->insert_id;
-      if( $_FILES['imagen']["tmp_name"] != "" ) {
-        $index = 'imagen';
-        $nombre = 'perfil';
-        $camino = "../img/usuarios/" . $id . "/";
-        $status = subir_imagen($index, $nombre, $camino);
-        if( $status['exito'] ) {
-          $camino = $status['camino'];
-          $camino = str_replace( '../', '', $camino);
-          $query = "UPDATE usuarios SET foto = '$camino' WHERE id = '$id'";
-          $error['imagen'] = $bd->query($query);
-        }
-        else {
-          $error['imagen'] = 'No se pudo subir la imagen.';
-        }
+    $query = "UPDATE usuarios
+              SET nombre = '$nombre', apellido = '$apellido'$contrasena_sql$tipo_query
+              WHERE id = '$id'";
+    $result = $bd->query($query);
+
+    if( $_FILES['imagen']["tmp_name"] != "" ) {
+      $index = 'imagen';
+      $nombre = 'perfil';
+      $camino = "../img/usuarios/" . $id . "/";
+      $status = subir_imagen($index, $nombre, $camino);
+      if( $status['exito'] ) {
+        $camino = $status['camino'];
+        $camino = str_replace( '../', '', $camino);
+        $query = "UPDATE usuarios SET foto = '$camino' WHERE id = '$id'";
+        $error['imagen'] = $bd->query($query);
       }
+      else {
+        $error['imagen'] = 'No se pudo subir la imagen.';
+      }
+
       $bd->close();
       return $result;
     }
