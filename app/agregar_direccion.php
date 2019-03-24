@@ -2,9 +2,17 @@
   $page_title = "Agregar Direccion";
   include('estructura/cabecera.php');
 
+  if($_GET['redirect']) {
+    $redirect = '?redirect=' . $_GET['redirect'];
+  }
+
   if($_POST!=NULL) {
     if( agregar_direccion($_POST, $_SESSION['id']) === true ) {
       aviso("Se ha registrado la direccion.");
+      if($_GET['redirect']) {
+        $url = $_GET['redirect'] . ".php";
+        echo "<meta http-equiv='refresh' content='0; URL=$url' />";
+      }
     }
     else {
       aviso("La direccion no se pudo registrar. Inténtalo de nuevo.");
@@ -16,7 +24,7 @@
   <div class="container">
     <h1> Agregar direccion </h1>
 
-    <form action="agregar_direccion.php" method="post" enctype="multipart/form-data">
+    <form action="agregar_direccion.php<?php echo $redirect; ?>" method="post" enctype="multipart/form-data">
       <div class="row">
 
         <div class="col-12 col-md-6">

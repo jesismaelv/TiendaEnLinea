@@ -6,6 +6,10 @@
 <main class="carrito-page">
   <div class="container">
     <h1> Carrito </h1>
+<?php
+  $items = json_decode($_SESSION['carrito']);
+  if(sizeof($items) > 0) :
+?>
     <div class="carrito__wrapper">
       <table class="carrito">
           <tr >
@@ -29,7 +33,6 @@
             </th>
         </tr>
         <?php
-          $items = json_decode($_SESSION['carrito']);
           $total = 0;
           $total_items = 0;
           foreach($items as $id => $cantidad) :
@@ -83,6 +86,12 @@
     <div class="alinear-derecha alinear-derecha--nosm">
       <a href="checkout.php" class="boton boton-important"> Checkout </a>
     </div>
+    <?php else: ?>
+      <div class="no-resultados">
+        Tu carrito está vacío.
+      </div>
+
+    <?php endif;  ?>
   </div>
 </main>
 

@@ -94,4 +94,101 @@
     $bd->close();
     return $result;
   }
+
+  function get_carrito($id_usuario) {
+    $bd = mysqli_connect("db","root","root", "main");
+    $sql = "SELECT carrito FROM usuarios WHERE id = '$id_usuario'";
+    $result = $bd->query($sql);
+    if ($result->num_rows > 0) :
+      while($row = $result->fetch_assoc()) :
+        $res = $row;
+      endwhile;
+    else :
+      $res = false;
+    endif;
+    $bd->close();
+    return $res;
+  }
+
+  function restar_existencia($id, $cantidad) {
+    $producto = get_single('producto', $id);
+    $existencia = $producto['existencia'];
+    $existencia = $existencia - $cantidad; 
+    if($existencia <= 0) {
+      $existencia = 0;
+    }
+    $bd = mysqli_connect("db","root","root", "main");
+
+    $query = "UPDATE producto SET existencia = '$existencia' WHERE id = '$id'";
+
+    $result = $bd->query($query);
+    if($result === true) {
+      $bd->close();
+      return $existencia;
+    }
+    else {
+      $bd->close();
+      return false;
+    }
+  }
+
+
+
+  function registrar_orden($data, $id_usuario) {
+    $items = get_carrito($id_usuario);
+    $items = json_decode($items['carrito']);
+
+    $detalles = [];
+    $total = 0;
+    foreach($items as $id => $cantidad) :
+      $producto = get_single('producto', $id);
+      $quedan = $producto['existencia'];
+      if($quedan > 0) :
+        if($quedan < $cantidad) {
+          $cantidad = $quedan;
+        }
+        restar_existencia($id, $cantidad);
+        $detalles[$id]['nombre'] = $producto['nombre'];
+        $detalles[$id]['unidad'] = $producto['unidad'];
+        $detalles[$id]['descripcion'] = $producto['descripcion'];
+        $detalles[$id]['precio'] = $producto['precio'];
+        $detalles[$id]['cantidad'] = $cantidad;
+        $detalles[$id]['subtotal'] = $cantidad * $producto['precio'];
+        $total = $total + ( $cantidad * $producto['precio'] );
+      endif;
+    endforeach;
+
+    $direccion = get_direccion($data['direccion'], $id_usuario);
+    $pago = [
+      'nombre' => $data['nombre_tarjeta'],
+      'numero' => $data['numero_tarjeta'],
+      'vence' => $data['vence_tarjeta'],
+      'tipo' => $data['tipo_tarjeta'],
+      'ccv' => $data['ccv_tarjeta']
+    ];
+
+    $detalles = json_encode($detalles);
+    $direccion = json_encode($direccion);
+    $pago = json_encode($pago);
+
+    $bd = mysqli_connect("db","root","root", "main");
+
+    $query = "INSERT INTO orden (id_usuario, detalles, direccion, pago, total) VALUES ('$id_usuario','$detalles','$direccion','$pago', '$total')";
+    $result = $bd->query($query);
+
+    $status[0] = $result;
+    $status[1] = $bd->insert_id;
+
+    if($result === true) {
+      $sql = "UPDATE usuarios SET carrito = '{}' WHERE id = '$id_usuario'";
+      $res = $bd->query($sql);
+      $_SESSION['carrito'] = '';
+    }
+
+
+
+    $bd->close();
+
+    return $status;
+  }
 ?>

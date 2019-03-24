@@ -58,7 +58,7 @@ label {
   margin-bottom: 7px;
 }
 
-input:not([type='file']),
+input:not([type='file']):not([type=radio]):not([type=checkbox]),
 textarea,
 select {
   @include borde-redondo(3px);

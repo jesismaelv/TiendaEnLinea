@@ -20,9 +20,6 @@
       echo aviso("Hubo un error al agregarlo al carrito. Por favor intentalo de nuevo.");
     }
   }
-  else {
-    echo "si es null";
-  }
   ?>
 
 <main class="single-product-page">

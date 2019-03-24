@@ -1864,7 +1864,7 @@ label {
   display: block;
   margin-bottom: 7px; }
 
-input:not([type='file']),
+input:not([type='file']):not([type=radio]):not([type=checkbox]),
 textarea,
 select {
   -webkit-border-radius: 3px;
@@ -2462,9 +2462,12 @@ h1 {
   .login-page .container {
     max-width: 450px; }
 
+.tarjeta-direccion__wrapper {
+  margin-bottom: 20px; }
+
 .tarjeta-direccion {
   background-color: white;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -2473,7 +2476,14 @@ h1 {
   -moz-border-radius: 3px;
   border-radius: 3px;
   display: block;
-  padding: 10px 15px; }
+  padding: 10px 15px;
+  height: 100%;
+  position: relative;
+  cursor: pointer; }
+  .tarjeta-direccion input {
+    position: absolute;
+    top: 15px;
+    right: 15px; }
   .tarjeta-direccion h5 {
     margin: 10px 0px 0px;
     padding: 5px 0px;
@@ -2485,7 +2495,7 @@ h1 {
     font-size: 12px;
     color: #666; }
   .tarjeta-direccion:hover {
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); }
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); }
 
 .productos-relacionados {
   margin-top: 50px; }
@@ -2513,6 +2523,7 @@ h1 {
   overflow: auto;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   padding: 15px;
+  margin-bottom: 30px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px; }

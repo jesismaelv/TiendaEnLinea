@@ -50,9 +50,10 @@
     [X] Agregar direccion
     [X] Editar direccion
     [X] Eliminar direccion
-[X] Carrito
+[ ] Carrito
     [X] Agregar al carrito
-[ ] Checkout
+    [ ] Eliminar de carrito
+[X] Checkout
 [ ] Ordenes
 [ ] Orden
     [ ] Cancelar orden

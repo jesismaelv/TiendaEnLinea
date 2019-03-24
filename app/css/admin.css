@@ -38,7 +38,7 @@ label {
   display: block;
   margin-bottom: 7px; }
 
-input:not([type='file']),
+input:not([type='file']):not([type=radio]):not([type=checkbox]),
 textarea,
 select {
   -webkit-border-radius: 3px;
