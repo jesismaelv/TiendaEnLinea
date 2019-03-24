@@ -55,7 +55,7 @@
     [X] Editar carrito
     [X] Eliminar de carrito
 [X] Checkout
-[ ] Ordenes
+[X] Ordenes [Se muestran en el perfil]
 [ ] Orden
     [ ] Cancelar orden
 

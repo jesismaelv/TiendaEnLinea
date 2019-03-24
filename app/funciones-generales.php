@@ -1,5 +1,6 @@
 <?php
 session_start();
+date_default_timezone_set("America/Tijuana");
 
   function iniciar_sesion($args) {
     $bd = mysqli_connect("db","root","root", "main");

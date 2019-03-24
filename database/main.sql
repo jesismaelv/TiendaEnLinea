@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Mar 24, 2019 at 06:38 PM
+-- Generation Time: Mar 24, 2019 at 07:31 PM
 -- Server version: 5.7.11
 -- PHP Version: 7.2.8
 
@@ -88,20 +88,21 @@ CREATE TABLE `orden` (
   `total` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci,
   `direccion` json DEFAULT NULL,
   `pago` json DEFAULT NULL,
-  `estado` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci
+  `estado` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `orden`
 --
 
-INSERT INTO `orden` (`id`, `id_usuario`, `detalles`, `total`, `direccion`, `pago`, `estado`) VALUES
-(1, 19, '[]', '0', '{\"id\": \"4\", \"zip\": \"12345\", \"calle\": \"Hello\", \"notas\": \"Muchas NOTAS!\", \"ciudad\": \"Hello x3\", \"correo\": \"jesismaelv@gmail.com\", \"estado\": \"Baja California\", \"nombre\": \"Ismael\", \"colonia\": \"\", \"apellido\": \"Villegas\", \"id_usuario\": \"19\"}', '{\"ccv\": null, \"tipo\": \"Mastercard\", \"vence\": null, \"nombre\": null, \"numero\": null}', NULL),
-(2, 19, '{\"31\": {\"nombre\": \"Un buen meme\", \"precio\": \"150\", \"unidad\": \"memistico\", \"cantidad\": 16, \"subtotal\": 2400, \"descripcion\": \"ahora con descripcion\"}, \"36\": {\"nombre\": \"Prueba\", \"precio\": \"123\", \"unidad\": \"img\", \"cantidad\": \"1\", \"subtotal\": 123, \"descripcion\": \"\"}}', '2523', '{\"id\": \"4\", \"zip\": \"12345\", \"calle\": \"Hello\", \"notas\": \"Muchas NOTAS!\", \"ciudad\": \"Hello x3\", \"correo\": \"jesismaelv@gmail.com\", \"estado\": \"Baja California\", \"nombre\": \"Ismael\", \"colonia\": \"\", \"apellido\": \"Villegas\", \"id_usuario\": \"19\"}', '{\"ccv\": null, \"tipo\": \"Mastercard\", \"vence\": null, \"nombre\": null, \"numero\": null}', NULL),
-(3, 19, '{\"31\": {\"nombre\": \"Un buen meme\", \"precio\": \"150\", \"unidad\": \"memistico\", \"cantidad\": 16, \"subtotal\": 2400, \"descripcion\": \"ahora con descripcion\"}, \"36\": {\"nombre\": \"Prueba\", \"precio\": \"123\", \"unidad\": \"img\", \"cantidad\": \"1\", \"subtotal\": 123, \"descripcion\": \"\"}}', '2523', '{\"id\": \"4\", \"zip\": \"12345\", \"calle\": \"Hello\", \"notas\": \"Muchas NOTAS!\", \"ciudad\": \"Hello x3\", \"correo\": \"jesismaelv@gmail.com\", \"estado\": \"Baja California\", \"nombre\": \"Ismael\", \"colonia\": \"\", \"apellido\": \"Villegas\", \"id_usuario\": \"19\"}', '{\"ccv\": null, \"tipo\": \"Mastercard\", \"vence\": null, \"nombre\": null, \"numero\": null}', NULL),
-(4, 19, '{\"31\": {\"nombre\": \"Un buen meme\", \"precio\": \"150\", \"unidad\": \"memistico\", \"cantidad\": 16, \"subtotal\": 2400, \"descripcion\": \"ahora con descripcion\"}, \"36\": {\"nombre\": \"Prueba\", \"precio\": \"123\", \"unidad\": \"img\", \"cantidad\": \"1\", \"subtotal\": 123, \"descripcion\": \"\"}}', '2523', '{\"id\": \"7\", \"zip\": \"12378\", \"calle\": \"asdf\", \"notas\": \"\", \"ciudad\": \"adsf\", \"correo\": \"hola@entraencatarsis.com\", \"estado\": \"Ciudad de Mu00e9xico\", \"nombre\": \"Ismael\", \"colonia\": \"\", \"apellido\": \"Villegas\", \"id_usuario\": \"19\"}', '{\"ccv\": null, \"tipo\": \"Mastercard\", \"vence\": null, \"nombre\": null, \"numero\": null}', NULL),
-(5, 19, '{\"31\": {\"nombre\": \"Un buen meme\", \"precio\": \"150\", \"unidad\": \"memistico\", \"cantidad\": 16, \"subtotal\": 2400, \"descripcion\": \"ahora con descripcion\"}, \"36\": {\"nombre\": \"Prueba\", \"precio\": \"123\", \"unidad\": \"img\", \"cantidad\": \"1\", \"subtotal\": 123, \"descripcion\": \"\"}}', '2523', '{\"id\": \"8\", \"zip\": \"21060\", \"calle\": \"Dummy\", \"notas\": \"\", \"ciudad\": \"Dummy\", \"correo\": \"Dummy@Dummy.com\", \"estado\": \"Alabama\", \"nombre\": \"Dummy\", \"colonia\": \"\", \"apellido\": \"Dummy\", \"id_usuario\": \"19\"}', '{\"ccv\": null, \"tipo\": \"Visa\", \"vence\": null, \"nombre\": null, \"numero\": null}', NULL),
-(6, 19, '{\"31\": {\"nombre\": \"Un buen meme\", \"precio\": \"150\", \"unidad\": \"memistico\", \"cantidad\": 4, \"subtotal\": 600, \"descripcion\": \"ahora con descripcion\"}}', '600', '{\"id\": \"8\", \"zip\": \"21060\", \"calle\": \"Dummy\", \"notas\": \"\", \"ciudad\": \"Dummy\", \"correo\": \"Dummy@Dummy.com\", \"estado\": \"Alabama\", \"nombre\": \"Dummy\", \"colonia\": \"\", \"apellido\": \"Dummy\", \"id_usuario\": \"19\"}', '{\"ccv\": null, \"tipo\": \"Mastercard\", \"vence\": null, \"nombre\": null, \"numero\": null}', 'pendiente');
+INSERT INTO `orden` (`id`, `id_usuario`, `detalles`, `total`, `direccion`, `pago`, `estado`, `fecha`) VALUES
+(1, 19, '[]', '0', '{\"id\": \"4\", \"zip\": \"12345\", \"calle\": \"Hello\", \"notas\": \"Muchas NOTAS!\", \"ciudad\": \"Hello x3\", \"correo\": \"jesismaelv@gmail.com\", \"estado\": \"Baja California\", \"nombre\": \"Ismael\", \"colonia\": \"\", \"apellido\": \"Villegas\", \"id_usuario\": \"19\"}', '{\"ccv\": null, \"tipo\": \"Mastercard\", \"vence\": null, \"nombre\": null, \"numero\": null}', NULL, '2019-03-24 19:23:49'),
+(2, 19, '{\"31\": {\"nombre\": \"Un buen meme\", \"precio\": \"150\", \"unidad\": \"memistico\", \"cantidad\": 16, \"subtotal\": 2400, \"descripcion\": \"ahora con descripcion\"}, \"36\": {\"nombre\": \"Prueba\", \"precio\": \"123\", \"unidad\": \"img\", \"cantidad\": \"1\", \"subtotal\": 123, \"descripcion\": \"\"}}', '2523', '{\"id\": \"4\", \"zip\": \"12345\", \"calle\": \"Hello\", \"notas\": \"Muchas NOTAS!\", \"ciudad\": \"Hello x3\", \"correo\": \"jesismaelv@gmail.com\", \"estado\": \"Baja California\", \"nombre\": \"Ismael\", \"colonia\": \"\", \"apellido\": \"Villegas\", \"id_usuario\": \"19\"}', '{\"ccv\": null, \"tipo\": \"Mastercard\", \"vence\": null, \"nombre\": null, \"numero\": null}', NULL, '2019-03-24 19:23:49'),
+(3, 19, '{\"31\": {\"nombre\": \"Un buen meme\", \"precio\": \"150\", \"unidad\": \"memistico\", \"cantidad\": 16, \"subtotal\": 2400, \"descripcion\": \"ahora con descripcion\"}, \"36\": {\"nombre\": \"Prueba\", \"precio\": \"123\", \"unidad\": \"img\", \"cantidad\": \"1\", \"subtotal\": 123, \"descripcion\": \"\"}}', '2523', '{\"id\": \"4\", \"zip\": \"12345\", \"calle\": \"Hello\", \"notas\": \"Muchas NOTAS!\", \"ciudad\": \"Hello x3\", \"correo\": \"jesismaelv@gmail.com\", \"estado\": \"Baja California\", \"nombre\": \"Ismael\", \"colonia\": \"\", \"apellido\": \"Villegas\", \"id_usuario\": \"19\"}', '{\"ccv\": null, \"tipo\": \"Mastercard\", \"vence\": null, \"nombre\": null, \"numero\": null}', NULL, '2019-03-24 19:23:49'),
+(4, 19, '{\"31\": {\"nombre\": \"Un buen meme\", \"precio\": \"150\", \"unidad\": \"memistico\", \"cantidad\": 16, \"subtotal\": 2400, \"descripcion\": \"ahora con descripcion\"}, \"36\": {\"nombre\": \"Prueba\", \"precio\": \"123\", \"unidad\": \"img\", \"cantidad\": \"1\", \"subtotal\": 123, \"descripcion\": \"\"}}', '2523', '{\"id\": \"7\", \"zip\": \"12378\", \"calle\": \"asdf\", \"notas\": \"\", \"ciudad\": \"adsf\", \"correo\": \"hola@entraencatarsis.com\", \"estado\": \"Ciudad de Mu00e9xico\", \"nombre\": \"Ismael\", \"colonia\": \"\", \"apellido\": \"Villegas\", \"id_usuario\": \"19\"}', '{\"ccv\": null, \"tipo\": \"Mastercard\", \"vence\": null, \"nombre\": null, \"numero\": null}', NULL, '2019-03-24 19:23:49'),
+(5, 19, '{\"31\": {\"nombre\": \"Un buen meme\", \"precio\": \"150\", \"unidad\": \"memistico\", \"cantidad\": 16, \"subtotal\": 2400, \"descripcion\": \"ahora con descripcion\"}, \"36\": {\"nombre\": \"Prueba\", \"precio\": \"123\", \"unidad\": \"img\", \"cantidad\": \"1\", \"subtotal\": 123, \"descripcion\": \"\"}}', '2523', '{\"id\": \"8\", \"zip\": \"21060\", \"calle\": \"Dummy\", \"notas\": \"\", \"ciudad\": \"Dummy\", \"correo\": \"Dummy@Dummy.com\", \"estado\": \"Alabama\", \"nombre\": \"Dummy\", \"colonia\": \"\", \"apellido\": \"Dummy\", \"id_usuario\": \"19\"}', '{\"ccv\": null, \"tipo\": \"Visa\", \"vence\": null, \"nombre\": null, \"numero\": null}', NULL, '2019-03-24 19:23:49'),
+(6, 19, '{\"31\": {\"nombre\": \"Un buen meme\", \"precio\": \"150\", \"unidad\": \"memistico\", \"cantidad\": 4, \"subtotal\": 600, \"descripcion\": \"ahora con descripcion\"}}', '600', '{\"id\": \"8\", \"zip\": \"21060\", \"calle\": \"Dummy\", \"notas\": \"\", \"ciudad\": \"Dummy\", \"correo\": \"Dummy@Dummy.com\", \"estado\": \"Alabama\", \"nombre\": \"Dummy\", \"colonia\": \"\", \"apellido\": \"Dummy\", \"id_usuario\": \"19\"}', '{\"ccv\": null, \"tipo\": \"Mastercard\", \"vence\": null, \"nombre\": null, \"numero\": null}', 'pendiente', '2019-03-24 19:23:49');
 
 -- --------------------------------------------------------
 
@@ -176,7 +177,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `correo`, `foto`, `contrasena`, `tipo`, `carrito`) VALUES
-(19, 'Ismael', 'Villegas', 'jesismaelv@gmail.com', 'fotos/ismael.jpg', '56437ee14d804bfa14762e0b1782827e', 'admin', '{}'),
+(19, 'Ismael', 'Villegas', 'jesismaelv@gmail.com', 'fotos/ismael.jpg', '56437ee14d804bfa14762e0b1782827e', 'admin', '[]'),
 (22, 'Ismael', 'Villegas', 'ismael@entraencatarsis.com', 'img/usuarios/22/perfil.jpg', '56437ee14d804bfa14762e0b1782827e', 'admin', NULL),
 (30, 'elena', 'Dummy', 'elena@dummy.com', 'img/usuarios/30/perfil.png', 'fadf17141f3f9c3389d10d09db99f757', 'cliente', NULL),
 (32, 'admin editado', 'hola editado', 'admin', 'img/usuarios/32/perfil.png', '21232f297a57a5a743894a0e4a801fc3', 'cliente', NULL);

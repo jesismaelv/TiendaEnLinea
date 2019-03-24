@@ -60,6 +60,8 @@
     return $result;
   }
 
+
+
   function get_direccion($id, $id_usuario) {
     $bd = mysqli_connect("db","root","root", "main");
     $sql = "SELECT * FROM direccion WHERE id_usuario = '$id_usuario' AND id = '$id'";
@@ -73,6 +75,14 @@
     endif;
     $bd->close();
     return $res;
+  }
+
+  function get_ordenes($id_usuario) {
+    $bd = mysqli_connect("db","root","root", "main");
+    $sql = "SELECT * FROM orden WHERE id_usuario = '$id_usuario'";
+    $result = $bd->query($sql);
+    $bd->close();
+    return $result;
   }
 
   function agregar_producto($cantidad, $id, $id_usuario) {

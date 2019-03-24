@@ -90,10 +90,11 @@
         </div>
       </div>
     </form>
+
     <hr>
     <div class="row">
       <div class="col-12 col-md-6">
-        <h1> Direcciones </h1>
+        <h2> Direcciones </h2>
       </div>
       <div class="col-12 col-md-6 alinear-derecha alinear-derecha--nosm">
         <a href="agregar_direccion.php" class="boton"> Agregar direccion </a>
@@ -111,7 +112,7 @@
             $colonia = $direccion['colonia'];
             $zip = $direccion['zip'];
       ?>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 tarjeta-direccion__wrapper">
               <a href="editar_direccion.php?id=<?php echo $id_direccion ?>" class="tarjeta-direccion">
                 <h5><?php echo "$calle $colonia ($zip)" ?></h5>
                 <p><?php echo "$nombre $apellido ($correo)" ?></p>
@@ -122,6 +123,43 @@
         endif;
       ?>
     </div>
+
+    <hr>
+    <div class="row">
+      <div class="col-12">
+        <h2> Órdenes </h2>
+      </div>
+
+      <?php
+        $ordenes = get_ordenes($_SESSION['id']);
+        if ($ordenes->num_rows > 0) :
+          while($orden = $ordenes->fetch_assoc()) :
+            $total = $orden['total'];
+            $id_orden = $orden['id'];
+            $status = $orden['estado'];
+            $fecha = date('d/M/Y',time($orden['fecha']));
+
+      ?>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 tarjeta-orden__wrapper">
+              <a href="orden.php?id=<?php echo $id_orden ?>" class="tarjeta-orden">
+                <h3><?php echo "Orden: #$id_orden"; ?></h3>
+                <span class="total">$<?php echo number_format($total); ?> • <?php echo $fecha; ?> </span>
+                <p><?php echo $status; ?></p>
+              </a>
+            </div>
+      <?php
+          endwhile;
+        else:
+      ?>
+        <div class="col-12">
+          <div class="no-resultados"> No haz hecho ninguna orden todavía. </div>
+        </div>
+      <?php;
+        endif;
+      ?>
+    </div>
+
+
   </div>
 
 </main>
