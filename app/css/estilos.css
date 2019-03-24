@@ -2503,7 +2503,7 @@ h1 {
 .agregar-al-carrito .contenido {
   display: flex; }
 .agregar-al-carrito input {
-  width: 100px;
+  width: 100px !important;
   font-size: 20px; }
 .agregar-al-carrito button {
   margin: 0 5px;
@@ -2548,6 +2548,10 @@ h1 {
     text-align: left;
     text-transform: uppercase;
     letter-spacing: 0.05em; }
+  .carrito .cantidad input {
+    width: 70px !important;
+    display: inline-block !important;
+    text-align: center; }
 
 .carrito__item .imagen {
   width: 120px; }

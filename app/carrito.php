@@ -1,6 +1,15 @@
 <?php
   $page_title = "Carrito";
   include('estructura/cabecera.php');
+
+  if($_POST != NULL) {
+    if(actualizar_carrito($_POST, $_SESSION[id])) {
+      aviso('El carrito fue actualizado.');
+    }
+    else {
+      aviso('No se pudo actualizar el carrito.');
+    }
+  }
 ?>
 
 <main class="carrito-page">
@@ -10,6 +19,7 @@
   $items = json_decode($_SESSION['carrito']);
   if(sizeof($items) > 0) :
 ?>
+    <form action="carrito.php" method="post">
     <div class="carrito__wrapper">
       <table class="carrito">
           <tr >
@@ -60,7 +70,7 @@
                 <?php echo $unidad; ?>
               </td>
               <td class="cantidad">
-                <?php echo $cantidad; ?>
+                <input type="number" name='cantidad[<?php echo $id ?>]' value = <?php echo $cantidad; ?>>
               </td>
               <td class="total">
                 $<?php echo number_format($precio * $cantidad); ?>
@@ -83,9 +93,17 @@
         </tr>
       </table>
     </div>
-    <div class="alinear-derecha alinear-derecha--nosm">
-      <a href="checkout.php" class="boton boton-important"> Checkout </a>
+    <div class="row">
+        
+      <div class="col-12 col-md-6">
+        <button class='boton'> Actualizar </button>
+      </div>
+      <div class="col-12 col-md-6 alinear-derecha alinear-derecha--nosm">
+        <a href="checkout.php" class="boton boton-important"> Checkout </a>
+      </div>
+
     </div>
+    </form>
     <?php else: ?>
       <div class="no-resultados">
         Tu carrito está vacío. <a href="tienda.php" class='link'> Ir a la tienda. </a>

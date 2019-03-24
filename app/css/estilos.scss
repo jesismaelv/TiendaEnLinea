@@ -288,7 +288,7 @@ h1 {
   }
 
   input {
-    width: 100px;
+    width: 100px !important;
     font-size: 20px;
   }
 
@@ -347,6 +347,12 @@ h1 {
     text-align: left;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+  }
+
+  .cantidad input {
+    width: 70px !important;
+    display: inline-block !important;
+    text-align: center;
   }
 }
 

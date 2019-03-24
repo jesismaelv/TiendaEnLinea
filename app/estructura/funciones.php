@@ -185,10 +185,33 @@
       $_SESSION['carrito'] = '';
     }
 
-
-
     $bd->close();
 
     return $status;
+  }
+
+  function actualizar_carrito($data, $id_usuario) {
+    $data = $data['cantidad'];
+    $carrito = [];
+    foreach($data as $item => $cantidad) {
+      if($cantidad > 0) {
+        $carrito[$item] = $cantidad;
+      }
+    }
+
+    $carrito = json_encode($carrito);
+
+    $bd = mysqli_connect("db","root","root", "main");
+    $query = "UPDATE usuarios SET carrito = '$carrito' WHERE id = '$id_usuario'";
+    $result = $bd->query($query);
+    if($result === true) {
+      $bd->close();
+      $_SESSION['carrito'] = $carrito;
+      return true;
+    }
+    else {
+      $bd->close();
+      return false;
+    }
   }
 ?>
