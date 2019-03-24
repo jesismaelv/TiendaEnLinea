@@ -44,10 +44,7 @@
 [ ] Footer
 
 --views--
-[ ] Inicio
-    [ ] Galería
-    [ ] Novedades
-    [ ] Productos recienes
+[X] Inicio
 [X] Archivo Productos
 [X] Single Producto
     [x] Productos relacionados
