@@ -2508,4 +2508,47 @@ h1 {
   color: #333;
   white-space: pre-wrap; }
 
+.carrito__wrapper {
+  width: 100%;
+  overflow: auto;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px; }
+
+.carrito {
+  width: 100%;
+  min-width: 800px;
+  overflow: auto; }
+  .carrito td,
+  .carrito th {
+    text-align: center; }
+    .carrito td:first-child,
+    .carrito th:first-child {
+      text-align: left; }
+    .carrito td:last-child,
+    .carrito th:last-child {
+      text-align: right; }
+    .carrito td:not(.imagen),
+    .carrito th:not(.imagen) {
+      padding: 10px 15px; }
+  .carrito .nombre {
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.05em; }
+
+.carrito__item .imagen {
+  width: 120px; }
+.carrito__item .img {
+  display: inline-block;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 120px;
+  height: 120px; }
+
+.carrito__totales {
+  font-weight: bold; }
+
 /*# sourceMappingURL=estilos.css.map */

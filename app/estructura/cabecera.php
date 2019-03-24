@@ -36,7 +36,7 @@
               }
             ?>
             <a href="<?php echo $url ?>" <?php echo $img ?> class="menu__link--cuenta">Cuenta</a>
-            <a href="#" class="menu__link--carrito">Carrito</a>
+            <a href="carrito.php" class="menu__link--carrito">Carrito</a>
           </div>
         </div>
       </div>

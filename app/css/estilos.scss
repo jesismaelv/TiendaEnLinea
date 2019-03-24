@@ -297,3 +297,58 @@ h1 {
     white-space: pre-wrap;
   }
 }
+
+.carrito__wrapper {
+  width: 100%;
+  overflow: auto;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  @include borde-redondo(5px);
+}
+
+.carrito {
+  width: 100%;
+  min-width: 800px;
+  overflow: auto;
+
+  td,
+  th {
+    text-align: center;
+
+    &:first-child {
+      text-align: left;
+    }
+
+    &:last-child {
+      text-align: right;
+    }
+
+    &:not(.imagen) {
+      padding: 10px 15px;
+    }
+  }
+
+  .nombre {
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}
+
+.carrito__item {
+  .imagen {
+    width: 120px;
+  }
+
+  .img {
+    display: inline-block;
+    @include bgimage();
+    width: 120px;
+    height: 120px;
+  }
+
+}
+
+.carrito__totales {
+  font-weight: bold;
+}
