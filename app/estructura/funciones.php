@@ -173,7 +173,7 @@
 
     $bd = mysqli_connect("db","root","root", "main");
 
-    $query = "INSERT INTO orden (id_usuario, detalles, direccion, pago, total) VALUES ('$id_usuario','$detalles','$direccion','$pago', '$total')";
+    $query = "INSERT INTO orden (id_usuario, detalles, direccion, pago, total, estado) VALUES ('$id_usuario','$detalles','$direccion','$pago', '$total', 'pendiente')";
     $result = $bd->query($query);
 
     $status[0] = $result;

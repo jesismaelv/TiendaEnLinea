@@ -88,7 +88,7 @@
     </div>
     <?php else: ?>
       <div class="no-resultados">
-        Tu carrito está vacío.
+        Tu carrito está vacío. <a href="tienda.php" class='link'> Ir a la tienda. </a>
       </div>
 
     <?php endif;  ?>
