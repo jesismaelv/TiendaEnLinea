@@ -16,7 +16,7 @@
 <header class="header-principal">
     <nav class="nav-principal">
       <div class="container contenedor-principal">
-        <a href="#" class="logo">
+        <a href="index.php" class="logo">
           Logo
         </a>
         <button class="menu-btn-movil"></button>
@@ -25,9 +25,7 @@
             <a href="/admin/productos.php" class="menu__link">Productos</a>
             <a href="/admin/novedades.php" class="menu__link">Novedades</a>
             <a href="/admin/usuarios.php" class="menu__link"> Clientes </a>
-            <a href="/admin/ordenes.php" class="menu__link"> Ordenes </a>
             <a href="/admin/galeria.php" class="menu__link">Galeria</a>
-            <a href="/cerrar-sesion.php" class="menu__link">Cerrar Sesion</a>
           </div>
         </div>
       </div>
