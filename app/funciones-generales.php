@@ -139,6 +139,14 @@ date_default_timezone_set("America/Tijuana");
     return $result;
   }
 
+  function productos_recientes($cant) {
+    $bd = mysqli_connect("db","root","root", "main");
+    $sql = "SELECT * FROM producto ORDER BY fecha_creacion LIMIT $cant";
+    $result = $bd->query($sql);
+    $bd->close();
+    return $result;
+  }
+
   function get_single( $tipo, $id ){
     $bd = mysqli_connect("db","root","root", "main");
     $sql = "SELECT * FROM $tipo WHERE id = '$id'";

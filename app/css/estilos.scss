@@ -409,6 +409,73 @@ h1 {
     color: #333;
     text-transform: capitalize;
   }
+}
+
+.galeria-inicio {
+  .gallery__slides {
+    padding: 0px;
+    height: calc(100vh - 120px);
+  }
+
+  .gallery__slide {
+    background-color: #666;
+  }
+
+  .content {
+    h3 {
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 40px;
+    }
+
+    p {
+      font-size: 25px;
+    }
+
+    h3,
+    p {
+      margin: 0px;
+      padding: 0px;
+      line-height: 1.2em;
+      color: white;
+    }
+  }
+}
+
+.tarjeta-novedad {
+  .img {
+    @include bgimage();
+    width: 100%;
+    padding: 40% 0;
+    @include borde-redondo(5px);
+    background-color: #333;
+  }
+
+  h3,
+  span,
+  p {
+    margin: 0px;
+    padding: 0.3em 0;
+  }
+
+  h3 {
+    @include ellipsis(26px, 2);
+    margin-top: 15px;
+  }
+
+  span {
+    @include ellipsis(16px, 1);
+    font-weight: bold;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 
 
+  }
+
+  p {
+    font-size: 20px;
+    @include ellipsis(20px, 4);
+    color: #333;
+  }
 }

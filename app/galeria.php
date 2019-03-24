@@ -13,7 +13,7 @@
                   $img = $slide['imagen'];
                   $frase = $slide['frase'];
                   $subtitulo = $slide['subtitulo'];
-                  $accion = $slide['seccion'];
+                  $accion = $slide['boton'];
                 }
                 else {
                   $img = $slide;
@@ -25,17 +25,23 @@
             <a class="<?php echo $slide_class; ?>"
             style="background-image:url(<?php echo $img ?>)"
             data-slide href="<?php echo $accion ?>">
+                <?php
+                    if( is_array($slide) ) :
+                ?>
+                    <div class="content">
+                        <h3> <?php echo $frase; ?> </h3>
+                        <p> <?php echo $subtitulo; ?> </p>
+                    </div>
+                <?php endif; ?>
             </a>
         <?php
             endforeach;
         ?>
-        <div class="container gallery-nav-container">
             <button class="gallery__previous-btn" data-previous-slide>
                 Previous slide
             </button>
             <button class="gallery__next-btn" data-next-slide>
                 Next slide
             </button>
-        </div>
     </div>
 </div>
