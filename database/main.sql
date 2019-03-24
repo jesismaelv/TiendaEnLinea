@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Mar 24, 2019 at 07:31 PM
+-- Generation Time: Mar 24, 2019 at 11:41 PM
 -- Server version: 5.7.11
 -- PHP Version: 7.2.8
 
@@ -73,7 +73,8 @@ CREATE TABLE `novedades` (
 
 INSERT INTO `novedades` (`id`, `titulo`, `subtitulo`, `descripcion`, `imagen`) VALUES
 (4, 'Novedaza', 'Con subtitlo!', 'Y DescripciÃ³n :0 ', 'img/novedades/4/principal.jpg'),
-(5, 'Otra novedad editada otra vez a berda', 'HOLA? ayayayay', 'uyuyiy editado', 'img/novedades/5/principal.png');
+(5, 'Otra novedad editada otra vez a berda', 'HOLA? ayayayay', 'uyuyiy editado', 'img/novedades/5/principal.png'),
+(7, 'Cambios a Se Universitario', 'Que bonitos se ven hoy', '', NULL);
 
 -- --------------------------------------------------------
 
@@ -97,7 +98,6 @@ CREATE TABLE `orden` (
 --
 
 INSERT INTO `orden` (`id`, `id_usuario`, `detalles`, `total`, `direccion`, `pago`, `estado`, `fecha`) VALUES
-(1, 19, '[]', '0', '{\"id\": \"4\", \"zip\": \"12345\", \"calle\": \"Hello\", \"notas\": \"Muchas NOTAS!\", \"ciudad\": \"Hello x3\", \"correo\": \"jesismaelv@gmail.com\", \"estado\": \"Baja California\", \"nombre\": \"Ismael\", \"colonia\": \"\", \"apellido\": \"Villegas\", \"id_usuario\": \"19\"}', '{\"ccv\": null, \"tipo\": \"Mastercard\", \"vence\": null, \"nombre\": null, \"numero\": null}', NULL, '2019-03-24 19:23:49'),
 (2, 19, '{\"31\": {\"nombre\": \"Un buen meme\", \"precio\": \"150\", \"unidad\": \"memistico\", \"cantidad\": 16, \"subtotal\": 2400, \"descripcion\": \"ahora con descripcion\"}, \"36\": {\"nombre\": \"Prueba\", \"precio\": \"123\", \"unidad\": \"img\", \"cantidad\": \"1\", \"subtotal\": 123, \"descripcion\": \"\"}}', '2523', '{\"id\": \"4\", \"zip\": \"12345\", \"calle\": \"Hello\", \"notas\": \"Muchas NOTAS!\", \"ciudad\": \"Hello x3\", \"correo\": \"jesismaelv@gmail.com\", \"estado\": \"Baja California\", \"nombre\": \"Ismael\", \"colonia\": \"\", \"apellido\": \"Villegas\", \"id_usuario\": \"19\"}', '{\"ccv\": null, \"tipo\": \"Mastercard\", \"vence\": null, \"nombre\": null, \"numero\": null}', NULL, '2019-03-24 19:23:49'),
 (3, 19, '{\"31\": {\"nombre\": \"Un buen meme\", \"precio\": \"150\", \"unidad\": \"memistico\", \"cantidad\": 16, \"subtotal\": 2400, \"descripcion\": \"ahora con descripcion\"}, \"36\": {\"nombre\": \"Prueba\", \"precio\": \"123\", \"unidad\": \"img\", \"cantidad\": \"1\", \"subtotal\": 123, \"descripcion\": \"\"}}', '2523', '{\"id\": \"4\", \"zip\": \"12345\", \"calle\": \"Hello\", \"notas\": \"Muchas NOTAS!\", \"ciudad\": \"Hello x3\", \"correo\": \"jesismaelv@gmail.com\", \"estado\": \"Baja California\", \"nombre\": \"Ismael\", \"colonia\": \"\", \"apellido\": \"Villegas\", \"id_usuario\": \"19\"}', '{\"ccv\": null, \"tipo\": \"Mastercard\", \"vence\": null, \"nombre\": null, \"numero\": null}', NULL, '2019-03-24 19:23:49'),
 (4, 19, '{\"31\": {\"nombre\": \"Un buen meme\", \"precio\": \"150\", \"unidad\": \"memistico\", \"cantidad\": 16, \"subtotal\": 2400, \"descripcion\": \"ahora con descripcion\"}, \"36\": {\"nombre\": \"Prueba\", \"precio\": \"123\", \"unidad\": \"img\", \"cantidad\": \"1\", \"subtotal\": 123, \"descripcion\": \"\"}}', '2523', '{\"id\": \"7\", \"zip\": \"12378\", \"calle\": \"asdf\", \"notas\": \"\", \"ciudad\": \"adsf\", \"correo\": \"hola@entraencatarsis.com\", \"estado\": \"Ciudad de Mu00e9xico\", \"nombre\": \"Ismael\", \"colonia\": \"\", \"apellido\": \"Villegas\", \"id_usuario\": \"19\"}', '{\"ccv\": null, \"tipo\": \"Mastercard\", \"vence\": null, \"nombre\": null, \"numero\": null}', NULL, '2019-03-24 19:23:49'),
@@ -150,9 +150,6 @@ CREATE TABLE `slides_inicio` (
 
 INSERT INTO `slides_inicio` (`imagen`, `frase`, `subtitulo`, `boton`, `id`) VALUES
 ('img/slides_inicio/1/principal.png', 'Titulo de galerÃ­a', '', '', 1),
-('img/slides_inicio/3/principal.png', '', '', '', 3),
-('img/slides_inicio/5/principal.png', 'Titulo de galerÃ­a', 'Con subtitlo!', '', 5),
-('img/slides_inicio/8/principal.png', 'Bienvenidos al sitio! editado', 'Que bonitos se ven hoy editoad', '###', 8),
 (NULL, 'El oscar es buen compa', 'holi', '#35', 9);
 
 -- --------------------------------------------------------
@@ -177,7 +174,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `correo`, `foto`, `contrasena`, `tipo`, `carrito`) VALUES
-(19, 'Ismael', 'Villegas', 'jesismaelv@gmail.com', 'fotos/ismael.jpg', '56437ee14d804bfa14762e0b1782827e', 'admin', '[]'),
+(19, 'Ismael', 'Villegas', 'jesismaelv@gmail.com', 'img/usuarios/19/perfil.jpg', '56437ee14d804bfa14762e0b1782827e', 'admin', '[]'),
 (22, 'Ismael', 'Villegas', 'ismael@entraencatarsis.com', 'img/usuarios/22/perfil.jpg', '56437ee14d804bfa14762e0b1782827e', 'admin', NULL),
 (30, 'elena', 'Dummy', 'elena@dummy.com', 'img/usuarios/30/perfil.png', 'fadf17141f3f9c3389d10d09db99f757', 'cliente', NULL),
 (32, 'admin editado', 'hola editado', 'admin', 'img/usuarios/32/perfil.png', '21232f297a57a5a743894a0e4a801fc3', 'cliente', NULL);
@@ -236,7 +233,7 @@ ALTER TABLE `direccion`
 -- AUTO_INCREMENT for table `novedades`
 --
 ALTER TABLE `novedades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `orden`
