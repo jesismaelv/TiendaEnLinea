@@ -31,7 +31,14 @@
 
 <main class="admin-page pagina-editar-usuario">
   <div class="container">
-    <h1> Editar perfil </h1>
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <h1> Editar perfil </h1>
+      </div>
+      <div class="col-12 col-md-6 alinear-derecha alinear-derecha--nosm">
+        <a href="cerrar-sesion.php" class="boton">Cerrar sesión</a>
+      </div>
+    </div>
 
     <form action="editar_usuario.php?id=<?php echo $id ?>" method="post" enctype="multipart/form-data">
       <div class="row">

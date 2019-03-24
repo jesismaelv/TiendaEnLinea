@@ -18,9 +18,9 @@
       </div>
     </div>
   </footer>
-  
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
-  <script src="javascript/funciones.js"></script>
+  <script src="/javascript/jQuery.js"></script>
+  <script src="/javascript/galeria.js"></script>
+  <script src="/javascript/funciones.js"></script>
 </body>
 </html>

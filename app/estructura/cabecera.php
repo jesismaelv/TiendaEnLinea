@@ -22,8 +22,8 @@
         <button class="menu-btn-movil"></button>
         <div class="menu-movil">
           <div class="menu__links">
-            <a href="#" class="menu__link">Inicio</a>
-            <a href="#" class="menu__link">Tienda</a>
+            <a href="/" class="menu__link">Inicio</a>
+            <a href="/tienda.php" class="menu__link">Tienda</a>
             <?php
               if($_SESSION['foto']) {
                 $img = '../'.$_SESSION['foto'];

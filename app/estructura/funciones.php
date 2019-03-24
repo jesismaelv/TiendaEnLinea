@@ -74,4 +74,24 @@
     $bd->close();
     return $res;
   }
+
+  function agregar_producto($cantidad, $id, $id_usuario) {
+    $bd = mysqli_connect("db","root","root", "main");
+    $carrito = json_decode($_SESSION['carrito']);
+
+    if($carrito->$id > 0) {
+      $carrito->$id += $cantidad;
+    }
+    else {
+      $carrito->$id = $cantidad;
+    }
+
+    $carrito = json_encode($carrito);
+    $_SESSION['carrito'] = $carrito;
+
+    $sql = "UPDATE usuarios SET carrito = '$carrito' WHERE id = '$id_usuario'";
+    $result = $bd->query($sql);
+    $bd->close();
+    return $result;
+  }
 ?>

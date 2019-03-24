@@ -117,6 +117,14 @@ session_start();
     return $result;
   }
 
+  function get_mas_productos(){
+    $bd = mysqli_connect("db","root","root", "main");
+    $sql = "SELECT * FROM producto ORDER BY RAND() LIMIT 4";
+    $result = $bd->query($sql);
+    $bd->close();
+    return $result;
+  }
+
   function get_single( $tipo, $id ){
     $bd = mysqli_connect("db","root","root", "main");
     $sql = "SELECT * FROM $tipo WHERE id = '$id'";

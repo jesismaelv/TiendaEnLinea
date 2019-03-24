@@ -1,6 +1,8 @@
 @import "mixin.scss";
 @import "bootstrap.scss";
 @import "admin.scss";
+@import "galeria.scss";
+
 
 $texto: #000;
 $blanco: white;
@@ -258,5 +260,40 @@ h1 {
 
   &:hover {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+
+.productos-relacionados {
+  margin-top: 50px;
+}
+
+.agregar-al-carrito {
+  .contenido {
+    display: flex;
+  }
+
+  input {
+    width: 100px;
+    font-size: 20px;
+  }
+
+  button {
+    margin: 0 5px;
+    width: auto;
+  }
+}
+
+.single-product-page {
+  .detalles {
+    font-size: 14px;
+    font-style: italic;
+    color: #666;
+  }
+
+  .descripcion {
+    font-size: 18px;
+    color: #333;
+    white-space: pre-wrap;
   }
 }

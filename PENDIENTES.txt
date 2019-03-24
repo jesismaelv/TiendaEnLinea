@@ -40,7 +40,7 @@
     [ ] Galería
     [ ] Novedades
     [ ] Productos recienes
-[ ] Archivo Productos
+[X] Archivo Productos
 [ ] Single Producto
     [ ] Productos relacionados
 
