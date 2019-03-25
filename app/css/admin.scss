@@ -67,6 +67,8 @@ select {
   border: 1px solid #666;
   padding: 5px 10px;
   background-color: white;
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 [type='file'] {
@@ -164,6 +166,7 @@ select {
       @include bgimage();
       width: 100%;
       padding: 60% 0;
+      @include borde-redondo(5px);
     }
 
     h2,

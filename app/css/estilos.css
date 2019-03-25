@@ -1960,7 +1960,10 @@ select {
       background-size: cover;
       background-repeat: no-repeat;
       width: 100%;
-      padding: 60% 0; }
+      padding: 60% 0;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px; }
     .tarjeta-producto .link-producto h2,
     .tarjeta-producto .link-producto span {
       z-index: 1;
