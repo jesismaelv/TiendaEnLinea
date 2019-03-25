@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: db
--- Generation Time: Mar 24, 2019 at 11:41 PM
--- Server version: 5.7.11
--- PHP Version: 7.2.8
+-- Servidor: db
+-- Tiempo de generación: 25-03-2019 a las 07:22:10
+-- Versión del servidor: 5.7.11
+-- Versión de PHP: 7.2.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `main`
+-- Base de datos: `main`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `direccion`
+-- Estructura de tabla para la tabla `direccion`
 --
 
 CREATE TABLE `direccion` (
@@ -43,7 +43,7 @@ CREATE TABLE `direccion` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `direccion`
+-- Volcado de datos para la tabla `direccion`
 --
 
 INSERT INTO `direccion` (`id`, `id_usuario`, `nombre`, `apellido`, `correo`, `calle`, `colonia`, `zip`, `estado`, `ciudad`, `notas`) VALUES
@@ -56,7 +56,7 @@ INSERT INTO `direccion` (`id`, `id_usuario`, `nombre`, `apellido`, `correo`, `ca
 -- --------------------------------------------------------
 
 --
--- Table structure for table `novedades`
+-- Estructura de tabla para la tabla `novedades`
 --
 
 CREATE TABLE `novedades` (
@@ -68,18 +68,16 @@ CREATE TABLE `novedades` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `novedades`
+-- Volcado de datos para la tabla `novedades`
 --
 
 INSERT INTO `novedades` (`id`, `titulo`, `subtitulo`, `descripcion`, `imagen`) VALUES
-(4, 'Novedaza', 'Con subtitlo!', 'Y DescripciÃ³n :0 ', 'img/novedades/4/principal.jpg'),
-(5, 'Otra novedad editada otra vez a berda', 'HOLA? ayayayay', 'uyuyiy editado', 'img/novedades/5/principal.png'),
-(7, 'Cambios a Se Universitario', 'Que bonitos se ven hoy', '', NULL);
+(8, 'Â¡Aviso importante! Riesgo de salud con manzana auto-cortada', '', 'Si haz comprado nuestra manzana auto-cortada no la consumas. Se han reportado varios casos en el que ha provocado el auto-despedazamiento de quien la consume. ', 'img/novedades/8/principal.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orden`
+-- Estructura de tabla para la tabla `orden`
 --
 
 CREATE TABLE `orden` (
@@ -94,7 +92,7 @@ CREATE TABLE `orden` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `orden`
+-- Volcado de datos para la tabla `orden`
 --
 
 INSERT INTO `orden` (`id`, `id_usuario`, `detalles`, `total`, `direccion`, `pago`, `estado`, `fecha`) VALUES
@@ -107,7 +105,7 @@ INSERT INTO `orden` (`id`, `id_usuario`, `detalles`, `total`, `direccion`, `pago
 -- --------------------------------------------------------
 
 --
--- Table structure for table `producto`
+-- Estructura de tabla para la tabla `producto`
 --
 
 CREATE TABLE `producto` (
@@ -123,7 +121,7 @@ CREATE TABLE `producto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `producto`
+-- Volcado de datos para la tabla `producto`
 --
 
 INSERT INTO `producto` (`id`, `imagen`, `nombre`, `descripcion`, `precio`, `unidad`, `existencia`, `fecha_creacion`, `imagenes`) VALUES
@@ -133,7 +131,7 @@ INSERT INTO `producto` (`id`, `imagen`, `nombre`, `descripcion`, `precio`, `unid
 -- --------------------------------------------------------
 
 --
--- Table structure for table `slides_inicio`
+-- Estructura de tabla para la tabla `slides_inicio`
 --
 
 CREATE TABLE `slides_inicio` (
@@ -145,17 +143,17 @@ CREATE TABLE `slides_inicio` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `slides_inicio`
+-- Volcado de datos para la tabla `slides_inicio`
 --
 
 INSERT INTO `slides_inicio` (`imagen`, `frase`, `subtitulo`, `boton`, `id`) VALUES
-('img/slides_inicio/1/principal.png', 'Titulo de galerÃ­a', '', '', 1),
-(NULL, 'El oscar es buen compa', 'holi', '#35', 9);
+('img/slides_inicio/10/principal.jpg', 'Descubre el sabor del transgÃ©nico', 'No volverÃ¡s a querer una fruta de verdad otra vez.', '/tienda.php', 10),
+('img/slides_inicio/11/principal.jpg', 'Â¡Nuevo! CÃ­tricos que saben a berries', 'Â¡Crecen hasta 4 metros!', '', 11);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuarios`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -170,94 +168,94 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `usuarios`
+-- Volcado de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `correo`, `foto`, `contrasena`, `tipo`, `carrito`) VALUES
-(19, 'Ismael', 'Villegas', 'jesismaelv@gmail.com', 'img/usuarios/19/perfil.jpg', '56437ee14d804bfa14762e0b1782827e', 'admin', '[]'),
+(19, 'Ismael', 'Villegas', 'jesismaelv@gmail.com', 'img/usuarios/19/perfil.jpg', '56437ee14d804bfa14762e0b1782827e', 'admin', '{\"31\": \"1\", \"36\": \"1\"}'),
 (22, 'Ismael', 'Villegas', 'ismael@entraencatarsis.com', 'img/usuarios/22/perfil.jpg', '56437ee14d804bfa14762e0b1782827e', 'admin', NULL),
 (30, 'elena', 'Dummy', 'elena@dummy.com', 'img/usuarios/30/perfil.png', 'fadf17141f3f9c3389d10d09db99f757', 'cliente', NULL),
 (32, 'admin editado', 'hola editado', 'admin', 'img/usuarios/32/perfil.png', '21232f297a57a5a743894a0e4a801fc3', 'cliente', NULL);
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `direccion`
+-- Indices de la tabla `direccion`
 --
 ALTER TABLE `direccion`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `novedades`
+-- Indices de la tabla `novedades`
 --
 ALTER TABLE `novedades`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `orden`
+-- Indices de la tabla `orden`
 --
 ALTER TABLE `orden`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `producto`
+-- Indices de la tabla `producto`
 --
 ALTER TABLE `producto`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `slides_inicio`
+-- Indices de la tabla `slides_inicio`
 --
 ALTER TABLE `slides_inicio`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `usuarios`
+-- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `direccion`
+-- AUTO_INCREMENT de la tabla `direccion`
 --
 ALTER TABLE `direccion`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `novedades`
+-- AUTO_INCREMENT de la tabla `novedades`
 --
 ALTER TABLE `novedades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `orden`
+-- AUTO_INCREMENT de la tabla `orden`
 --
 ALTER TABLE `orden`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `producto`
+-- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
--- AUTO_INCREMENT for table `slides_inicio`
+-- AUTO_INCREMENT de la tabla `slides_inicio`
 --
 ALTER TABLE `slides_inicio`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `usuarios`
+-- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

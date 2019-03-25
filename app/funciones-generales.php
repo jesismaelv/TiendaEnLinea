@@ -1,6 +1,10 @@
 <?php
 session_start();
 date_default_timezone_set("America/Tijuana");
+$carrito = json_decode($_SESSION['carrito']);
+if(sizeof($carrito) == 0) {
+  $_SESSION['carrito'] = "{}";
+}
 
   function iniciar_sesion($args) {
     $bd = mysqli_connect("db","root","root", "main");

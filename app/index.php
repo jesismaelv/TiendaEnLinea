@@ -60,7 +60,7 @@
                 $precio = $producto['precio'];
                 $unidad = $producto['unidad'];
           ?>
-            <div class="col-12 col-sm-6 col-lg-4">
+            <div class="col-12 col-sm-6 col-lg-3">
               <article class="tarjeta tarjeta-producto">
                 <a class="link-producto"
                     href="/producto.php?id=<?php echo $producto['id'] ?>">

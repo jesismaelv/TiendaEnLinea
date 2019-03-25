@@ -3,7 +3,7 @@
   include('estructura/cabecera.php');
 
   if($_POST != NULL) {
-    if(actualizar_carrito($_POST, $_SESSION[id])) {
+    if(actualizar_carrito($_POST, $_SESSION['id'])) {
       aviso('El carrito fue actualizado.');
     }
     else {
@@ -17,6 +17,7 @@
     <h1> Carrito </h1>
 <?php
   $items = json_decode($_SESSION['carrito']);
+
   if(sizeof($items) > 0) :
 ?>
     <form action="carrito.php" method="post">

@@ -1,5 +1,5 @@
 <?php
-  $page_title = "Inicio";
+  $page_title = "Producto";
   include('estructura/cabecera.php');
 
   $id = $_GET['id'];
