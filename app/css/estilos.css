@@ -1877,6 +1877,12 @@ select {
   background-color: white;
   font-size: 18px;
   line-height: 1.5; }
+  input:not([type='file']):not([type=radio]):not([type=checkbox]):hover, input:not([type='file']):not([type=radio]):not([type=checkbox]):focus,
+  textarea:hover,
+  textarea:focus,
+  select:hover,
+  select:focus {
+    border-color: #94BF47; }
 
 [type='file'] {
   width: 100%;
@@ -2064,6 +2070,9 @@ select {
   .link-slide:hover {
     text-decoration: none;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); }
+
+.productos-recientes {
+  margin-top: 30px; }
 
 .gallery {
   width: 100%;
@@ -2728,7 +2737,7 @@ h2 {
 .tarjeta-novedad h3,
 .tarjeta-novedad span,
 .tarjeta-novedad p {
-  margin: 0px;
+  margin: 0px 0px 10px;
   padding: 0.3em 0; }
 .tarjeta-novedad h3 {
   padding: 0px;
