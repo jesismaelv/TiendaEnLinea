@@ -65,3 +65,6 @@
     [ ] Cancelar orden
 
 
+[ D E T A L L E S ]
+[ ] Ponerle 'required' a todo, en todas las formas
+[ ] Checar que el nombre esté bien en todas las páginas

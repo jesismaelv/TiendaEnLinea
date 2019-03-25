@@ -2317,10 +2317,10 @@ a {
     padding-left: 0px;
     padding-right: 0px; }
   .boton-important {
-    background-color: #037;
+    background-color: #94BF47;
     color: white; }
     .boton-important:hover {
-      background-color: #014;
+      background-color: #789d36;
       color: white; }
 
 h1 {
@@ -2538,7 +2538,8 @@ h1 {
   margin-bottom: 30px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
-  border-radius: 5px; }
+  border-radius: 5px;
+  background-color: white; }
 
 .carrito {
   width: 100%;

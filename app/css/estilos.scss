@@ -66,11 +66,11 @@ a {
   }
 
   &-important {
-    background-color: #037;
+    background-color: $verde;
     color: white;
 
     &:hover {
-      background-color: #014;
+      background-color: darken($verde, 10%);
       color: white;
     }
   }
@@ -127,9 +127,11 @@ h1 {
   display: flex;
   align-items: center;
   height: 100%;
+
   .logo {
     height: 100%;
     width: 140px;
+
     img {
       height: 100%;
       width: auto;
@@ -337,6 +339,8 @@ h1 {
   padding: 15px;
   margin-bottom: 30px;
   @include borde-redondo(5px);
+  background-color: white;
+
 }
 
 .carrito {
@@ -435,6 +439,7 @@ h1 {
 
 .galeria-inicio {
   margin-bottom: 40px;
+
   .gallery__slides {
     padding: 0px;
     height: calc(100vh - 120px);
@@ -502,4 +507,3 @@ h1 {
     color: #333;
   }
 }
-
