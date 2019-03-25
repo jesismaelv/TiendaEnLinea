@@ -25,6 +25,9 @@
           <div class="menu__links">
             <a href="/" class="menu__link">Inicio</a>
             <a href="/tienda.php" class="menu__link">Tienda</a>
+            <?php if($_SESSION['tipo'] == 'admin' ) : ?>
+              <a href="/admin/" class="menu__link"> Admin </a>
+            <?php endif; ?>
             <?php
               if($_SESSION['foto']) {
                 $img = '../'.$_SESSION['foto'];
@@ -36,6 +39,7 @@
                 $url = "login.php";
               }
             ?>
+
             <a href="<?php echo $url ?>" <?php echo $img ?> class="menu__link--cuenta">Cuenta</a>
             <a href="carrito.php" class="menu__link--carrito">Carrito</a>
           </div>
