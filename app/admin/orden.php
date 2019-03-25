@@ -2,13 +2,11 @@
   $page_title = "Orden";
   include('estructura/cabecera.php');
   $id = $_GET['id'];
-  
 
   if($_POST['estado'] != NULL) {
     $data = $_POST;
     $data['id'] = $id;
-  
-    if(actualizar_orden($data, $_SESSION['id'], false)) {
+    if(actualizar_orden($data, $_SESSION['id'], true)) {
       aviso("La orden ha sido actualizada.");
     }
     else {
@@ -16,18 +14,21 @@
     }
   }
 
-  $orden = get_orden($id, $_SESSION['id']);
+
+  $orden = get_single('orden',$id);
   $fecha = date('d/M/Y',time($orden['fecha']));
+  $usuario = get_single('usuarios', $orden['id_usuario']);
+
 ?>
 
 <main class="orden-page">
   <div class="container">
-  <div class="row">
+    <div class="row">
       <div class="col-12 col-md-6">
 
         <h1> Orden #<?php echo $orden['id'] ?></h1>
 
-        <h4> Pedido por: <?php echo $_SESSION['nombre'] . " " . $_SESSION['apellido'] ?></h4>
+        <h4> Pedido por: <?php echo $usuario['nombre'] . " " . $usuario['apellido'] ?></h4>
         <p> El <?php echo $fecha; ?></p>
       </div>
       <div class="col-12 col-md-6">
@@ -39,7 +40,9 @@
             <label> Status </label>
             <select name="estado">
               <option disabled selected> <?php echo $orden['estado'] ?> </option>
-              <option value="Cancelado"> Cancelar </option>
+              <option value="Pendiente"> Pendiente </option>
+              <option value="Enviado"> Enviado </option>
+              <option value="Entregado"> Entregado </option>
             </select>
             <button class="boton" style="margin-left: 0px;"> Actualizar </button>
           </div>
@@ -141,11 +144,12 @@
           <?php 
             $pago = json_decode($orden['pago']);
             $numero = $pago->numero;
-            $numero = substr($numero, -4)
           ?>
           <h2> Forma de pago: </h2>
           <p><strong>Nombre: </strong><?php echo $pago->nombre; ?></p>
-          <p><strong>Número: </strong> **** **** **** <?php echo $numero; ?></p>
+          <p><strong>Número: </strong> <?php echo $numero; ?></p>
+          <p><strong>Vencimiento: </strong> <?php echo $pago->vence; ?></p>
+          <p><strong>CCV: </strong> <?php echo $pago->ccv; ?></p>
           <p><strong>Tipo: </strong><?php echo $pago->tipo; ?></p>
       </div>
     </div>

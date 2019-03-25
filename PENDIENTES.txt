@@ -34,7 +34,7 @@
 [X] Producto
 [X] Novedad
 [X] Cliente
-[ ] Orden
+[X] Orden
 [X] Slide de galería
 
 
@@ -61,8 +61,8 @@
     [x] Eliminar de carrito
 [X] Checkout
 [X] Ordenes [Se muestran en el perfil]
-[ ] Orden
-    [ ] Cancelar orden
+[X] Orden
+    [x] Cancelar orden
 
 
 [ D E T A L L E S ]

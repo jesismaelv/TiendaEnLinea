@@ -187,6 +187,28 @@ if(sizeof($carrito) == 0) {
     return $status;
   }
 
+  function actualizar_orden($data, $id_usuario, $es_admin = false) {
+    $bd = mysqli_connect("db","root","root", "main");
+
+    $id = $data['id'];
+    $estado = $data['estado'];
+
+    if($es_admin) {
+      $query = "UPDATE orden
+                SET estado = '$estado'
+                WHERE id = '$id'";
+    }
+    else {
+      $query = "UPDATE orden
+                SET estado = '$estado'
+                WHERE id = '$id' AND id_usuario = '$id_usuario'";
+    }
+    $result = $bd->query($query);
+
+    $bd->close();
+    return $result;
+  }
+
   function print_x($var, $die = false) {
     echo "<pre>";
       print_r($var);
