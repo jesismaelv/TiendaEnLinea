@@ -38,7 +38,7 @@
           <div class="input-group">
             <label> Imagen Principal </label>
             <img src="../<?php echo $img ?>" alt="">
-            <input type="file" name="imagen" id="fileToUpload" accept="image/png, image/jpeg">
+            <input required type="file" name="imagen" id="fileToUpload" accept="image/png, image/jpeg">
           </div>
 
           <div class="input-group">
@@ -50,7 +50,7 @@
               <?php
                 endforeach;
               ?>
-              <input type="file" name="imagenes[]" id="fileToUpload" accept="image/png, image/jpeg" multiple="multiple">
+              <input required type="file" name="imagenes[]" id="fileToUpload" accept="image/png, image/jpeg" multiple="multiple">
           </div>
 
         </div>
@@ -61,14 +61,14 @@
             <div class="col-12 col-sm-6">
               <div class="input-group">
                 <label> Nombre </label>
-                <input type="text" name="nombre" value="<?php echo $nombre ?>">
+                <input required type="text" name="nombre" value="<?php echo $nombre ?>">
               </div>
             </div>
 
             <div class="col-12 col-sm-6">
               <div class="input-group">
                 <label> Unidad </label>
-                <input type="text" name="unidad" value="<?php echo $unidad ?>">
+                <input required type="text" name="unidad" value="<?php echo $unidad ?>">
               </div>
             </div>
 
@@ -82,14 +82,14 @@
             <div class="col-12 col-sm-6">
               <div class="input-group">
                 <label> Precio </label>
-                <input type="number" name="precio" value="<?php echo $precio ?>">
+                <input required type="number" name="precio" value="<?php echo $precio ?>">
               </div>
             </div>
 
             <div class="col-12 col-sm-6">
               <div class="input-group">
                 <label> Existencia </label>
-                <input type="number" name="existencia" value="<?php echo $existencia ?>">
+                <input required type="number" name="existencia" value="<?php echo $existencia ?>">
               </div>
             </div>
           </div>

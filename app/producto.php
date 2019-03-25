@@ -44,7 +44,7 @@
         <form action="producto.php?id=<?php echo $id ?>" method="post">
           <div class="agregar-al-carrito">
             <div class="contenido">
-              <input class="cantidad" name="cantidad" type="number" value="1" min="1" max="<?php echo $existencia ?>">
+              <input required class="cantidad" name="cantidad" type="number" value="1" min="1" max="<?php echo $existencia ?>">
               <button class="boton boton-important"> Agregar </button>
             </div>
           </div>

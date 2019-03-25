@@ -1,5 +1,4 @@
 [ G E N E R A L ]
-[ ] Perder contrasena
 [X] Login
 [X] Cerrar Sesión
 [X] Registrarse
@@ -65,15 +64,7 @@
 
 
 [ D E T A L L E S ]
-[ ] Ponerle 'required' a todo, en todas las formas
+[X] Ponerle 'required' a todo, en todas las formas
 [ ] Checar que el nombre esté bien en todas las páginas
 [ ] Llenar de contenido
 [ ] Quitarle lo cutre
-
-[ G E N E R A L ]
-[ ] Perder contrasena
-
-[ C L I E N T E ]
---estructura--
-[ ] Menú
-[ ] Footer

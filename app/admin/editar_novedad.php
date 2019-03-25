@@ -33,7 +33,7 @@
           <div class="input-group">
             <label> Imagen Principal </label>
             <img src="../<?php echo $img ?>">
-            <input type="file" name="imagen" accept="image/png, image/jpeg">
+            <input required type="file" name="imagen" accept="image/png, image/jpeg">
           </div>
 
         </div>
@@ -44,14 +44,14 @@
             <div class="col-12">
               <div class="input-group">
                 <label> Titulo </label>
-                <input type="text" name="titulo" value="<?php echo $titulo; ?>" >
+                <input required type="text" name="titulo" value="<?php echo $titulo; ?>" >
               </div>
             </div>
 
             <div class="col-12">
               <div class="input-group">
                 <label> Subtitulo </label>
-                <input type="text" name="subtitulo" value="<?php echo $subtitulo; ?>">
+                <input required type="text" name="subtitulo" value="<?php echo $subtitulo; ?>">
               </div>
             </div>
 

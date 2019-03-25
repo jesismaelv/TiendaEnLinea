@@ -32,7 +32,7 @@
           <div class="input-group">
             <label> Imagen </label>
             <img src="../<?php echo $img ?>" alt="">
-            <input type="file" name="imagen" accept="image/png, image/jpeg">
+            <input required type="file" name="imagen" accept="image/png, image/jpeg">
           </div>
 
         </div>
@@ -44,21 +44,21 @@
             <div class="col-12">
               <div class="input-group">
                 <label> Frase </label>
-                <input type="text" name="frase" value="<?php echo $frase ?>">
+                <input required type="text" name="frase" value="<?php echo $frase ?>">
               </div>
             </div>
 
             <div class="col-12 col-sm-6">
               <div class="input-group">
                 <label> Subtítulo </label>
-                <input type="text" name="subtitulo" value="<?php echo $subtitulo ?>">
+                <input required type="text" name="subtitulo" value="<?php echo $subtitulo ?>">
               </div>
             </div>
 
             <div class="col-12 col-sm-6">
               <div class="input-group">
                 <label> Acción </label>
-                <input type="text" name="accion" value="<?php echo $boton ?>">
+                <input required type="text" name="accion" value="<?php echo $boton ?>">
               </div>
             </div>
 

@@ -22,12 +22,12 @@
 
           <div class="input-group">
             <label> Imagen Principal </label>
-            <input type="file" name="imagen" id="fileToUpload" accept="image/png, image/jpeg">
+            <input required type="file" name="imagen" id="fileToUpload" accept="image/png, image/jpeg">
           </div>
 
           <div class="input-group">
             <label> Galería </label>
-              <input type="file" name="imagenes[]" id="fileToUpload" accept="image/png, image/jpeg" multiple="multiple">
+              <input required type="file" name="imagenes[]" id="fileToUpload" accept="image/png, image/jpeg" multiple="multiple">
           </div>
 
         </div>
@@ -38,14 +38,14 @@
             <div class="col-12 col-sm-6">
               <div class="input-group">
                 <label> Nombre </label>
-                <input type="text" name="nombre" >
+                <input required type="text" name="nombre" >
               </div>
             </div>
 
             <div class="col-12 col-sm-6">
               <div class="input-group">
                 <label> Unidad </label>
-                <input type="text" name="unidad" >
+                <input required type="text" name="unidad" >
               </div>
             </div>
 
@@ -59,14 +59,14 @@
             <div class="col-12 col-sm-6">
               <div class="input-group">
                 <label> Precio </label>
-                <input type="number" name="precio" >
+                <input required type="number" name="precio" >
               </div>
             </div>
 
             <div class="col-12 col-sm-6">
               <div class="input-group">
                 <label> Existencia </label>
-                <input type="number" name="existencia" >
+                <input required type="number" name="existencia" >
               </div>
             </div>
           </div>

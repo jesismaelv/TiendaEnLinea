@@ -26,12 +26,12 @@
 
           <div class="input-group">
             <label> Correo </label>
-            <input type="text" name="correo" >
+            <input required type="text" name="correo" >
           </div>
 
           <div class="input-group">
             <label> Contraseña </label>
-            <input type="password" name="contrasena" >
+            <input required type="password" name="contrasena" >
           </div>
 
           <div>

@@ -47,7 +47,7 @@
           <div class="input-group">
             <label> Foto </label>
             <img src="/<?php echo $img ?>">
-            <input type="file" name="imagen" accept="image/png, image/jpeg">
+            <input required type="file" name="imagen" accept="image/png, image/jpeg">
           </div>
 
         </div>
@@ -58,28 +58,28 @@
             <div class="col-12 col-sm-6">
               <div class="input-group">
                 <label> Nombre </label>
-                <input type="text" name="nombre" value="<?php echo $nombre ?>">
+                <input required type="text" name="nombre" value="<?php echo $nombre ?>">
               </div>
             </div>
 
             <div class="col-12 col-sm-6">
               <div class="input-group">
                 <label> Apellido </label>
-                <input type="text" name="apellido" value="<?php echo $apellido ?>">
+                <input required type="text" name="apellido" value="<?php echo $apellido ?>">
               </div>
             </div>
 
             <div class="col-12 col-sm-6">
               <div class="input-group">
                 <label> Correo </label>
-                <input type="text" name="correo" value="<?php echo $correo ?>" disabled>
+                <input required type="text" name="correo" value="<?php echo $correo ?>" disabled>
               </div>
             </div>
 
             <div class="col-12 col-sm-6">
               <div class="input-group">
                 <label> Contraseña </label>
-                <input type="password" name="contrasena">
+                <input required type="password" name="contrasena">
               </div>
             </div>
 

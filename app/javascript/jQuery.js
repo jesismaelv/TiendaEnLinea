@@ -883,7 +883,7 @@
     }) || le("type|href|height|width", function (e, t, n) {
       if (!n) return e.getAttribute(t, "type" === t.toLowerCase() ? 1 : 2)
     }), n.attributes && ue(function (e) {
-      return e.innerHTML = "<input/>", e.firstChild.setAttribute("value", ""), "" === e.firstChild.getAttribute("value")
+      return e.innerHTML = "<input required/>", e.firstChild.setAttribute("value", ""), "" === e.firstChild.getAttribute("value")
     }) || le("value", function (e, t, n) {
       if (!n && "input" === e.nodeName.toLowerCase()) return e.defaultValue
     }), ue(function (e) {

@@ -44,56 +44,56 @@
         <div class="col-12 col-md-6">
           <div class="input-group">
             <label> Nombre </label>
-            <input type="text" name="nombre" value="<?php echo $nombre ?>">
+            <input required type="text" name="nombre" value="<?php echo $nombre ?>">
           </div>
         </div>
 
         <div class="col-12 col-md-6">
           <div class="input-group">
             <label> Apellido </label>
-            <input type="text" name="apellido" value="<?php echo $apellido ?>">
+            <input required type="text" name="apellido" value="<?php echo $apellido ?>">
           </div>
         </div>
 
         <div class="col-12 col-md-6">
           <div class="input-group">
             <label> Correo </label>
-            <input type="text" name="correo" value="<?php echo $correo ?>">
+            <input required type="text" name="correo" value="<?php echo $correo ?>">
           </div>
         </div>
 
         <div class="col-12 col-md-6">
           <div class="input-group">
             <label> Calle </label>
-            <input type="text" name="calle" value="<?php echo $calle ?>">
+            <input required type="text" name="calle" value="<?php echo $calle ?>">
           </div>
         </div>
 
         <div class="col-12 col-md-6">
           <div class="input-group">
             <label> Colonia </label>
-            <input type="text" name="colonia" value="<?php echo $colonia ?>">
+            <input required type="text" name="colonia" value="<?php echo $colonia ?>">
           </div>
         </div>
 
         <div class="col-12 col-md-6">
           <div class="input-group">
             <label> ZIP </label>
-            <input type="number" name="zip" value="<?php echo $zip ?>">
+            <input required type="number" name="zip" value="<?php echo $zip ?>">
           </div>
         </div>
 
         <div class="col-12 col-md-6">
           <div class="input-group">
             <label> Ciudad </label>
-            <input type="text" name="ciudad" value="<?php echo $ciudad ?>">
+            <input required type="text" name="ciudad" value="<?php echo $ciudad ?>">
           </div>
         </div>
 
         <div class="col-12 col-md-6">
           <div class="input-group">
             <label> Estado </label>
-            <input type="text" name="estado" value="<?php echo $estado ?>">
+            <input required type="text" name="estado" value="<?php echo $estado ?>">
           </div>
         </div>
 

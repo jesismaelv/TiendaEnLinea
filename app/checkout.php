@@ -122,7 +122,7 @@
                 <a href="editar_direccion.php?id=<?php echo $id_direccion ?>" class="link">
                   Editar 
                 </a>
-                <input type="radio" name="direccion" value="<?php echo $id_direccion ?>" checked>
+                <input required type="radio" name="direccion" value="<?php echo $id_direccion ?>" checked>
               </label>
             </div>
       <?php
@@ -140,21 +140,21 @@
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="input-group">
           <label> Nombre Completo </label>
-          <input type="text" class="nombre_tarjeta">
+          <input required type="text" class="nombre_tarjeta">
         </div>
       </div>
 
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="input-group">
           <label> Numero Tarjeta </label>
-          <input type="number" class="numero_tarjeta">
+          <input required type="number" class="numero_tarjeta">
         </div>
       </div>
 
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="input-group">
           <label> Fecha de Vencimiento </label>
-          <input type="text" class="vence_tarjeta">
+          <input required type="text" class="vence_tarjeta">
         </div>
       </div>
 
@@ -172,13 +172,13 @@
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="input-group">
           <label> CCV </label>
-          <input type="text" class="ccv_tarjeta">
+          <input required type="text" class="ccv_tarjeta">
         </div>
       </div>
 
     </div>
 
-    <label> <input type="checkbox" name="terminos"> Acepto los <a class="link" href="terminos.php"> Terminos y Condiciones </a></label>
+    <label> <input required type="checkbox" name="terminos"> Acepto los <a class="link" href="terminos.php"> Terminos y Condiciones </a></label>
 
     <div class="alinear-derecha alinear-derecha--nosm">
       <button class="boton boton-important"> Comprar </button>

@@ -23,7 +23,7 @@
 
           <div class="input-group">
             <label> Foto </label>
-            <input type="file" name="imagen" accept="image/png, image/jpeg">
+            <input required type="file" name="imagen" accept="image/png, image/jpeg">
           </div>
 
         </div>
@@ -34,28 +34,28 @@
             <div class="col-12 col-sm-6">
               <div class="input-group">
                 <label> Nombre </label>
-                <input type="text" name="nombre" >
+                <input required type="text" name="nombre" >
               </div>
             </div>
 
             <div class="col-12 col-sm-6">
               <div class="input-group">
                 <label> Apellido </label>
-                <input type="text" name="apellido" >
+                <input required type="text" name="apellido" >
               </div>
             </div>
 
             <div class="col-12 col-sm-6">
               <div class="input-group">
                 <label> Correo </label>
-                <input type="text" name="correo" >
+                <input required type="text" name="correo" >
               </div>
             </div>
 
             <div class="col-12 col-sm-6">
               <div class="input-group">
                 <label> Contraseña </label>
-                <input type="password" name="contrasena" >
+                <input required type="password" name="contrasena" >
               </div>
             </div>
 

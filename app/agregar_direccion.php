@@ -30,56 +30,56 @@
         <div class="col-12 col-md-6">
           <div class="input-group">
             <label> Nombre </label>
-            <input type="text" name="nombre" >
+            <input required type="text" name="nombre" >
           </div>
         </div>
 
         <div class="col-12 col-md-6">
           <div class="input-group">
             <label> Apellido </label>
-            <input type="text" name="apellido" >
+            <input required type="text" name="apellido" >
           </div>
         </div>
 
         <div class="col-12 col-md-6">
           <div class="input-group">
             <label> Correo </label>
-            <input type="text" name="correo" >
+            <input required type="text" name="correo" >
           </div>
         </div>
 
         <div class="col-12 col-md-6">
           <div class="input-group">
             <label> Calle </label>
-            <input type="text" name="calle" >
+            <input required type="text" name="calle" >
           </div>
         </div>
 
         <div class="col-12 col-md-6">
           <div class="input-group">
             <label> Colonia </label>
-            <input type="text" name="colonia" >
+            <input required type="text" name="colonia" >
           </div>
         </div>
 
         <div class="col-12 col-md-6">
           <div class="input-group">
             <label> ZIP </label>
-            <input type="number" name="zip" >
+            <input required type="number" name="zip" >
           </div>
         </div>
 
         <div class="col-12 col-md-6">
           <div class="input-group">
             <label> Ciudad </label>
-            <input type="text" name="ciudad" >
+            <input required type="text" name="ciudad" >
           </div>
         </div>
 
         <div class="col-12 col-md-6">
           <div class="input-group">
             <label> Estado </label>
-            <input type="text" name="estado" >
+            <input required type="text" name="estado" >
           </div>
         </div>
 

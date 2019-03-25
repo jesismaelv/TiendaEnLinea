@@ -71,7 +71,7 @@
                 <?php echo $unidad; ?>
               </td>
               <td class="cantidad">
-                <input type="number" name='cantidad[<?php echo $id ?>]' value = <?php echo $cantidad; ?>>
+                <input required type="number" name='cantidad[<?php echo $id ?>]' value = <?php echo $cantidad; ?>>
               </td>
               <td class="total">
                 $<?php echo number_format($precio * $cantidad); ?>

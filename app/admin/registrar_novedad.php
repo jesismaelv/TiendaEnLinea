@@ -22,7 +22,7 @@
 
           <div class="input-group">
             <label> Imagen Principal </label>
-            <input type="file" name="imagen" id="fileToUpload" accept="image/png, image/jpeg">
+            <input required type="file" name="imagen" id="fileToUpload" accept="image/png, image/jpeg">
           </div>
 
         </div>
@@ -33,14 +33,14 @@
             <div class="col-12">
               <div class="input-group">
                 <label> Titulo </label>
-                <input type="text" name="titulo" >
+                <input required type="text" name="titulo" >
               </div>
             </div>
 
             <div class="col-12">
               <div class="input-group">
                 <label> Subtitulo </label>
-                <input type="text" name="subtitulo" >
+                <input required type="text" name="subtitulo" >
               </div>
             </div>
 

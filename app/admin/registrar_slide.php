@@ -22,7 +22,7 @@
 
           <div class="input-group">
             <label> Imagen </label>
-            <input type="file" name="imagen" accept="image/png, image/jpeg">
+            <input required type="file" name="imagen" accept="image/png, image/jpeg">
           </div>
 
         </div>
@@ -34,21 +34,21 @@
             <div class="col-12">
               <div class="input-group">
                 <label> Frase </label>
-                <input type="text" name="frase" >
+                <input required type="text" name="frase" >
               </div>
             </div>
 
             <div class="col-12 col-sm-6">
               <div class="input-group">
                 <label> Subtítulo </label>
-                <input type="text" name="subtitulo" >
+                <input required type="text" name="subtitulo" >
               </div>
             </div>
 
             <div class="col-12 col-sm-6">
               <div class="input-group">
                 <label> Acción </label>
-                <input type="text" name="accion" >
+                <input required type="text" name="accion" >
               </div>
             </div>
 
