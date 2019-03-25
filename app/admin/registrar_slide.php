@@ -22,7 +22,7 @@
 
           <div class="input-group">
             <label> Imagen </label>
-            <input required type="file" name="imagen" accept="image/png, image/jpeg">
+            <input  type="file" name="imagen" accept="image/png, image/jpeg">
           </div>
 
         </div>

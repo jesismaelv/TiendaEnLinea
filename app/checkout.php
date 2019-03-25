@@ -161,7 +161,7 @@
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="input-group">
           <label> Tipo </label>
-          <select name="tipo_tarjeta">
+          <select required name="tipo_tarjeta">
             <option> Mastercard </option>
             <option> Visa </option>
             <option> American Express </option>

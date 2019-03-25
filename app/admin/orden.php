@@ -38,7 +38,7 @@
         <form action="/admin/orden.php?id=<?php echo $id ?>" method='post'>
           <div class="input-group">
             <label> Status </label>
-            <select name="estado">
+            <select required name="estado">
               <option disabled selected> <?php echo $orden['estado'] ?> </option>
               <option value="Pendiente"> Pendiente </option>
               <option value="Enviado"> Enviado </option>
@@ -50,7 +50,7 @@
         <?php else : ?>
           <div class="input-group">
             <label> Status </label>
-            <select disabled>
+            <select required disabled>
               <option> Cancelado </option>
             </select>
           </div>

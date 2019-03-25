@@ -32,7 +32,7 @@
           <div class="input-group">
             <label> Imagen </label>
             <img src="../<?php echo $img ?>" alt="">
-            <input required type="file" name="imagen" accept="image/png, image/jpeg">
+            <input  type="file" name="imagen" accept="image/png, image/jpeg">
           </div>
 
         </div>

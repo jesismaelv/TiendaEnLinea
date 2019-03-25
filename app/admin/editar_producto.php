@@ -38,7 +38,7 @@
           <div class="input-group">
             <label> Imagen Principal </label>
             <img src="../<?php echo $img ?>" alt="">
-            <input required type="file" name="imagen" id="fileToUpload" accept="image/png, image/jpeg">
+            <input  type="file" name="imagen" id="fileToUpload" accept="image/png, image/jpeg">
           </div>
 
           <div class="input-group">
@@ -50,7 +50,7 @@
               <?php
                 endforeach;
               ?>
-              <input required type="file" name="imagenes[]" id="fileToUpload" accept="image/png, image/jpeg" multiple="multiple">
+              <input  type="file" name="imagenes[]" id="fileToUpload" accept="image/png, image/jpeg" multiple="multiple">
           </div>
 
         </div>

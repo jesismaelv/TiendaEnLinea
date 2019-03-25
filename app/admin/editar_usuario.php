@@ -33,7 +33,7 @@
           <div class="input-group">
             <label> Foto </label>
             <img src="../<?php echo $img ?>">
-            <input required type="file" name="imagen" accept="image/png, image/jpeg">
+            <input  type="file" name="imagen" accept="image/png, image/jpeg">
           </div>
 
         </div>
@@ -72,7 +72,7 @@
             <div class="col-12 col-sm-6">
               <div class="input-group">
                 <label> Tipo </label>
-                <select name="tipo">
+                <select required name="tipo">
                   <option value="cliente" <?php if($tipo == 'cliente') echo selected; ?>> Cliente </option>
                   <option value="admin" <?php if($tipo == 'admin') echo selected; ?>> Administrador </option>
                 </select>

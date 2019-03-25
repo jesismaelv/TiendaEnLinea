@@ -22,12 +22,12 @@
 
           <div class="input-group">
             <label> Imagen Principal </label>
-            <input required type="file" name="imagen" id="fileToUpload" accept="image/png, image/jpeg">
+            <input  type="file" name="imagen" id="fileToUpload" accept="image/png, image/jpeg">
           </div>
 
           <div class="input-group">
             <label> Galería </label>
-              <input required type="file" name="imagenes[]" id="fileToUpload" accept="image/png, image/jpeg" multiple="multiple">
+              <input  type="file" name="imagenes[]" id="fileToUpload" accept="image/png, image/jpeg" multiple="multiple">
           </div>
 
         </div>

@@ -23,7 +23,7 @@
 
           <div class="input-group">
             <label> Foto </label>
-            <input required type="file" name="imagen" accept="image/png, image/jpeg">
+            <input  type="file" name="imagen" accept="image/png, image/jpeg">
           </div>
 
         </div>
@@ -62,7 +62,7 @@
             <div class="col-12 col-sm-6">
               <div class="input-group">
                 <label> Tipo </label>
-                <select name="tipo">
+                <select required name="tipo">
                   <option value="cliente"> Cliente </option>
                   <option value="admin"> Administrador </option>
                 </select>
