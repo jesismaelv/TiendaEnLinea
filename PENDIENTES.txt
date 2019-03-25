@@ -15,8 +15,7 @@
 [X] Novedad
 [X] Usuario
 [X] Slide Galeria
-[ ] Ordenes Pendientes
-[ ] Todas las Órdenes
+[X] Ordenes
 
 --registrar--
 [X] Producto

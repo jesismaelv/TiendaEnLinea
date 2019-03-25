@@ -2,7 +2,7 @@
   $page_title = "Orden";
   include('estructura/cabecera.php');
   $id = $_GET['id'];
-  
+
 
   if($_POST['estado'] != NULL) {
     $data = $_POST;

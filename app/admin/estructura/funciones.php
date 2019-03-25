@@ -255,6 +255,15 @@
     return $result;
   }
 
+  function get_ordenes_estado($estado){
+    $bd = mysqli_connect("db","root","root", "main");
+    $sql = "SELECT * FROM orden WHERE estado = '$estado'";
+    $result = $bd->query($sql);
+    $bd->close();
+    return $result;
+  }
+
+
   function eliminar($tipo, $id) {
     $bd = mysqli_connect("db","root","root", "main");
     $sql = "DELETE FROM $tipo WHERE id = '$id'";
