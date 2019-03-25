@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="/css/estilos.css">
+  <link rel="shortcut icon" href="../img/favicon.png" />
 
   <title> TF Admin • <?php echo @$page_title; ?> </title>
 </head>
@@ -17,7 +18,7 @@
     <nav class="nav-principal">
       <div class="container contenedor-principal">
         <a href="index.php" class="logo">
-          Logo
+          <img src="../img/logo.svg">
         </a>
         <button class="menu-btn-movil"></button>
         <div class="menu-movil">

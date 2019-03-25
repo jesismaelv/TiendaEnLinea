@@ -6,8 +6,17 @@
 
 $texto: #000;
 $blanco: white;
-$fondo: #333;
-$acento: #9F7;
+$gris1: #111;
+$gris2: #333;
+$gris3: #555;
+$gris4: #666;
+$gris5: #999;
+$gris6: #CCC;
+$gris7: #eee;
+$verde: #94BF47;
+$morado: #4C4C7E;
+$naranja: #F07B22;
+
 
 body,
 html {
@@ -109,7 +118,7 @@ h1 {
   right: 0;
   display: block;
   height: 60px;
-  background-color: $fondo;
+  background-color: $gris2;
   z-index: 500;
 }
 
@@ -118,6 +127,13 @@ h1 {
   display: flex;
   align-items: center;
   height: 100%;
+  .logo {
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+
 }
 
 .logo,
@@ -151,13 +167,13 @@ h1 {
     display: block;
     content: '';
     height: 1px;
-    background: $acento;
+    background: $verde;
   }
 
   &:hover {
     cursor: pointer;
     text-decoration: none;
-    color: $acento;
+    color: $verde;
 
     &:after {
       transform: translate(-50%, 0%) scale(1);
@@ -176,7 +192,7 @@ h1 {
 }
 
 .footer-principal {
-  background: $fondo;
+  background: $gris2;
   padding: 30px 0 100px;
 }
 

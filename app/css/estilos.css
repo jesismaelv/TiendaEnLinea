@@ -2359,6 +2359,9 @@ h1 {
   display: flex;
   align-items: center;
   height: 100%; }
+  .nav-principal .logo img {
+    height: 100%;
+    width: auto; }
 
 .logo,
 .menu-movil {
@@ -2394,11 +2397,11 @@ h1 {
     display: block;
     content: '';
     height: 1px;
-    background: #9F7; }
+    background: #94BF47; }
   .menu__link:hover {
     cursor: pointer;
     text-decoration: none;
-    color: #9F7; }
+    color: #94BF47; }
     .menu__link:hover:after {
       transform: translate(-50%, 0%) scale(1); }
 
