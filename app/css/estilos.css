@@ -2365,7 +2365,7 @@ h1 {
   align-items: center;
   height: 100%; }
   .nav-principal .logo {
-    height: 100%;
+    height: calc(100% - 20px);
     width: 140px; }
     .nav-principal .logo img {
       height: 100%;
@@ -2377,6 +2377,23 @@ h1 {
   display: inline-block;
   text-transform: uppercase;
   color: white; }
+  @media only screen and (min-width: 601px) {
+    .logo,
+    .menu-movil {
+      height: 100%; }
+      .logo .menu__links,
+      .menu-movil .menu__links {
+        height: 100%;
+        display: inline-flex;
+        align-items: center; }
+      .logo .menu__link,
+      .menu-movil .menu__link {
+        display: inline-block;
+        height: 100%; } }
+
+.menu-movil {
+  display: inline-flex;
+  align-items: center; }
 
 .menu-btn-movil {
   display: none; }
@@ -2429,7 +2446,7 @@ h1 {
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  padding-bottom: 10px;
+  padding: 20px 0;
   position: relative; }
   .menu__link:after {
     -webkit-transition: all 0.5s ease;
@@ -2443,7 +2460,7 @@ h1 {
     transform: translate(-50%, 0%) scale(0);
     display: block;
     content: '';
-    height: 1px;
+    height: 2px;
     background: #94BF47; }
   .menu__link:hover {
     cursor: pointer;
@@ -2455,7 +2472,9 @@ h1 {
 .contenedor-principal {
   position: relative;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  height: 100%;
+  align-items: center; }
 
 .menu-spacer {
   height: 60px; }
