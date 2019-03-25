@@ -17,8 +17,11 @@
     <h1> Carrito </h1>
 <?php
   $items = json_decode($_SESSION['carrito']);
-
-  if(sizeof($items) > 0) :
+  $tiene_productos = false;
+  foreach($items as $item) {
+    if($item > 0) $tiene_productos = true;
+  }
+  if( $tiene_productos ) :
 ?>
     <form action="carrito.php" method="post">
     <div class="carrito__wrapper">
@@ -95,14 +98,12 @@
       </table>
     </div>
     <div class="row">
-        
       <div class="col-12 col-md-6">
         <button class='boton'> Actualizar </button>
       </div>
       <div class="col-12 col-md-6 alinear-derecha alinear-derecha--nosm">
         <a href="checkout.php" class="boton boton-important"> Checkout </a>
       </div>
-
     </div>
     </form>
     <?php else: ?>

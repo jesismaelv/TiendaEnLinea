@@ -6,7 +6,7 @@
     $status = registrar_orden($_POST, $_SESSION['id']);
     if( $status[0] === true ) {
       $id = $status[1];
-      $url = "orden.php?id=" . $id;
+      $url = "orden.php?mensaje=exito&id=" . $id;
       echo "<meta http-equiv='refresh' content='0; URL=$url' />";
     }
     else {

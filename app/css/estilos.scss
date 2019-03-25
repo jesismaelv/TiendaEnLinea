@@ -74,6 +74,12 @@ a {
       color: white;
     }
   }
+
+  &:not(.boton-important) {
+    background-color: transparent;
+    color: $verde;
+    border: 1px solid $verde;
+  }
 }
 
 
@@ -90,7 +96,7 @@ h1 {
     display: block;
     width: 80px;
     height: 3px;
-    background-color: gray;
+    background-color: $naranja;
     position: absolute;
     bottom: 0px;
     left: 0px;
@@ -106,9 +112,14 @@ h1 {
   }
 }
 
+h2 {
+  color: $naranja;
+}
+
 .link {
   display: inline-block;
   text-decoration: underline;
+  color: $naranja;
 }
 
 .header-principal {
@@ -574,5 +585,34 @@ h1 {
     font-size: 20px;
     @include ellipsis(20px, 4);
     color: #333;
+  }
+}
+
+
+.no-resultados {
+  display: block;
+  width: 100%;
+  padding: 30px;
+  border: 2px dashed $verde;
+  @include borde-redondo(5px);
+  font-weight: bold;
+  animation-name: colorful;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  animation-direction: alternate;
+}
+
+@keyframes colorful {
+  0% {
+    border-color: $verde;
+  }
+
+  50% {
+    border-color: rgb(219, 216, 13);
+  }
+
+  100% {
+    border-color: $naranja;
   }
 }

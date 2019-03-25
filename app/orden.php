@@ -3,6 +3,10 @@
   include('estructura/cabecera.php');
   $id = $_GET['id'];
 
+  if( $_GET['mensaje'] == 'exito') {
+      aviso("Gracias por comprar con nosotros!");
+  }
+
 
   if($_POST['estado'] != NULL) {
     $data = $_POST;
