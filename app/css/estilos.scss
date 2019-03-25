@@ -35,6 +35,15 @@ a {
   color: $texto;
 }
 
+.advertencia {
+  display: block;
+  width: 100%;
+  padding: 10px 30px;
+  border: 2px solid $naranja;
+  font-weight: bold;
+  margin-bottom: 15px;
+  @include borde-redondo(5px);
+}
 
 .boton {
   @include reset-appearance();
@@ -265,7 +274,7 @@ h2 {
 
 .footer-principal {
   background: $gris2;
-  padding: 30px 0 100px;
+  padding: 30px 0 35px;
 
   .logo {
     img {
@@ -601,6 +610,7 @@ h2 {
   animation-iteration-count: infinite;
   animation-timing-function: ease;
   animation-direction: alternate;
+  margin-bottom: 20px;
 }
 
 @keyframes colorful {

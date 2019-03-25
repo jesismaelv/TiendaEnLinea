@@ -37,14 +37,23 @@ if(sizeof($carrito) == 0) {
       $tipo = 'cliente';
     }
 
+    $carrito = json_decode($_SESSION['carrito']);
+
+    if(!$es_admin && sizeof($carrito) > 0) {
+      $carrito = $_SESSION['carrito'];
+    }
+    else {
+      $carrito = "{}";
+    }
+
     $query = "SELECT correo FROM usuarios WHERE correo = '$correo'";
     $result = $bd->query($query);
     if ($result->num_rows > 0) {
       $bd->close();
       return false;
     } else {
-      $query = "INSERT INTO usuarios ( nombre, apellido, correo, contrasena, foto, tipo )
-        VALUES ('$nombre', '$apellido', '$correo', '$contrasena', '$foto', '$tipo')";
+      $query = "INSERT INTO usuarios ( nombre, apellido, correo, contrasena, foto, tipo, carrito )
+        VALUES ('$nombre', '$apellido', '$correo', '$contrasena', '$foto', '$tipo', '$carrito')";
       $result = $bd->query($query);
 
       $id = $bd->insert_id;

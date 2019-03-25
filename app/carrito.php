@@ -15,6 +15,12 @@
 <main class="carrito-page">
   <div class="container">
     <h1> Carrito </h1>
+    <?php if( !$_SESSION['id'] > 0) : ?>
+        <div class="advertencia">
+            <p> Si tienes cuenta <a class='link' href="login.php"> Inicia sesión </a> perro! Lo que guardes en el carrito no se mostrará en tu cuenta. </a>
+            <p> Si no tienes cuenta tu carrito se guardará al <a class='link' href="registrarse.php"> hacer una.  </a> </p>
+        </div>
+      <?php endif; ?>
 <?php
   $items = json_decode($_SESSION['carrito']);
   $tiene_productos = false;
@@ -102,7 +108,11 @@
         <button class='boton'> Actualizar </button>
       </div>
       <div class="col-12 col-md-6 alinear-derecha alinear-derecha--nosm">
-        <a href="checkout.php" class="boton boton-important"> Checkout </a>
+        <?php if($_SESSION['id'] > 0) : ?>
+          <a href="checkout.php" class="boton boton-important"> Checkout </a>
+        <?php else : ?>
+          <p> Por favor, <a href="registrarse.php" class="link"> regístrate </a> para hacer checkout. </p>
+        <?php endif; ?>
       </div>
     </div>
     </form>

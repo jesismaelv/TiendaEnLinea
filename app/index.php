@@ -1,10 +1,12 @@
 <?php
   $page_title = "Inicio";
   include('estructura/cabecera.php');
+
+  
 ?>
 
 <main class="index-page">
-  <section class="container galeria-inicio" data-gallery-auto-rotate>
+  <section class="galeria-inicio" data-gallery-auto-rotate>
     <?php
       $result = get_archivo("slides_inicio");
       if ($result->num_rows > 0) :

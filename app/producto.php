@@ -25,6 +25,14 @@
 <main class="single-product-page">
   <div class="container">
     <div class="row">
+      <?php if( !$_SESSION['id'] > 0) : ?>
+        <div class="col-12">
+          <div class="advertencia"> 
+          <p> Si tienes cuenta <a class='link' href="login.php"> Inicia sesión </a> perro! Lo que guardes en el carrito no se mostrará en tu cuenta. </a>
+              <p> Si no tienes cuenta tu carrito se guardará al <a class='link' href="registrarse.php"> hacer una.  </a> </p>
+          </div>
+        </div>
+      <?php endif; ?>
       <div class="col-12 col-md-6 col-lg-4 galeria-producto">
         <?php
           $slides = $galeria;

@@ -120,6 +120,12 @@
             </div>
       <?php
           endwhile;
+        else :
+      ?>
+        <div class="col-12">
+          <div class="no-resultados"> No tienes direcciones todavía. </div>
+        </div>
+      <?php
         endif;
       ?>
     </div>
