@@ -7,7 +7,7 @@
 $texto: #000;
 $blanco: white;
 $gris1: #111;
-$gris2: #333;
+$gris2: #333338;
 $gris3: #555;
 $gris4: #666;
 $gris5: #999;
@@ -128,6 +128,8 @@ h1 {
   align-items: center;
   height: 100%;
   .logo {
+    height: 100%;
+    width: 140px;
     img {
       height: 100%;
       width: auto;
@@ -427,7 +429,13 @@ h1 {
   }
 }
 
+.index-page {
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
 .galeria-inicio {
+  margin-bottom: 40px;
   .gallery__slides {
     padding: 0px;
     height: calc(100vh - 120px);
@@ -495,3 +503,4 @@ h1 {
     color: #333;
   }
 }
+

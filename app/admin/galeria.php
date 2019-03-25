@@ -54,7 +54,7 @@
         ?>
         <div class="col-12">
           <div class="no-resultados">
-            No existen productos
+            No existen slides
           </div>
         </div>
         <?php

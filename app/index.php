@@ -4,7 +4,7 @@
 ?>
 
 <main class="index-page">
-  <section class="container galeria-inicio">
+  <section class="container galeria-inicio" data-gallery-auto-rotate>
     <?php
       $result = get_archivo("slides_inicio");
       if ($result->num_rows > 0) :
@@ -29,7 +29,7 @@
         if ($result->num_rows > 0) :
           while($novedad = $result->fetch_assoc()) :
             $titulo = $novedad['titulo'];
-            $subtitlo = $novedad['subtitulo'];
+            $subtitulo = $novedad['subtitulo'];
             $descripcion = $novedad['descripcion'];
             $imagen = $novedad['imagen'];
       ?>
