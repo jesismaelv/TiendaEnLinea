@@ -40,7 +40,7 @@
 [ C L I E N T E ]
 --estructura--
 [X] Menú
-[ ] Footer
+[X] Footer
 
 --views--
 [X] Inicio

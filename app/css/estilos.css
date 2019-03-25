@@ -2482,21 +2482,24 @@ h1 {
 .footer-principal {
   background: #333338;
   padding: 30px 0 100px; }
+  .footer-principal .logo img {
+    width: 200px;
+    height: auto;
+    display: inline-block; }
+  .footer-principal .firma {
+    text-align: center;
+    color: white; }
+    .footer-principal .firma p {
+      margin: 0px;
+      padding: 0px;
+      line-height: 1.5; }
 
-.menu__footer {
-  display: flex;
-  justify-content: space-between; }
+.footer__iconos {
+  text-align: right; }
 
-.logo-links {
-  display: flex; }
-
-.menu__footer__links {
-  display: flex;
-  flex-direction: column;
-  margin: 0 50px; }
-
+.menu__link--carrito,
 .menu__link--cuenta {
-  background-image: url("../img/icono-cuenta.svg");
+  text-align: left;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2506,7 +2509,17 @@ h1 {
   text-indent: -9999px;
   position: relative;
   display: inline-block;
-  transition: all 0.5s ease;
+  transform: scale(1);
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+  .menu__link--carrito:hover,
+  .menu__link--cuenta:hover {
+    transform: scale(1.1); }
+
+.menu__link--cuenta {
+  background-image: url("../img/icono-cuenta.svg");
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -2514,15 +2527,6 @@ h1 {
 
 .menu__link--carrito {
   background-image: url("../img/icono-carrito.svg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin-left: 20px;
-  width: 25px;
-  height: 25px;
-  text-indent: -9999px;
-  position: relative;
-  display: inline-block;
   transition: all 0.5s ease; }
 
 .login-page {

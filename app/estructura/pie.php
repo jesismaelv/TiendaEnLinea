@@ -1,19 +1,25 @@
   
   <footer class="footer-principal">
     <div class="container">
-      <div class="menu__footer">
-        <div class="logo-links">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4">
           <div class="logo">
-            Logo
-          </div>
-          <div class="menu__footer__links">
-            <a href="#" class="menu__link">Inicio</a>
-            <a href="#" class="menu__link">Tienda</a>
+            <img src="../img/logo.svg">
           </div>
         </div>
-        <div class="menu__footer__iconos">
-          <a href="#" class="menu__link--cuenta">Cuenta</a>
-          <a href="#" class="menu__link--carrito">Carrito</a>
+
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="firma">
+            <p> Derechos reservados a TrannyFrut <i> Nada es lo que parece </i> a 2019 ® .</p>
+            <p><small>Respeta o te demandamos perro.</small></p>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="footer__iconos">
+            <a href="perfil.php" class="menu__link--cuenta">Cuenta</a>
+            <a href="carrito.php" class="menu__link--carrito">Carrito</a>
+          </div>
         </div>
       </div>
     </div>

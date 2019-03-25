@@ -255,25 +255,35 @@ h1 {
 .footer-principal {
   background: $gris2;
   padding: 30px 0 100px;
+
+  .logo {
+    img {
+      width: 200px;
+      height: auto;
+      display: inline-block;
+    }
+  }
+
+  .firma {
+    text-align: center;
+    color: white;
+
+    p {
+      margin: 0px;
+      padding: 0px;
+      line-height: 1.5;
+    }
+  }
 }
 
-.menu__footer {
-  display: flex;
-  justify-content: space-between;
+.footer__iconos {
+  text-align: right;
 }
 
-.logo-links {
-  display: flex;
-}
 
-.menu__footer__links {
-  display: flex;
-  flex-direction: column;
-  margin: 0 50px;
-}
-
+.menu__link--carrito,
 .menu__link--cuenta {
-  background-image: url('../img/icono-cuenta.svg');
+  text-align: left;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -283,24 +293,26 @@ h1 {
   text-indent: -9999px;
   position: relative;
   display: inline-block;
-  transition: all 0.5s ease;
+  transform: scale(1);
+  @include transicion(0.2s);
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.menu__link--cuenta {
+  background-image: url('../img/icono-cuenta.svg');
   @include borde-redondo(50%);
   border: 1px solid white;
 }
 
 .menu__link--carrito {
   background-image: url('../img/icono-carrito.svg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin-left: 20px;
-  width: 25px;
-  height: 25px;
-  text-indent: -9999px;
-  position: relative;
-  display: inline-block;
   transition: all 0.5s ease;
 }
+
+
 
 .login-page {
   text-align: center;
