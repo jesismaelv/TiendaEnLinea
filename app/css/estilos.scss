@@ -148,8 +148,43 @@ h1 {
   color: $blanco;
 }
 
+
+
 .menu-btn-movil {
   display: none;
+
+  @include movil {
+    @include reset-appearance;
+    display: block;
+    float: right;
+    width: 50px;
+    height: 50px;
+    @include bgimage('../img/menu.svg');
+    background-size: 30px auto;
+  }
+}
+
+@include movil {
+  .menu-movil {
+    display: block;
+    position: absolute;
+    top: 55px;
+    left: 0px;
+    right: 0px;
+    overflow: auto;
+    max-height: 0px;
+    background-color: $gris3;
+    padding: 0px 0px;
+    text-align: center;
+    opacity: 0;
+    @include transicion();
+  }
+
+  .menu-btn-movil.activo+.menu-movil {
+    max-height: calc(100vh - 55px);
+    padding: 30px 15px;
+    opacity: 1;
+  }
 }
 
 .menu__link {

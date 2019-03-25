@@ -20,7 +20,7 @@
         <a href="index.php" class="logo">
           <img src="../img/logo.svg">
         </a>
-        <button class="menu-btn-movil"></button>
+        <button class="menu-btn-movil" data-toggle='activo'></button>
         <div class="menu-movil">
           <div class="menu__links">
             <a href="/admin/productos.php" class="menu__link">Productos</a>

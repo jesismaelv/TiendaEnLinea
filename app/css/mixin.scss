@@ -128,7 +128,7 @@
 }
 
 
-$breakpoint: 991px;
+$breakpoint: 600px;
 
 @mixin desktop() {
   @media only screen and (min-width: $breakpoint + 1) {
@@ -136,7 +136,7 @@ $breakpoint: 991px;
   }
 }
 
-@mixin mobile() {
+@mixin movil() {
   @media only screen and (max-width: $breakpoint) {
     @content;
   }

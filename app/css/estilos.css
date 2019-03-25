@@ -2380,7 +2380,46 @@ h1 {
 
 .menu-btn-movil {
   display: none; }
+  @media only screen and (max-width: 600px) {
+    .menu-btn-movil {
+      appearance: none;
+      -webkit-appearance: none;
+      -o-appearance: none;
+      -moz-appearance: none;
+      background-color: transparent;
+      border: 0px solid transparent;
+      display: block;
+      float: right;
+      width: 50px;
+      height: 50px;
+      background-image: url("../img/menu.svg");
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-size: 30px auto; } }
 
+@media only screen and (max-width: 600px) {
+  .menu-movil {
+    display: block;
+    position: absolute;
+    top: 55px;
+    left: 0px;
+    right: 0px;
+    overflow: auto;
+    max-height: 0px;
+    background-color: #555;
+    padding: 0px 0px;
+    text-align: center;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
+
+  .menu-btn-movil.activo + .menu-movil {
+    max-height: calc(100vh - 55px);
+    padding: 30px 15px;
+    opacity: 1; } }
 .menu__link {
   color: white;
   margin-left: 20px;
