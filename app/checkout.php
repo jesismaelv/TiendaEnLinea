@@ -1,5 +1,5 @@
 <?php
-  $page_title = "Carrito";
+  $page_title = "Checkout";
   include('estructura/cabecera.php');
 
   if($_POST['terminos']) {

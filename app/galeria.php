@@ -1,5 +1,5 @@
 <?php
-    $class="gallery";
+    $class="Gallería";
     $slide_class="slide gallery__slide";
 ?>
 

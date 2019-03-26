@@ -12,7 +12,7 @@
   }
 ?>
 
-<main class="admin-page registrar-producto-page">
+<main class="admin-page">
   <div class="container">
     <h1> Agregar Slide </h1>
 

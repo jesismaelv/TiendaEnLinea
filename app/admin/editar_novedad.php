@@ -1,5 +1,5 @@
 <?php
-  $page_title = "Registrar Novedades";
+  $page_title = "Editar Novedad";
   include('estructura/cabecera.php');
 
   $id = $_GET['id'];
@@ -22,7 +22,7 @@
 
 ?>
 
-<main class="admin-page registrar-producto-page">
+<main class="admin-page">
   <div class="container">
     <h1> Editar novedad </h1>
 

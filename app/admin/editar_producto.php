@@ -1,5 +1,5 @@
 <?php
-  $page_title = "Registrar Producto";
+  $page_title = "Editar Producto";
   include('estructura/cabecera.php');
 
   $id = $_GET['id'];
@@ -28,7 +28,7 @@
 
 ?>
 
-<main class="admin-page registrar-producto-page">
+<main class="admin-page">
   <div class="container">
     <h1> Editar producto </h1>
     <form action="editar_producto.php?id=<?php echo $id ?>" method="post" enctype="multipart/form-data">

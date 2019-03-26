@@ -1,5 +1,5 @@
 <?php
-  $page_title = "Inicio";
+  $page_title = "Terminos y condiciones";
   include('estructura/cabecera.php');
 
   

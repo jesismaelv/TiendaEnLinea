@@ -1,5 +1,5 @@
 <?php
-  $page_title = "Agregar Direccion";
+  $page_title = "Editar Direccion";
   include('estructura/cabecera.php');
 
   $id = $_GET['id'];

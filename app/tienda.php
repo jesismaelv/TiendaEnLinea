@@ -4,7 +4,7 @@
 
 
 ?>
-<main class="admin-page registrar-producto-page">
+<main class="admin-page">
   <div class="container">
 
   <div class="row">

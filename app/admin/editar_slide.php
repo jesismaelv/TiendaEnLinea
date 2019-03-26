@@ -1,5 +1,5 @@
 <?php
-  $page_title = "Registrar Slide";
+  $page_title = "Editar Slide";
   include('estructura/cabecera.php');
 
   $id = $_GET['id'];
