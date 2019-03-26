@@ -6,8 +6,6 @@
   if( $_GET['mensaje'] == 'exito') {
       aviso("Gracias por comprar con nosotros!");
   }
-
-
   if($_POST['estado'] != NULL) {
     $data = $_POST;
     $data['id'] = $id;
@@ -19,9 +17,9 @@
       aviso("La orden no se pudo actualizar.");
     }
   }
-
   $orden = get_orden($id, $_SESSION['id']);
   $fecha = date('d/M/Y',time($orden['fecha']));
+
 ?>
 
 <main class="orden-page">
