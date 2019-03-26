@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Mar 25, 2019 at 08:05 PM
+-- Generation Time: Mar 26, 2019 at 01:32 AM
 -- Server version: 5.7.11
 -- PHP Version: 7.2.8
 
@@ -125,8 +125,11 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`id`, `imagen`, `nombre`, `descripcion`, `precio`, `unidad`, `existencia`, `fecha_creacion`, `imagenes`) VALUES
-(31, 'img/producto/31/principal.png', 'Un buen meme', 'ahora con descripcion', 150, 'memistico', '29', '2019-03-23 02:35:25', '[\"img/producto/31/galeria0.png\", \"img/producto/31/galeria1.png\"]'),
-(36, 'img/producto/36/principal.png', 'Prueba', '', 123, 'img', '63', '2019-03-24 00:21:05', '[\"img/producto/36/galeria0.png\", \"img/producto/36/galeria1.png\", \"img/producto/36/galeria2.png\"]');
+(37, 'img/producto/37/principal.jpg', 'Naranja Blue Berry', 'Con esta deliciosa naranja sorprenderÃ¡s a tus amigos con un escalofriante sabor a Blue Berry. Por tan solo 3 efectos secundarias disfrutaras de una deliciosa Blue Berry con una, aunque considerable, pequeÃ±a posibilidad de quedar ciego, estreÃ±ido por siempre, o simplemente muerto. Â¡A disfrutar!', 450, 'c/u', '120', '2019-03-26 00:22:33', '[\"img/producto/37/galeria0.jpg\", \"img/producto/37/galeria1.jpg\"]'),
+(38, 'img/producto/38/principal.jpg', 'Gran SandÃ­a', 'Â¿No estar harto de tener que buscar la sandÃ­a mÃ¡s grande para usar para tu casa y no puedes encontrar una de 20 metros? Â¡La Gran SandÃ­a crece tanto como tu quieras! Alimentada de restos humanos por cada m2 crecido, la Gran SandÃ­a puede suplir tus necesidades de hogar tan grantes como te los imagines.', 300, 'm2', '30', '2019-03-26 00:27:10', '[\"img/producto/38/galeria0.jpg\"]'),
+(39, 'img/producto/39/principal.jpg', 'PiÃ±a que habla', 'Olvidate de las aburridas piÃ±as que no hablar con LA PIÃ‘A QUE SI HABLA!', 600, 'kg', '12', '2019-03-26 00:31:16', '[\"img/producto/39/galeria0.jpg\"]'),
+(40, 'img/producto/40/principal.jpg', 'Coco con fresas', 'Es incomodo lllegar a casa con un antojo a fresas y solo tener coco en tu casa, asÃ­ como tambiÃ©n es incomodo llegar a casa con un antojo a coco y solo tener fresas en tu casa. Con el coco con fresas puedes tener fresas y coco en una misma fruta! Y si no quieres una fruta, no lo consumas!!', 1500, 'kg', '20', '2019-03-26 00:38:46', '[\"img/producto/40/galeria0.jpg\"]'),
+(41, 'img/producto/41/principal.jpg', 'Fresas sabor chile', 'Cuando estas haciendo una salsa y por accidente agregas una fresa, podrÃ­a convertirse en un momento sumamente embarazoso. EvÃ­talo comprando la fresa sabor a chile para que tu salsa no pierda enchilosidad.', 200, 'kg', '500', '2019-03-26 00:45:13', '[\"img/producto/41/galeria0.jpg\"]');
 
 -- --------------------------------------------------------
 
@@ -147,7 +150,7 @@ CREATE TABLE `slides_inicio` (
 --
 
 INSERT INTO `slides_inicio` (`imagen`, `frase`, `subtitulo`, `boton`, `id`) VALUES
-('img/slides_inicio/10/principal.jpg', 'Descubre el sabor del transgÃ©nico', 'No volverÃ¡s a querer una fruta de verdad otra vez.', '/tienda.php', 10),
+('img/slides_inicio/10/principal.jpg', 'Nada es lo que parece', 'No volverÃ¡s a querer una fruta de verdad otra vez. Â¡Visita nuestra tienda!', '/tienda.php', 10),
 ('img/slides_inicio/11/principal.jpg', 'Â¡Nuevo! CÃ­tricos que saben a berries', 'Â¡Crecen hasta 4 metros!', '', 11);
 
 -- --------------------------------------------------------
@@ -244,13 +247,13 @@ ALTER TABLE `orden`
 -- AUTO_INCREMENT for table `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `slides_inicio`
 --
 ALTER TABLE `slides_inicio`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `usuarios`

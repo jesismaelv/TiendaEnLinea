@@ -11,6 +11,9 @@
   $existencia = $data['existencia'];
   $imagen = $data['imagen'];
   $galeria = json_decode($data['imagenes']);
+  if($galeria[0] == '') {
+    $galeria = [];
+  }
 
   if( $_POST['cantidad'] > 0 ) {
     if(agregar_producto($_POST['cantidad'], $id, $_SESSION['id']) === true ) {
@@ -72,18 +75,7 @@
               $unidad = $producto['unidad'];
         ?>
           <div class="col-12 col-sm-6 col-lg-3">
-            <article class="tarjeta tarjeta-producto">
-              <a class="link-producto"
-                  href="/producto.php?id=<?php echo $producto['id'] ?>">
-                  <div class="imagen"
-                  style="background-image:url(../<?php echo $producto['imagen'] ?>)"></div>
-
-                <h2>
-                  <?php echo $producto['nombre']; ?>
-                </h2>
-                <span class="precio"><?php echo "$$precio por $unidad" ?></span> • <span class="existencia">Quedan <?php echo $producto['existencia'] ?></span>
-              </a>
-            </article>
+            <?php include('tarjeta-producto.php') ?>
           </div>
         <?php
             endwhile;

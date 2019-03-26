@@ -162,7 +162,7 @@ if(sizeof($carrito) == 0) {
 
   function productos_recientes($cant) {
     $bd = mysqli_connect("db","root","root", "main");
-    $sql = "SELECT * FROM producto ORDER BY fecha_creacion LIMIT $cant";
+    $sql = "SELECT * FROM producto ORDER BY fecha_creacion DESC LIMIT $cant";
     $result = $bd->query($sql);
     $bd->close();
     return $result;
