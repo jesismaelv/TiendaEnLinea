@@ -33,6 +33,12 @@ main {
   .input-group img {
     width: 100%;
     height: auto; }
+  .input-group--flex {
+    display: flex;
+    align-items: center; }
+    .input-group--flex input,
+    .input-group--flex button {
+      height: 45px; }
 
 label {
   display: block;

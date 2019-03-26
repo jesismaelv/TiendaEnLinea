@@ -144,6 +144,14 @@ if(sizeof($carrito) == 0) {
     return $result;
   }
 
+  function buscar_productos( $s ){
+    $bd = mysqli_connect("db","root","root", "main");
+    $sql = "SELECT * FROM producto WHERE nombre LIKE '%$s%'";
+    $result = $bd->query($sql);
+    $bd->close();
+    return $result;
+  }
+
   function get_mas_productos(){
     $bd = mysqli_connect("db","root","root", "main");
     $sql = "SELECT * FROM producto ORDER BY RAND() LIMIT 4";

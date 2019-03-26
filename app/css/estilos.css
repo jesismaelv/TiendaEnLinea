@@ -1859,6 +1859,12 @@ main {
   .input-group img {
     width: 100%;
     height: auto; }
+  .input-group--flex {
+    display: flex;
+    align-items: center; }
+    .input-group--flex input,
+    .input-group--flex button {
+      height: 45px; }
 
 label {
   display: block;
@@ -2522,9 +2528,19 @@ h2 {
       margin: 0px;
       padding: 0px;
       line-height: 1.5; }
+  @media only screen and (min-width: 1px) and (max-width: 991px) {
+    .footer-principal {
+      text-align: center; }
+      .footer-principal .logo,
+      .footer-principal .firma,
+      .footer-principal .footer__icons {
+        margin-bottom: 30px; } }
 
 .footer__iconos {
   text-align: right; }
+  @media only screen and (min-width: 1px) and (max-width: 991px) {
+    .footer__iconos {
+      text-align: center; } }
 
 .menu__link--carrito,
 .menu__link--cuenta {

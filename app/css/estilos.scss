@@ -294,10 +294,24 @@ h2 {
       line-height: 1.5;
     }
   }
+
+  @include upto_md {
+    text-align: center;
+
+    .logo,
+    .firma,
+    .footer__icons {
+      margin-bottom: 30px;
+    }
+  }
 }
 
 .footer__iconos {
   text-align: right;
+
+  @include upto_md {
+    text-align: center;
+  }
 }
 
 
