@@ -195,7 +195,20 @@ select {
       @include bgimage();
       width: 100%;
       padding: 60% 0;
+      position: relative;
       @include borde-redondo(5px);
+
+      .imagen-secundaria {
+        @include borde-redondo(5px);
+        @include bgimage();
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        @include transicion();
+      }
     }
 
     h2,
@@ -217,6 +230,10 @@ select {
       background-color: white;
       text-decoration: none;
       box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+
+      .imagen-secundaria {
+        opacity: 1;
+      }
     }
   }
 }
