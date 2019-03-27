@@ -13,7 +13,19 @@
   <title> TrannyFrut • <?php echo @$page_title; ?> </title>
 </head>
 <body>
+<?php
+$items_carrito_cabecera = json_decode($_SESSION['carrito']);
+$tiene_productos_cabecera = false;
+$c = 0;
+foreach($items_carrito_cabecera as $item) {
+  if($item > 0) { $tiene_productos_cabecera = true; $c++; }
+}
+$num_productos = 0;
+if( $tiene_productos_cabecera ) {
+  $num_productos = $c;
+}
 
+?>
   <header class="header-principal">
     <nav class="nav-principal">
       <div class="container contenedor-principal">
@@ -39,9 +51,8 @@
                 $url = "login.php";
               }
             ?>
-
             <a href="<?php echo $url ?>" <?php echo $img ?> class="menu__link--cuenta">Cuenta</a>
-            <a href="carrito.php" class="menu__link--carrito">Carrito</a>
+            <a href="carrito.php" class="menu__link--carrito">Carrito <?php echo ($num_productos > 0) ? "<span>$num_productos</span>" : ""; ?></a>
           </div>
         </div>
       </div>
